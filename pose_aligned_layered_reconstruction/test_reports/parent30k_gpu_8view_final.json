@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "scope": "real SS30K EMA load plus oracle-layer adapter forward",
+  "device": "cuda:0",
+  "torch_version": "2.4.0",
+  "parent": {
+    "path": "/data/zjr/proobjaverse_official_30k_checkpoint_archives/ProObjaverse_30K_noVGGT_SS_SLat_numbered_checkpoints_20260818_v1/ss/checkpoints/step_030000.pt",
+    "sha256": "042a1b5467b05975584aeb571dec6ffaed5096edcc6abe4aa88600c9c9506b7f",
+    "format": "pose_point_depth_mv.native_ss_genrecon_no_vggt.v1",
+    "step": 30000,
+    "weights": "ema",
+    "loaded_tensor_count": 298,
+    "freeze_parent": true,
+    "new_trainable_tensor_count": 104
+  },
+  "model": {
+    "format": "pose_aligned_layered_reconstruction.native_ss.v1",
+    "parent": "no-VGGT Native-SS step30000 EMA",
+    "parent_parameter_layout_preserved": true,
+    "appearance_input": "masked_target_dino",
+    "layer_input": "raw_rgb_dino_plus_visible_target_cue",
+    "query_grid": "dense_16_cubed",
+    "target_lari": {
+      "representation": "ordered_camera_depth_plus_stopping_index",
+      "target_ownership": true,
+      "confidence": true,
+      "input_channels": 1024,
+      "hidden_channels": 256,
+      "layers": 5,
+      "decoder_blocks": 3,
+      "minimum_depth_gap": 0.001,
+      "raster": "DINO_patch_grid",
+      "official_lari_checkpoint_compatible": false
+    },
+    "layer_match_features": 12,
+    "layer_channels": 128,
+    "new_view_gate": "zero_init_residual_logits",
+    "new_block_condition": "zero_init_independent_projection_every_block",
+    "layer_raster_sampling": "half_pixel_centers",
+    "layer_strength": "appearance_weights_times_absolute_target_support",
+    "stock_content_identity": {
+      "model_name": "ss_flow_img_dit_L_16l8_fp16",
+      "config_sha256": "bf69161da7ece9a87394dd4441f0cfa6d4261696a214a8f68388c81fa9a6b5b7",
+      "weights_sha256": "876df6751febc412d3e6f62c686f59da1634e4d3c4edba44fdf6a749bdbba73a"
+    },
+    "pretrained": "Stable-X/trellis-vggt-v0-2",
+    "lora_rank": 8,
+    "lora_alpha": 16,
+    "sampler": "FlowEulerGuidanceIntervalSampler",
+    "sampler_params": {
+      "steps": 25,
+      "cfg_strength": 5.0,
+      "cfg_interval": [
+        0.5,
+        1.0
+      ],
+      "rescale_t": 3.0
+    }
+  },
+  "build_seconds": 20.08771061897278,
+  "parent_loaded_seconds": 22.471136808395386,
+  "elapsed_seconds": 24.200228929519653,
+  "peak_cuda_bytes": 2401976320,
+  "condition_tokens": 4096,
+  "actual_condition_tokens": 4096,
+  "views": 8,
+  "forward": {
+    "new_adapters_exact_zero": true,
+    "max_abs_difference": 0.0,
+    "mean_abs_difference": 0.0,
+    "parent_finite": true,
+    "layered_finite": true,
+    "target_support_mean": 0.07245374470949173,
+    "passed": true
+  },
+  "backward": {
+    "loss": 2.424326181411743,
+    "trainable_tensor_count": 56,
+    "nonzero_gradient_tensor_count": 50,
+    "finite_gradients": true,
+    "finite_parameters_after_step": true,
+    "layer_projection_remains_zero": false,
+    "passed": true
+  }
+}

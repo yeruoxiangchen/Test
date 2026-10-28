@@ -1,0 +1,12 @@
+{
+  "input_channels": 1024,
+  "hidden_channels": 128,
+  "evidence_channels": 64,
+  "layers": 5,
+  "candidates": 32,
+  "query_chunk": 128,
+  "extent": 0.5,
+  "scene_margin": 2.0,
+  "absolute_tolerance": 0.02,
+  "relative_tolerance": 0.0
+}

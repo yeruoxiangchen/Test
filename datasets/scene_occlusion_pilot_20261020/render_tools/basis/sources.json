@@ -1,0 +1,26 @@
+[
+  {
+    "file": "basis_transcoder.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/libs/basis/basis_transcoder.js",
+    "bytes": 62337,
+    "sha256": "48a0ef319a28bf0224ee88ded34f74eaf97c175bba9eb18b47fb9720510ad6c4"
+  },
+  {
+    "file": "basis_transcoder.wasm",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/libs/basis/basis_transcoder.wasm",
+    "bytes": 499935,
+    "sha256": "79ae97d781e10a566659c689b7bb1de91726453f55f9f5e3bcc07a4e3904070f"
+  },
+  {
+    "file": "THREE_LICENSE",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/LICENSE",
+    "bytes": 1081,
+    "sha256": "852e0e8699169bf9f6fdc6bda3e682d078dcbc738b5d33e74df594721bff271d"
+  },
+  {
+    "file": "KTX2Loader.reference.js",
+    "source": "https://raw.githubusercontent.com/mrdoob/three.js/r160/examples/jsm/loaders/KTX2Loader.js",
+    "bytes": 22589,
+    "sha256": "9cca5aa35fdb04b4818c792c8d08fb6e7607dcafc46e7b06a9485e9f25261be7"
+  }
+]

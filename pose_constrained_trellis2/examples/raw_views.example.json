@@ -1,0 +1,29 @@
+{
+  "format": "pose_constrained_trellis2.raw_views.v1",
+  "root": "/absolute/path/to/source_dataset",
+  "samples": [
+    {
+      "uid": "object_000001",
+      "images": [
+        "renders/object_000001/view_000.png",
+        "renders/object_000001/view_001.png"
+      ],
+      "masks": [
+        "renders/object_000001/mask_000.png",
+        "renders/object_000001/mask_001.png"
+      ],
+      "intrinsics": [
+        [[700.0, 0.0, 256.0], [0.0, 700.0, 256.0], [0.0, 0.0, 1.0]],
+        [[700.0, 0.0, 256.0], [0.0, 700.0, 256.0], [0.0, 0.0, 1.0]]
+      ],
+      "extrinsics": [
+        [[1.0, 0.0, 0.0, 0.0], [0.0, 1.0, 0.0, 0.0], [0.0, 0.0, 1.0, 2.0], [0.0, 0.0, 0.0, 1.0]],
+        [[0.0, 0.0, -1.0, 0.0], [0.0, 1.0, 0.0, 0.0], [1.0, 0.0, 0.0, 2.0], [0.0, 0.0, 0.0, 1.0]]
+      ],
+      "extrinsics_type": "w2c",
+      "camera_forward_sign": 1.0,
+      "camera_image_y_sign": 1.0,
+      "grid_transform": "identity"
+    }
+  ]
+}

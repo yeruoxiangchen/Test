@@ -1,0 +1,28 @@
+{
+  "format": "pose_aligned_layered_reconstruction.source_manifest.v1",
+  "root": "/absolute/path/to/source_dataset",
+  "samples": [
+    {
+      "uid": "scene000-object00",
+      "object_uid": "object00",
+      "raw_images": [
+        "rgb/000.png",
+        "rgb/001.png"
+      ],
+      "visible_masks": [
+        "masks/000.png",
+        "masks/001.png"
+      ],
+      "camera": "camera/scene000-object00.npz",
+      "layers": "layers/scene000-object00.npz",
+      "ss_target": "ss_latents/object00.pt",
+      "tracking_boxes_xyxy": [
+        [100, 80, 420, 400],
+        [95, 82, 415, 402]
+      ],
+      "extrinsics_type": "c2w",
+      "camera_forward_sign": 1.0,
+      "grid_transform": "identity"
+    }
+  ]
+}

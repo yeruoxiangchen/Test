@@ -1,0 +1,12 @@
+[submodule "reconstruction-TRELLIS2"]
+path = TRELLIS2
+url = https://github.com/microsoft/TRELLIS.2.git
+
+[submodule "reconstruction-ReconViaGen"]
+path = ReconViaGen
+url = https://github.com/GAP-LAB-CUHK-SZ/ReconViaGen.git
+
+[submodule "reconstruction-pose_aligned_layered_reconstruction-external-GENAmodal3D"]
+path = pose_aligned_layered_reconstruction/external/GENAmodal3D
+url = https://github.com/Colezwhy/GENAmodal3D.git
+

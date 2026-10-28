@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "scope": "layer-prediction metrics; not mesh reconstruction accuracy",
+  "checkpoint": {
+    "path": "/tmp/palr_lari_box_overfit_20260909_v1/checkpoints/last.pt",
+    "sha256": "27dca0099caa84acc3dd70368bfef866470d33e73e81b1411e1eb35f9bb71f69",
+    "step": 64,
+    "data_identity": {
+      "manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+      "manifest_sha256": "e66b4a0ebd3207fe733adeb46172e84d8c6dbcf6a8849fdcca3db6def73fc1de",
+      "config_hash": "f9841c7a796b6cc30600c9e6abba84595a0b15674d68e4e24f3839005233b504",
+      "sample_count": 1,
+      "object_count": 1,
+      "uid_hash": "57246080574cabf4961593ab0d6f84876a0db5dc24353bd2c782e7df35260769",
+      "object_uid_hash": "afcf55a931dbd003ec2818f135f0fd1eac8608d461c00c3058316569b8184090",
+      "paired_raw_and_masked": true,
+      "build_trellis_contexts": false,
+      "sample_hashes_verified_at_open": true,
+      "synthetic_fixture_only": true,
+      "ss_target_is_random_not_geometry_ground_truth": true
+    }
+  },
+  "evaluation_data": {
+    "manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+    "manifest_sha256": "e66b4a0ebd3207fe733adeb46172e84d8c6dbcf6a8849fdcca3db6def73fc1de",
+    "config_hash": "f9841c7a796b6cc30600c9e6abba84595a0b15674d68e4e24f3839005233b504",
+    "sample_count": 1,
+    "object_count": 1,
+    "uid_hash": "57246080574cabf4961593ab0d6f84876a0db5dc24353bd2c782e7df35260769",
+    "object_uid_hash": "afcf55a931dbd003ec2818f135f0fd1eac8608d461c00c3058316569b8184090",
+    "object_uids": [
+      "box_smoke_only"
+    ],
+    "paired_raw_and_masked": true,
+    "build_trellis_contexts": false,
+    "sample_hashes_verified_at_open": true,
+    "synthetic_fixture_only": true,
+    "ss_target_is_random_not_geometry_ground_truth": true
+  },
+  "training_overlap_object_uids": [
+    "box_smoke_only"
+  ],
+  "heldout_verified": false,
+  "records": [
+    {
+      "uid": "box_scene_smoke",
+      "mode": "correct",
+      "valid_depth_mae": 0.03582727536559105,
+      "target_depth_mae": 0.040595389902591705,
+      "occluded_target_depth_mae": 0.0402669794857502,
+      "stop_accuracy": 1.0,
+      "target_ownership_iou_on_layer_slots": 1.0,
+      "valid_intersections": 3868,
+      "occluded_target_intersections": 1078
+    },
+    {
+      "uid": "box_scene_smoke",
+      "mode": "raw_view_cyclic1",
+      "valid_depth_mae": 0.11737222224473953,
+      "target_depth_mae": 0.14478737115859985,
+      "occluded_target_depth_mae": 0.11960100382566452,
+      "stop_accuracy": 0.7023374438285828,
+      "target_ownership_iou_on_layer_slots": 0.7299270072992701,
+      "valid_intersections": 3868,
+      "occluded_target_intersections": 1078
+    }
+  ]
+}
