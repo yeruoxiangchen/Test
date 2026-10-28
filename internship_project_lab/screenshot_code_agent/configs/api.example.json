@@ -1,0 +1,27 @@
+{
+  "code": {
+    "model": "${SCA_CODE_MODEL}",
+    "base_url": "${SCA_CODE_BASE_URL}",
+    "api_key_env": "SCA_CODE_API_KEY",
+    "input_usd_per_million": null,
+    "output_usd_per_million": null,
+    "max_output_tokens": 2048
+  },
+  "vision": {
+    "model": "${SCA_VISION_MODEL}",
+    "base_url": "${SCA_VISION_BASE_URL}",
+    "api_key_env": "SCA_VISION_API_KEY",
+    "input_usd_per_million": null,
+    "output_usd_per_million": null,
+    "max_output_tokens": 2048
+  },
+  "limits": {
+    "max_steps": 20,
+    "max_tool_calls": 80,
+    "max_vision_calls": 3,
+    "max_wall_seconds": 600,
+    "command_timeout_seconds": 60,
+    "request_timeout_seconds": 60,
+    "max_cost_usd": 2.0
+  }
+}

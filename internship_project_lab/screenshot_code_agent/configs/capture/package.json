@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@xterm/xterm": "5.5.0",
+    "codemirror": "5.65.20",
+    "playwright": "1.56.1"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "codeocr_commit": "411fc815f97ed13ecafa246b6042bb17dbc40748",
+  "reconstruction_dataset_sha256": "bc425f6ed528a1b8f56842c7df329e11f4cc1dfbc41ead64fdf119e10380f5ec",
+  "source_files": 100,
+  "ratios": [1, 2],
+  "readers": ["ocr", "vlm"],
+  "main_font": {
+    "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/Mono/NotoSansMonoCJKsc-Regular.otf",
+    "path": ".cache/NotoSansMonoCJKsc-Regular.otf",
+    "sha256": "ec04cc376b34887cedbdf84074e2e226ed2761eeabdcb9173fc1dd7bfd153ef7"
+  },
+  "fallback_font": {
+    "url": "https://raw.githubusercontent.com/google/fonts/45e3d5269e4a17d823f6d84470bc084dc5ae46f6/ofl/notoemoji/NotoEmoji%5Bwght%5D.ttf",
+    "path": ".cache/NotoEmoji-wght.ttf",
+    "sha256": "de6c18832938afc99caf132b39d6a30a19bac7f2e812e28db2535b4608d27551"
+  },
+  "evaluation": {
+    "model": "Qwen3-VL-8B-Instruct",
+    "max_output_tokens": 2048,
+    "server_max_context": 16384,
+    "gpus": [6, 7],
+    "shards": "Sorted source IDs assigned round-robin before inference; all ratios/readers of a source stay together.",
+    "scope": "All published reconstruction sources, at ratios 1 and 2 only. Not the other CodeOCR tasks or full paper reproduction."
+  }
+}

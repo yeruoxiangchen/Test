@@ -1,0 +1,45 @@
+[
+  {
+    "tool": "read_file",
+    "arguments": {
+      "file_path": "miniapp.py"
+    }
+  },
+  {
+    "tool": "run_tests",
+    "arguments": {}
+  },
+  {
+    "tool": "crop_screenshot",
+    "arguments": {
+      "image_id": "shot",
+      "bbox": [
+        0,
+        55,
+        640,
+        172
+      ]
+    }
+  },
+  {
+    "tool": "read_screenshot",
+    "arguments": {
+      "image_id": "crop_d54803fafe14"
+    }
+  },
+  {
+    "tool": "edit_file",
+    "arguments": {
+      "file_path": "miniapp.py",
+      "old_string": "def add(a, b):\n    return a - b\n",
+      "new_string": "def add(a, b):\n    return a + b\n"
+    }
+  },
+  {
+    "tool": "run_tests",
+    "arguments": {}
+  },
+  {
+    "content": "Scripted plumbing check: applied the known reference edit and ran tests. No model inference."
+  }
+]

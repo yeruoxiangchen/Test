@@ -1,0 +1,45 @@
+[
+  {
+    "tool": "read_file",
+    "arguments": {
+      "file_path": "miniapp.py"
+    }
+  },
+  {
+    "tool": "run_tests",
+    "arguments": {}
+  },
+  {
+    "tool": "crop_screenshot",
+    "arguments": {
+      "image_id": "shot",
+      "bbox": [
+        0,
+        55,
+        946,
+        544
+      ]
+    }
+  },
+  {
+    "tool": "read_screenshot",
+    "arguments": {
+      "image_id": "crop_249b32e04c51"
+    }
+  },
+  {
+    "tool": "edit_file",
+    "arguments": {
+      "file_path": "miniapp.py",
+      "old_string": "def mean(values):\n    return sum(values) / (len(values) + 1)\n",
+      "new_string": "def mean(values):\n    return sum(values) / len(values)\n"
+    }
+  },
+  {
+    "tool": "run_tests",
+    "arguments": {}
+  },
+  {
+    "content": "Scripted plumbing check: applied the known reference edit and ran tests. No model inference."
+  }
+]

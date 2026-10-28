@@ -1,0 +1,8 @@
+{
+  "name": "CoreCoder",
+  "url": "https://github.com/he-yufeng/CoreCoder",
+  "commit": "bd64cfe7ad2789fa0ab1b3a689ad160567b5cdb0",
+  "version": "0.8.0",
+  "license": "MIT",
+  "integration": "Unmodified upstream Agent loop, Tool interface and LLMResponse; all repository tools are replaced by isolated adapters."
+}

@@ -1,0 +1,5 @@
+# The unchanged mini agent is vendored and pinned by MINI_UPSTREAM.json.
+# Only its protocol/loop utilities are imported, not litellm or host environments.
+Jinja2==3.1.6
+platformdirs==4.4.0
+tokenizers==0.21.4

@@ -1,0 +1,22 @@
+{
+  "task_id": "synthetic_add",
+  "group_id": "synthetic_add",
+  "split": "dev",
+  "provenance": "self_authored_synthetic_micro_repository",
+  "repo": "repo",
+  "problem": "Adding two integers gives the wrong result.",
+  "test_command": "python3 -m unittest discover -s tests -v",
+  "protected_paths": [
+    "tests"
+  ],
+  "reference_patch": "reference.patch",
+  "replay": "replay_dark.json",
+  "images": [
+    {
+      "image_id": "shot",
+      "path": "code_dark.png",
+      "reference": "code_dark.txt",
+      "layout": "code_dark.layout.json"
+    }
+  ]
+}

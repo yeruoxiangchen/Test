@@ -1,0 +1,22 @@
+{
+  "task_id": "synthetic_mean",
+  "group_id": "synthetic_mean",
+  "split": "dev",
+  "provenance": "self_authored_synthetic_micro_repository",
+  "repo": "repo",
+  "problem": "The arithmetic mean is too small.",
+  "test_command": "python3 -m unittest discover -s tests -v",
+  "protected_paths": [
+    "tests"
+  ],
+  "reference_patch": "reference.patch",
+  "replay": "replay_light.json",
+  "images": [
+    {
+      "image_id": "shot",
+      "path": "error_light.png",
+      "reference": "error_light.txt",
+      "layout": "error_light.layout.json"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "SWE-bench": {
+    "url": "https://github.com/SWE-bench/SWE-bench",
+    "commit": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e"
+  },
+  "swe-bench-tasks": {
+    "url": "https://github.com/SWE-bench/swe-bench-tasks",
+    "commit": "3d07b464b7b311a0cbfb5ed5b2d8a3b96f84a33d"
+  },
+  "CodeOCR": {
+    "url": "https://github.com/YerbaPage/CodeOCR",
+    "commit": "411fc815f97ed13ecafa246b6042bb17dbc40748"
+  },
+  "dataset": {
+    "name": "SWE-bench/SWE-bench_Lite",
+    "revision": "b0dde1093fe417d83b7184254edf8199c1f0dff5",
+    "split": "test",
+    "url": "https://huggingface.co/datasets/SWE-bench/SWE-bench_Lite/resolve/b0dde1093fe417d83b7184254edf8199c1f0dff5/data/test-00000-of-00001.parquet",
+    "sha256": "438e281d80587aa7be470896ce410557002fde02d2ceee3e099331d308f62dd3"
+  },
+  "python": {
+    "version": "3.9.20",
+    "url": "https://github.com/astral-sh/python-build-standalone/releases/download/20241016/cpython-3.9.20%2B20241016-x86_64-unknown-linux-gnu-install_only.tar.gz",
+    "sha256": "c20ee831f7f46c58fa57919b75a40eb2b6a31e03fd29aaa4e8dab4b9c4b60d5d"
+  },
+  "scope": "Official-source subset and CodeOCR reconstruction, using adapted isolated Python execution. Screenshot derivative scores are not original benchmark leaderboard scores.",
+  "font": {
+    "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/f8d157532fbfaeda587e826d4cd5b21a49186f7c/Sans/Mono/NotoSansMonoCJKsc-Regular.otf",
+    "commit": "f8d157532fbfaeda587e826d4cd5b21a49186f7c",
+    "git_blob_sha1": "5ff7011ee3c76bb800e3c7ed0ed496427c3477de",
+    "sha256": "ec04cc376b34887cedbdf84074e2e226ed2761eeabdcb9173fc1dd7bfd153ef7"
+  }
+}

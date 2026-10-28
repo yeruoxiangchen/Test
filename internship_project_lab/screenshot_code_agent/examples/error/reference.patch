@@ -1,0 +1,7 @@
+diff --git a/miniapp.py b/miniapp.py
+--- a/miniapp.py
++++ b/miniapp.py
+@@ -1,2 +1,2 @@
+ def mean(values):
+-    return sum(values) / (len(values) + 1)
++    return sum(values) / len(values)

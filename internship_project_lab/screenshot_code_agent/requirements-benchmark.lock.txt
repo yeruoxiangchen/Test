@@ -1,0 +1,7 @@
+# Additional packages used by the official-source data and metrics pipeline.
+pyarrow==23.0.1
+Levenshtein==0.27.5
+python-Levenshtein==0.27.5
+rapidfuzz==3.14.6
+tiktoken==0.14.0
+unidiff==0.7.5

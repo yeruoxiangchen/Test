@@ -1,0 +1,21 @@
+{
+  "code": {
+    "model": "${SCA_CODE_MODEL}", "base_url": "${SCA_CODE_BASE_URL}", "api_key_env": "SCA_CODE_API_KEY",
+    "input_usd_per_million": 0, "output_usd_per_million": 0, "max_output_tokens": 2048,
+    "model_kwargs": {"temperature": 0}
+  },
+  "vision": {
+    "model": "${SCA_VISION_MODEL}", "base_url": "${SCA_VISION_BASE_URL}", "api_key_env": "SCA_VISION_API_KEY",
+    "input_usd_per_million": 0, "output_usd_per_million": 0, "max_output_tokens": 2048,
+    "model_kwargs": {"temperature": 0}
+  },
+  "limits": {
+    "max_steps": 18, "max_model_calls": 18, "max_summary_calls": 2,
+    "max_tool_calls": 50, "max_tool_output_chars": 12000,
+    "max_vision_calls": 3, "max_wall_seconds": 1200, "command_timeout_seconds": 180,
+    "request_timeout_seconds": 180, "max_cost_usd": 1
+  },
+  "max_context_tokens": 8192,
+  "screenshots": {"allow_crop": true, "allow_reread": true},
+  "agent": {"mode": "v6", "read_file_max_lines": 120, "repeated_edit_limit": 2, "summary_max_tokens": 384}
+}

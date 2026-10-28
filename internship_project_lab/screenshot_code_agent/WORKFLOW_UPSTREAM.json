@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-28",
+  "method": "corecoder_retrieval_workflow_v2",
+  "previous_method": "corecoder_retrieval_workflow_v1",
+  "references": [
+    {
+      "repository": "https://github.com/wingwen/CoreCoder-Agent",
+      "use": "Design reference for planner, repository index and bounded reflection/retry; original Agent loop is supplied by installed CoreCoder 0.8.0.",
+      "adaptation": "Steps record observed execution; success requires independent test execution. Structured-review parse failures cannot mark success. Retrieval is local lexical/symbol search, without an embedding service."
+    },
+    {
+      "repository": "https://github.com/he-yufeng/AnyCoder",
+      "source": "https://github.com/he-yufeng/AnyCoder/blob/main/anycoder/tools/apply_patch.py",
+      "use": "SEARCH/REPLACE parser and exact-match prevalidation adapted in worker.anchored_patch.",
+      "adaptation": "Reject overlapping original spans and apply original spans in reverse order to prevent replacement text from becoming a subsequent search match.",
+      "license": "MIT",
+      "license_file": "third_party/AnyCoder.LICENSE"
+    },
+    {
+      "source": "https://aider.chat/docs/repomap.html",
+      "use": "Repository-map design reference only; not Aider's graph-ranking implementation."
+    },
+    {
+      "repository": "https://github.com/OpenAutoCoder/Agentless",
+      "source": "https://github.com/OpenAutoCoder/Agentless/blob/main/README_swebench.md",
+      "use": "Design reference for separating visible regression tests from issue reproduction. No upstream execution code copied.",
+      "adaptation": "Freeze an Agent-provided assertion script, validate it against original source, and rerun identical bytes against candidate patches; reference tests stay hidden."
+    },
+    {
+      "repository": "https://github.com/AutoCodeRoverSG/auto-code-rover",
+      "source": "https://github.com/AutoCodeRoverSG/auto-code-rover/blob/main/app/task.py",
+      "use": "Design reference for comparing pre-existing test failures against candidate failures. No upstream execution code copied.",
+      "adaptation": "Cache an original public baseline, detect lost passing tests and additional failures, and report incomplete/timeout evidence separately."
+    }
+  ],
+  "new_training": false,
+  "external_embedding_service": false
+}
