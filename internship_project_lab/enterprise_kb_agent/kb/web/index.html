@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>知页 · 团队知识工作台</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <section id="login-view" class="login-view">
+    <div class="login-story"><div class="brand"><span class="brand-mark">知</span> 知页 <small>KNOWLEDGE DESK</small></div>
+      <p class="eyebrow">你的团队知识，有迹可循</p><h1>让每一份资料，<br>成为下一次解答。</h1>
+      <p>集中管理团队文档，在资料中寻找答案。<br>从问题到原文，保留每一步依据。</p>
+      <div class="story-card"><span>01 / KNOWLEDGE</span><h3>上传 · 检索 · 追溯</h3><p>让知识走出文件夹，进入工作流程。</p></div>
+      <footer>本地知识工作台 · v0.1</footer>
+    </div>
+    <form id="login-form" class="login-card"><span class="eyebrow">WELCOME BACK</span><h2>登录工作台</h2><p>使用管理员为你创建的团队账号。</p>
+      <label>账号<input name="username" autocomplete="username" required placeholder="请输入账号"></label>
+      <label>密码<input name="password" type="password" autocomplete="current-password" required placeholder="请输入密码"></label>
+      <button class="primary" type="submit">进入工作台 <span>↗</span></button><p id="login-error" class="error" role="alert"></p>
+    </form>
+  </section>
+  <div id="workspace" class="workspace hidden">
+    <aside class="sidebar"><div class="brand"><span class="brand-mark">知</span> 知页</div><div class="workspace-name">团队知识空间 <span class="dot"></span></div>
+      <button id="new-chat" class="new-chat">＋ 新建问答</button>
+      <nav><button data-tab="chat" class="nav-button active">◈ 知识问答</button><button data-tab="documents" class="nav-button">▤ 文档资料</button><button data-tab="feedback" class="nav-button admin-only">◇ 用户反馈</button></nav>
+      <div class="sidebar-label">最近会话</div><div id="history" class="history"></div>
+      <div class="sidebar-bottom"><button id="add-user" class="text-button admin-only">＋ 添加团队成员</button><div class="account"><span id="avatar" class="avatar">知</span><div><b id="username"></b><small id="role-name"></small></div><button id="logout" title="退出登录">↪</button></div></div>
+    </aside>
+    <div class="main-shell"><header class="topbar"><div><span class="breadcrumb">知识空间</span><span class="slash"> / </span><span id="page-name">知识问答</span></div><div class="topbar-right"><span id="mode-badge" class="badge"></span><span class="private-tag">● 本地工作台</span></div></header>
+      <main id="chat-view" class="view chat-layout"><section class="chat-center">
+        <div class="scope"><label for="chat-base">检索范围</label><select id="chat-base"><option value="">全部可访问知识库</option></select></div>
+        <div id="chat-messages" class="chat-messages"><div id="welcome" class="welcome"><div class="welcome-icon">✦</div><p class="eyebrow">ASK YOUR KNOWLEDGE</p><h1>从团队资料中，找到答案。</h1><p>选择知识库，描述你想了解的问题。<br>回答附带来源，点击即可查看原文。</p><div class="suggestions"><button>出差住宿报销标准是多少？</button><button>新员工如何申请 VPN？</button><button>产品保修期是多久？</button></div></div></div>
+        <form id="question-form" class="composer"><label class="sr-only" for="question">输入问题</label><textarea id="question" rows="2" maxlength="3000" placeholder="问一个与资料有关的问题…" required></textarea><div class="composer-bottom"><span id="mode-hint">回答以文档证据为依据</span><div><button id="cancel-run" type="button" class="hidden secondary">停止</button><button id="send" class="primary" type="submit">发送 ↑</button></div></div></form>
+        <p class="composer-note">请核对引用原文。未找到依据时，可补充资料或调整问题。</p>
+      </section><aside class="evidence-panel"><div class="panel-title">来源与执行记录 <span>↗</span></div><p class="muted small">选择一次回答，查看它参考的资料和执行过程。</p><div id="sources"><div class="empty-small">尚未引用资料</div></div><details id="trace-box" open><summary>执行过程</summary><div id="trace" class="trace"><p class="muted small">任务开始后将在这里更新。</p></div></details></aside></main>
+      <main id="documents-view" class="view content-view hidden"><div class="page-heading"><div><p class="eyebrow">KNOWLEDGE LIBRARY</p><h1>文档资料</h1><p>管理知识库，查看文档的入库状态与原文。</p></div><button id="new-base" class="secondary admin-only">＋ 新建知识库</button></div>
+        <div id="base-cards" class="base-cards"></div><div class="document-toolbar"><div><label for="document-base">知识库</label><select id="document-base"></select></div><div class="admin-only"><input type="file" id="file-input" accept=".pdf,.docx,.txt,.md,.csv" multiple hidden><button id="upload" class="primary">↑ 上传文档</button></div></div>
+        <p class="muted small">支持文本型 PDF、DOCX、TXT、Markdown、CSV，每个文件不超过 20 MiB。扫描件请先转为文字。</p><div id="upload-progress" class="small"></div>
+        <div class="table-wrap"><table><thead><tr><th>文档名称</th><th>状态</th><th>片段</th><th>上传时间</th><th>操作</th></tr></thead><tbody id="documents"></tbody></table></div>
+      </main>
+      <main id="feedback-view" class="view content-view hidden"><div class="page-heading"><div><p class="eyebrow">FEEDBACK</p><h1>用户反馈</h1><p>查看回答评价，发现需要补充或更新的资料。</p></div></div><div id="feedback-list"></div></main>
+    </div>
+  </div>
+  <dialog id="source-dialog"><button class="dialog-close" data-close="source-dialog" aria-label="关闭">×</button><h2 id="source-title"></h2><a id="source-download" class="text-link">下载原文件 ↗</a><div id="source-content"></div></dialog>
+  <dialog id="base-dialog"><button class="dialog-close" data-close="base-dialog" aria-label="关闭">×</button><h2>新建知识库</h2><form id="base-form"><label>名称<input name="name" maxlength="80" required></label><label>说明<textarea name="description" maxlength="500" rows="3"></textarea></label><label>可见范围<select name="visibility"><option value="all">全部成员</option><option value="admin">仅管理员</option></select></label><button class="primary">创建知识库</button></form></dialog>
+  <dialog id="user-dialog"><button class="dialog-close" data-close="user-dialog" aria-label="关闭">×</button><h2>添加团队成员</h2><form id="user-form"><label>账号<input name="username" minlength="2" maxlength="64" required></label><label>初始密码<input name="password" type="password" minlength="10" required autocomplete="new-password"></label><label>角色<select name="role"><option value="member">成员</option><option value="admin">管理员</option></select></label><button class="primary">创建账号</button></form></dialog>
+  <dialog id="feedback-dialog"><button class="dialog-close" data-close="feedback-dialog" aria-label="关闭">×</button><h2>评价这次回答</h2><form id="feedback-form"><label>评价<select name="rating"><option value="1">有帮助</option><option value="-1">需要改进</option></select></label><label>补充说明<textarea name="comment" rows="4" maxlength="2000" placeholder="例如：资料已经过期，或者没有回答到问题…"></textarea></label><button class="primary">提交反馈</button></form></dialog>
+  <div id="toast" class="toast hidden" role="status"></div>
+</body></html>

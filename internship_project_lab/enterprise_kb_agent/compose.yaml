@@ -1,0 +1,18 @@
+services:
+  knowledge-desk:
+    build: .
+    user: "${KB_UID:-1000}:${KB_GID:-1000}"
+    ports: ["127.0.0.1:8768:8768"]
+    volumes: ["${KB_DATA_DIR:-/data/zjr/enterprise_kb_agent}:/var/lib/knowledge-desk"]
+    environment:
+      KB_DATA_DIR: /var/lib/knowledge-desk
+      KB_MODE: ${KB_MODE:-extractive}
+      KB_LLM_BASE_URL: ${KB_LLM_BASE_URL:-}
+      KB_LLM_MODEL: ${KB_LLM_MODEL:-}
+      KB_LLM_API_KEY: ${KB_LLM_API_KEY:-}
+      KB_EMBED_BASE_URL: ${KB_EMBED_BASE_URL:-}
+      KB_EMBED_MODEL: ${KB_EMBED_MODEL:-}
+      KB_EMBED_API_KEY: ${KB_EMBED_API_KEY:-}
+      KB_SECURE_COOKIE: ${KB_SECURE_COOKIE:-0}
+    init: true
+    restart: unless-stopped
