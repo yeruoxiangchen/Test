@@ -1,0 +1,49 @@
+{
+  "version": "studio-eval-v1",
+  "purpose": "Internal engineering acceptance and diagnostic quality set; not an official benchmark submission",
+  "seeds": [20261028, 20261029],
+  "image": {"width": 1024, "height": 1024, "steps": 25, "guidance": 6.0},
+  "video": {"width": 1280, "height": 704, "frames": 49, "fps": 16, "steps": 20, "guidance": 5.0},
+  "smoke": {"width": 512, "height": 512, "steps": 6, "frames": 17, "fps": 16},
+  "timeout_seconds": 7200,
+  "gpu_sample_interval_seconds": 1,
+  "sources": {
+    "image_dimensions": "https://github.com/djghosh13/geneval",
+    "video_dimensions": "https://github.com/Vchitect/VBench",
+    "measurement_principles": "https://github.com/mlcommons/inference_policies/blob/master/inference_rules.adoc"
+  },
+  "image_cases": [
+    {"id":"i01","category":"single_object","prompt":"A photograph of a red ceramic teapot on a plain white table.","checks":["one teapot","teapot is red"],"motion":"The camera slowly moves closer to the red teapot. The teapot remains still on the table."},
+    {"id":"i02","category":"single_object","prompt":"A photograph of a golden retriever standing on grass in a park.","checks":["one golden retriever","standing on grass"],"motion":"The golden retriever slowly walks forward on the grass, with a steady camera."},
+    {"id":"i03","category":"single_object","prompt":"A photograph of a sailboat on a calm blue lake in daylight.","checks":["sailboat","blue lake"],"motion":"The sailboat slowly moves across the calm lake as small ripples spread behind it."},
+    {"id":"i04","category":"single_object","prompt":"A photograph of a bicycle parked beside a brick wall.","checks":["bicycle","brick wall"],"motion":"The camera slowly pans from left to right past the parked bicycle. The bicycle stays stationary."},
+    {"id":"i05","category":"two_objects","prompt":"A photograph of a cat and a dog sitting on a wooden floor.","checks":["cat present","dog present"],"motion":"The cat turns its head while the dog remains sitting beside it. The camera is fixed."},
+    {"id":"i06","category":"two_objects","prompt":"A photograph of a laptop and a coffee cup on a desk.","checks":["laptop present","coffee cup present"],"motion":"A faint stream of steam rises from the coffee cup next to the laptop. The camera is fixed."},
+    {"id":"i07","category":"two_objects","prompt":"A photograph of a horse and a cow standing in a field.","checks":["horse present","cow present"],"motion":"The horse slowly moves its head while the cow stays in the field. The camera remains steady."},
+    {"id":"i08","category":"two_objects","prompt":"A photograph of an apple and a banana on a kitchen counter.","checks":["apple present","banana present"],"motion":"The camera slowly orbits the apple and banana on the counter. Both fruits stay in place."},
+    {"id":"i09","category":"counting","prompt":"A photograph of exactly two oranges on a plain white plate.","checks":["exactly two oranges","white plate"],"motion":"The camera slowly moves closer to the two oranges. The oranges and plate remain stationary."},
+    {"id":"i10","category":"counting","prompt":"A photograph of exactly three candles on a wooden table.","checks":["exactly three candles","wooden table"],"motion":"The three candle flames flicker gently. The camera stays fixed and the candles remain in place."},
+    {"id":"i11","category":"counting","prompt":"A photograph of exactly four apples arranged in a row on a table.","checks":["exactly four apples","apples arranged in a row"]},
+    {"id":"i12","category":"counting","prompt":"A photograph of exactly two bicycles parked side by side.","checks":["exactly two bicycles","side-by-side arrangement"]},
+    {"id":"i13","category":"color","prompt":"A photograph of a blue car parked on an empty street.","checks":["car","car is blue"]},
+    {"id":"i14","category":"color","prompt":"A photograph of a yellow umbrella lying on a gray sidewalk.","checks":["umbrella is yellow","sidewalk is gray"]},
+    {"id":"i15","category":"color","prompt":"A photograph of a green backpack on a wooden chair.","checks":["backpack is green","wooden chair"]},
+    {"id":"i16","category":"color","prompt":"A photograph of a purple vase holding white flowers.","checks":["vase is purple","flowers are white"]},
+    {"id":"i17","category":"position","prompt":"A photograph of a red ball to the left of a blue cube on a white table.","checks":["ball is left of cube","ball red and cube blue"]},
+    {"id":"i18","category":"position","prompt":"A photograph of a cat under a wooden chair.","checks":["cat below chair","cat and chair both present"]},
+    {"id":"i19","category":"color_attribution","prompt":"A photograph of a red cup and a blue bowl side by side on a table.","checks":["cup is red","bowl is blue"]},
+    {"id":"i20","category":"color_attribution","prompt":"A photograph of a yellow car parked beside a green bicycle.","checks":["car is yellow","bicycle is green"]}
+  ],
+  "video_cases": [
+    {"id":"v01","category":"human_action","prompt":"A person walks slowly from left to right across a park path. Full body visible, steady camera, natural daylight.","checks":["person walks left to right","body remains structurally coherent"]},
+    {"id":"v02","category":"animal_motion","prompt":"A golden retriever runs across a grassy field. Side view, steady camera, daylight.","checks":["dog runs","dog identity remains consistent"]},
+    {"id":"v03","category":"object_motion","prompt":"A red ball rolls from left to right across a plain wooden table. Fixed camera.","checks":["red ball rolls left to right","table remains stable"]},
+    {"id":"v04","category":"fluid_motion","prompt":"Water pours from a glass pitcher into a transparent cup on a table. Close-up, fixed camera.","checks":["water moves from pitcher into cup","objects remain coherent"]},
+    {"id":"v05","category":"camera_motion","prompt":"A ceramic teapot sits still on a wooden table. The camera slowly moves closer. Soft daylight.","checks":["camera moves closer","teapot remains stationary"]},
+    {"id":"v06","category":"background_motion","prompt":"A leafy tree sways gently in the wind beside a small house. Fixed camera, daytime.","checks":["leaves and branches sway","house stays stable"]},
+    {"id":"v07","category":"vehicle_motion","prompt":"A blue car drives slowly from left to right along a quiet street. Side view, fixed camera.","checks":["car moves left to right","car stays blue and coherent"]},
+    {"id":"v08","category":"subject_consistency","prompt":"A person wearing a yellow coat slowly turns their head toward the camera. Medium shot, steady background.","checks":["head turns toward camera","coat remains yellow"]},
+    {"id":"v09","category":"multiple_objects","prompt":"Two ducks swim slowly together on a calm pond. Fixed camera, natural daylight.","checks":["two ducks remain visible","ducks swim"]},
+    {"id":"v10","category":"dynamic_texture","prompt":"A small candle flame flickers gently in a dark room. Close-up, camera completely still.","checks":["flame visibly flickers","candle and camera stay stable"]}
+  ]
+}
