@@ -1,0 +1,13 @@
+test_edit_path_redecodes_native_topology_each_time (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_frozen_hooks_survive_checkpoint_backward_and_native_bypass (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_missing_rays_still_pay_error (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_native_decoder_rejects_default256_and_out_of_range_coords (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_repair_gate_abstains_without_target_gain (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_rotation_search_has24_proper_rotations (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_similarity_cannot_introduce_reflections (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_surface_sampling_is_reproducible (trellis2_geometry_repair.test_core.CoreTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 2.393s
+
+OK

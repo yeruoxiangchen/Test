@@ -1,0 +1,5 @@
+# Install after the official TRELLIS.2 basic/CUDA extensions and data-toolkit
+# dependencies.  These are the two project-level additions not installed by
+# TRELLIS2/setup.sh --basic alone.
+peft==0.18.1
+objaverse==0.1.7

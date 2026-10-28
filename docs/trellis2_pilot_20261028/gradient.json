@@ -1,0 +1,27 @@
+{
+  "time": "2026-10-28T12:53:37+00:00",
+  "native_vertex_max_error": 0.0,
+  "nonzero_gradient_norm": 2.367302840866614e-06,
+  "finite_differences": [
+    {
+      "epsilon": 0.002,
+      "analytic": 0.002876174869015813,
+      "finite_difference": 0.0036421925760805607,
+      "relative_error": 0.21031773885198443
+    },
+    {
+      "epsilon": 0.01,
+      "analytic": 0.002876174869015813,
+      "finite_difference": 0.0034076012670993805,
+      "relative_error": 0.15595322234867243
+    },
+    {
+      "epsilon": 0.02,
+      "analytic": 0.002876174869015813,
+      "finite_difference": 0.003022446297109127,
+      "relative_error": 0.048395046169461504
+    }
+  ],
+  "passed": true,
+  "discrete_topology_frozen": true
+}

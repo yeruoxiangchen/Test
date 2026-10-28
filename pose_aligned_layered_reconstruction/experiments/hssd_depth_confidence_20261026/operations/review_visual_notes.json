@@ -1,0 +1,29 @@
+{
+  "reviewer": "Codex visual inspection of existing rendered sheets",
+  "review_date_utc": "2026-10-27",
+  "experiment": "hssd_depth_confidence_20261026",
+  "scope": "All 12 sheets inspected, each with GT plus five methods and the same three views. No user review is inferred. Visual notes describe geometry; quantitative ranking comes from original metrics.",
+  "row_order": ["GT", "appearance_control", "geometry_observed", "geometry_gt_depth_pred_confidence", "geometry_pred_depth_unit_confidence", "geometry_oracle_visible"],
+  "sheets": [
+    {"uid": "hssd_102344049_i076", "seed": 42, "notes": "All methods retain a recognizable four-leg armchair. New GT-depth/pred-confidence and predicted-depth/unit variants change the seat/back/arm proportions without a topology breakthrough. Unit variants visually approach the oracle, but arms and back remain somewhat angular relative to GT. No gross per-result rotation or translation is visible."},
+    {"uid": "hssd_102344049_i076", "seed": 43, "notes": "Both unit-confidence variants have chair proportions and side profiles closer to the GT row than the old predicted-confidence variants. Replacing depth while retaining predicted confidence remains visually close to old predicted geometry. These are contour/proportion improvements; the earlier models already had chair topology."},
+    {"uid": "hssd_102344049_i076", "seed": 44, "notes": "Predicted-depth/unit-confidence closely resembles GT-depth/unit-confidence in the three views. Chair proportions improve, while flat/segmented back and arm details persist. The large F gain should not be described as recovery of previously absent chair topology."},
+    {"uid": "hssd_102344049_i075", "seed": 42, "notes": "All generated tables retain two narrow end supports and a connecting bar instead of the GT broad layered pedestal. The new crossed arms look very similar to the old predicted and oracle rows; no meaningful recovery of the occluded base is visible."},
+    {"uid": "hssd_102344049_i075", "seed": 43, "notes": "The archived appearance row has a small cylinder on the tabletop; all geometry rows remove it. New GT-depth/pred-confidence and predicted-depth/unit variants still have the wrong end-support/base structure. Oracle alters the lower rails but also fails to reconstruct the GT pedestal."},
+    {"uid": "hssd_102344049_i075", "seed": 44, "notes": "Predicted-depth/unit-confidence introduces a conspicuous narrow upright cylinder on the tabletop, absent in the GT and old predicted row. Other rows are broadly similar but all have incorrect pedestal geometry. The new unit policy has an actual geometric regression on this seed."},
+    {"uid": "hssd_102344049_i080", "seed": 42, "notes": "GT is a long narrow bench. Old predicted geometry is an incorrect irregular flat platform. New GT-depth/pred-confidence restores a large erroneous box; predicted-depth/unit produces an erroneous side-walled platform; oracle is also a bulky block. Higher recall from these large surfaces is not successful bench completion."},
+    {"uid": "hssd_102344049_i080", "seed": 43, "notes": "Every method produces large vertical slabs/walls, including both crossed arms and oracle. None resembles the long narrow bench. The geometry errors dominate any small metric change."},
+    {"uid": "hssd_102344049_i080", "seed": 44, "notes": "Every method produces a broad layered rectangular platform rather than a narrow bench with two legs. GT-depth/pred-confidence and oracle change edges and support extent but do not repair the structural failure."},
+    {"uid": "hssd_102344049_i065", "seed": 42, "notes": "All rows retain stool legs and crossbars. Both new crossed variants remain close to old shape proportions; GT-depth/unit oracle has a more curved seat and altered leg spacing closer to GT. New GT-depth/pred-confidence only partially restores seat edge curvature."},
+    {"uid": "hssd_102344049_i065", "seed": 43, "notes": "Old predicted and both new crossed rows have an almost flat thick seat, while GT is curved. Only GT-depth/unit oracle clearly introduces the concave seat profile in these views. Fixed unit weights on predicted depth alone provide little visual improvement."},
+    {"uid": "hssd_102344049_i065", "seed": 44, "notes": "New GT-depth/pred-confidence and oracle show more of the curved seat than the old predicted and predicted-depth/unit rows. Leg/bar structures remain similar across models. Depth helps the seat detail here, but the full stool is not accurately reproduced."}
+  ],
+  "overall": [
+    "Chair gains mostly change proportions/contours; all variants already generate a recognizable chair.",
+    "Unit confidence can improve chair reconstruction but introduces a tabletop cylinder on seed44 and leaves severe bench errors.",
+    "All three bench seeds fail structurally, even with GT visible depth and unit confidence.",
+    "Table hidden pedestal remains wrong; visible-first-surface geometry does not supply the complete hidden shape.",
+    "Stool seat curvature benefits more from accurate depth together with unit confidence than from predicted depth with unit confidence alone.",
+    "No gross pose mismatch was apparent in sheets; numerical full-vertex coordinate validation is recorded separately."
+  ]
+}

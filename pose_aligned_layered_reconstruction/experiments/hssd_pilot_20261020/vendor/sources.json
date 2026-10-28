@@ -1,0 +1,32 @@
+[
+  {
+    "source": "https://raw.githubusercontent.com/microsoft/TRELLIS/main/dataset_toolkits/blender_script/render.py",
+    "local": "blender_render.py",
+    "sha256": "0d4aa5490903abc38a77756a5c45142d14b4c927896d47e5b42a33c2dc8b0397"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/microsoft/TRELLIS/main/dataset_toolkits/utils.py",
+    "local": "utils.py",
+    "sha256": "8425f5a142741d63ad3aa003a60ca5f33a35be9151281de2b8f5fdf38bbd2b75"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/microsoft/TRELLIS/main/dataset_toolkits/extract_feature.py",
+    "local": "extract_feature.py",
+    "sha256": "387ff2a6a042999ac901d89b70923a85909a381ce61c664c2f1caa2ddfb1eed3"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/microsoft/TRELLIS/main/dataset_toolkits/voxelize.py",
+    "local": "voxelize.py",
+    "sha256": "15eee74a5c812803c1fabbfe92b3f5e18c3378b41a7c7842980d2628804a89dc"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/microsoft/TRELLIS/main/dataset_toolkits/encode_latent.py",
+    "local": "encode_latent.py",
+    "sha256": "c91d967c531a43e461e543bcf2b3f1753d36efe5f5ce751db62c54264e941703"
+  },
+  {
+    "source": "https://raw.githubusercontent.com/microsoft/TRELLIS/main/LICENSE",
+    "local": "LICENSE",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+  }
+]

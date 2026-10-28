@@ -1,0 +1,63 @@
+{
+  "time": "2026-10-25T13:44:42+00:00",
+  "status": "complete_reviewed",
+  "raw_results": {
+    "path": "/home/zjr/Tracker/visual_evidence_probe/outputs/correlated_views_20261025/summary.json",
+    "sha256": "f928fa51d6824e138d029284fcbb11cc784268118f211ecb04412c7352614ff3"
+  },
+  "cropped_results": {
+    "path": "/home/zjr/Tracker/visual_evidence_probe/outputs/correlated_views_cropped_control_20261025/summary.json",
+    "sha256": "11b86aa696f0bed875005467d603b7df0411eae8edd9b602e861e0060b6090ad"
+  },
+  "raw_meshes": 128,
+  "cropped_meshes": 64,
+  "new_model_trained": false,
+  "geometric_confidence_tested": false,
+  "groups": {
+    "两张原始观测": {
+      "cd": 0.02055783316704137,
+      "f02": 0.6572401489258454,
+      "ss_iou": 0.2612603206716201,
+      "silhouette_source2": 0.8355859373120618
+    },
+    "原图重复为八张": {
+      "cd": 0.02000124748206901,
+      "f02": 0.6549202802057589,
+      "ss_iou": 0.25562397759552113,
+      "silhouette_source2": 0.8348779639340654
+    },
+    "八张原始观测": {
+      "cd": 0.017839699229695367,
+      "f02": 0.7064211657884636,
+      "ss_iou": 0.3592163873148366,
+      "silhouette_source2": 0.8556754253750211
+    },
+    "两张＋GT灰色渲染（oracle）": {
+      "cd": 0.018495406268006068,
+      "f02": 0.6689559549257862,
+      "ss_iou": 0.30270361372156046,
+      "silhouette_source2": 0.8446656324764058
+    },
+    "两张＋单一生成mesh供图（A/B均值）": {
+      "cd": 0.02470362569881532,
+      "f02": 0.5586851869943004,
+      "ss_iou": 0.19973023272534673,
+      "silhouette_source2": 0.7870120721888222
+    },
+    "两张＋两个生成mesh混合（互补分配均值）": {
+      "cd": 0.024856968456568502,
+      "f02": 0.5608077885049496,
+      "ss_iou": 0.20136911199639085,
+      "silhouette_source2": 0.7774194676003561
+    }
+  },
+  "coherent_cd_relative_to_real2_percent": 20.16648592333432,
+  "coherent_f02_minus_real2_pp": -9.8554961931545,
+  "mixed_cd_relative_to_coherent_percent": 0.6207297650260957,
+  "mixed_f02_minus_coherent_pp": 0.21226015106492468,
+  "coherent_worse_cd_objects": 4,
+  "mixed_worse_cd_objects": 4,
+  "mixed_better_than_coherent_cd_objects": 2,
+  "source_correlation_as_main_cause_established": false,
+  "decision": "synthetic-input degradation observed in this small crop-conformant cohort; no stable benefit from mixing donor seeds; do not start new-module training on this evidence alone"
+}

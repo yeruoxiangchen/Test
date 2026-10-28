@@ -1,0 +1,35 @@
+{
+  "time": "2026-10-28T12:50:59+00:00",
+  "fixed_raw_fgd_input": true,
+  "original_replays": [
+    {
+      "iteration": 0,
+      "vertices": 2101466,
+      "faces": 4238662,
+      "triangle_set_equal_to_first": true
+    },
+    {
+      "iteration": 1,
+      "vertices": 2101466,
+      "faces": 4238662,
+      "triangle_set_equal_to_first": true
+    },
+    {
+      "iteration": 2,
+      "vertices": 2101466,
+      "faces": 4238662,
+      "triangle_set_equal_to_first": true
+    },
+    {
+      "iteration": 3,
+      "vertices": 2101466,
+      "faces": 4238662,
+      "triangle_set_equal_to_first": true
+    }
+  ],
+  "deterministic_sorted_and_dense_agree": true,
+  "deterministic_repeat_exact": true,
+  "vertices": 2101466,
+  "faces": 4238662,
+  "original_first_matches_deterministic": true
+}

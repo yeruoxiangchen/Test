@@ -1,0 +1,11 @@
+{
+  "uid": "v2-smoke-pillow-scene0",
+  "object_uid": "omniobject3d-pillow_032",
+  "target_mesh": "/data/xxj/datasets/Omni6DPose/object_meshes/omniobject3d-pillow_032/Aligned.obj",
+  "seed": 20261017,
+  "views": 8,
+  "radius_range": [1.7, 4.8],
+  "trajectory": "wide",
+  "box_count": 2,
+  "layers": 5
+}

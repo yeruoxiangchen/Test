@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-09",
+  "python": "/home/zjr/anaconda3/envs/reconviagen/bin/python",
+  "compileall_passed": true,
+  "unittest": {
+    "command": "python -m unittest discover -v pose_aligned_layered_reconstruction/tests",
+    "tests_run": 25,
+    "failures": 0,
+    "errors": 0,
+    "elapsed_seconds": 2.485
+  },
+  "independence": {
+    "checked_production_python_files": 24,
+    "forbidden_imports": ["pose_aligned_reconstruction", "pose_point_depth_mv"],
+    "violations": []
+  },
+  "unlabelled_inference_cache": {
+    "manifest": "/tmp/palr_source_infer_cache_20260909_v1/manifest.json",
+    "ground_truth_label_fields_present": [],
+    "raw_tokens_equal_to_training_cache": true,
+    "masked_tokens_equal_to_training_cache": true,
+    "raw_masked_max_abs_difference": 12.02734375,
+    "raw_shape": [2, 1369, 1024],
+    "context_shape": [1, 2738, 1024]
+  }
+}

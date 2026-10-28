@@ -1,0 +1,385 @@
+{
+  "date": "2026-09-09",
+  "purpose": "functional_smoke_not_reconstruction_benchmark",
+  "tests": {
+    "target_lari_training": {
+      "source_report": "/tmp/palr_lari_box_overfit_20260909_v1/report.json",
+      "passed": true,
+      "step": 64,
+      "epoch": 64,
+      "model": {
+        "representation": "ordered_camera_depth_plus_stopping_index",
+        "target_ownership": true,
+        "confidence": true,
+        "input_channels": 1024,
+        "hidden_channels": 256,
+        "layers": 5,
+        "decoder_blocks": 3,
+        "minimum_depth_gap": 0.001,
+        "raster": "DINO_patch_grid",
+        "official_lari_checkpoint_compatible": false
+      },
+      "data_identity": {
+        "manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+        "manifest_sha256": "e66b4a0ebd3207fe733adeb46172e84d8c6dbcf6a8849fdcca3db6def73fc1de",
+        "config_hash": "f9841c7a796b6cc30600c9e6abba84595a0b15674d68e4e24f3839005233b504",
+        "sample_count": 1,
+        "object_count": 1,
+        "uid_hash": "57246080574cabf4961593ab0d6f84876a0db5dc24353bd2c782e7df35260769",
+        "object_uid_hash": "afcf55a931dbd003ec2818f135f0fd1eac8608d461c00c3058316569b8184090",
+        "paired_raw_and_masked": true,
+        "build_trellis_contexts": false,
+        "sample_hashes_verified_at_open": true,
+        "synthetic_fixture_only": true,
+        "ss_target_is_random_not_geometry_ground_truth": true
+      },
+      "last": {
+        "step": 64,
+        "loss": 0.07373413443565369,
+        "depth_loss": 0.001017664442770183,
+        "stopping_loss": 0.0013816478895023465,
+        "target_loss": 0.0014918451197445393,
+        "confidence_loss": 0.6984297633171082,
+        "valid_layer_fraction": 0.28254199028015137,
+        "target_layer_fraction": 0.59565669298172,
+        "gradient_norm_before_clip": 0.5157299041748047,
+        "elapsed_seconds": 4.860373497009277
+      },
+      "checkpoint": "/tmp/palr_lari_box_overfit_20260909_v1/checkpoints/last.pt"
+    },
+    "ss_adapter_training": {
+      "source_report": "/tmp/palr_ss_predicted_smoke_20260909_v1/report.json",
+      "passed": true,
+      "model": {
+        "format": "pose_aligned_layered_reconstruction.native_ss.v1",
+        "parent": "no-VGGT Native-SS step30000 EMA",
+        "parent_parameter_layout_preserved": true,
+        "appearance_input": "masked_target_dino",
+        "layer_input": "raw_rgb_dino_plus_visible_target_cue",
+        "query_grid": "dense_16_cubed",
+        "target_lari": {
+          "representation": "ordered_camera_depth_plus_stopping_index",
+          "target_ownership": true,
+          "confidence": true,
+          "input_channels": 1024,
+          "hidden_channels": 256,
+          "layers": 5,
+          "decoder_blocks": 3,
+          "minimum_depth_gap": 0.001,
+          "raster": "DINO_patch_grid",
+          "official_lari_checkpoint_compatible": false
+        },
+        "layer_match_features": 12,
+        "layer_channels": 128,
+        "new_view_gate": "zero_init_residual_logits",
+        "new_block_condition": "zero_init_independent_projection_every_block",
+        "layer_raster_sampling": "half_pixel_centers",
+        "layer_strength": "appearance_weights_times_absolute_target_support",
+        "stock_content_identity": {
+          "model_name": "ss_flow_img_dit_L_16l8_fp16",
+          "config_sha256": "bf69161da7ece9a87394dd4441f0cfa6d4261696a214a8f68388c81fa9a6b5b7",
+          "weights_sha256": "876df6751febc412d3e6f62c686f59da1634e4d3c4edba44fdf6a749bdbba73a"
+        },
+        "pretrained": "Stable-X/trellis-vggt-v0-2",
+        "lora_rank": 8,
+        "lora_alpha": 16,
+        "sampler": "FlowEulerGuidanceIntervalSampler",
+        "sampler_params": {
+          "steps": 25,
+          "cfg_strength": 5,
+          "cfg_interval": [
+            0.5,
+            1
+          ],
+          "rescale_t": 3
+        }
+      },
+      "initial_zero_audit": {
+        "new_adapters_exact_zero": true,
+        "layered_minus_parent_max_abs": 0,
+        "passed": true
+      },
+      "data_identity": {
+        "manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+        "manifest_sha256": "e66b4a0ebd3207fe733adeb46172e84d8c6dbcf6a8849fdcca3db6def73fc1de",
+        "config_hash": "f9841c7a796b6cc30600c9e6abba84595a0b15674d68e4e24f3839005233b504",
+        "sample_count": 1,
+        "object_count": 1,
+        "uid_hash": "57246080574cabf4961593ab0d6f84876a0db5dc24353bd2c782e7df35260769",
+        "object_uid_hash": "afcf55a931dbd003ec2818f135f0fd1eac8608d461c00c3058316569b8184090",
+        "paired_raw_and_masked": true,
+        "build_trellis_contexts": true,
+        "sample_hashes_verified_at_open": true,
+        "synthetic_fixture_only": true,
+        "ss_target_is_random_not_geometry_ground_truth": true,
+        "layer_source": "predicted",
+        "parent": {
+          "path": "/data/zjr/proobjaverse_official_30k_checkpoint_archives/ProObjaverse_30K_noVGGT_SS_SLat_numbered_checkpoints_20260818_v1/ss/checkpoints/step_030000.pt",
+          "sha256": "042a1b5467b05975584aeb571dec6ffaed5096edcc6abe4aa88600c9c9506b7f",
+          "format": "pose_point_depth_mv.native_ss_genrecon_no_vggt.v1",
+          "step": 30000,
+          "weights": "ema",
+          "loaded_tensor_count": 298,
+          "freeze_parent": true,
+          "new_trainable_tensor_count": 104
+        },
+        "target_lari": {
+          "path": "/tmp/palr_lari_box_overfit_20260909_v1/checkpoints/last.pt",
+          "sha256": "27dca0099caa84acc3dd70368bfef866470d33e73e81b1411e1eb35f9bb71f69",
+          "step": 64,
+          "data_identity": {
+            "manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+            "manifest_sha256": "e66b4a0ebd3207fe733adeb46172e84d8c6dbcf6a8849fdcca3db6def73fc1de",
+            "config_hash": "f9841c7a796b6cc30600c9e6abba84595a0b15674d68e4e24f3839005233b504",
+            "sample_count": 1,
+            "object_count": 1,
+            "uid_hash": "57246080574cabf4961593ab0d6f84876a0db5dc24353bd2c782e7df35260769",
+            "object_uid_hash": "afcf55a931dbd003ec2818f135f0fd1eac8608d461c00c3058316569b8184090",
+            "paired_raw_and_masked": true,
+            "build_trellis_contexts": false,
+            "sample_hashes_verified_at_open": true,
+            "synthetic_fixture_only": true,
+            "ss_target_is_random_not_geometry_ground_truth": true
+          }
+        }
+      },
+      "trainable_names": [
+        "layer_encoder.net.0.weight",
+        "layer_encoder.net.0.bias",
+        "layer_encoder.net.2.weight",
+        "layer_encoder.net.2.bias",
+        "view_gate.net.0.weight",
+        "view_gate.net.0.bias",
+        "view_gate.net.2.weight",
+        "view_gate.net.2.bias",
+        "layer_block_condition.projections.0.weight",
+        "layer_block_condition.projections.0.bias",
+        "layer_block_condition.projections.1.weight",
+        "layer_block_condition.projections.1.bias",
+        "layer_block_condition.projections.2.weight",
+        "layer_block_condition.projections.2.bias",
+        "layer_block_condition.projections.3.weight",
+        "layer_block_condition.projections.3.bias",
+        "layer_block_condition.projections.4.weight",
+        "layer_block_condition.projections.4.bias",
+        "layer_block_condition.projections.5.weight",
+        "layer_block_condition.projections.5.bias",
+        "layer_block_condition.projections.6.weight",
+        "layer_block_condition.projections.6.bias",
+        "layer_block_condition.projections.7.weight",
+        "layer_block_condition.projections.7.bias",
+        "layer_block_condition.projections.8.weight",
+        "layer_block_condition.projections.8.bias",
+        "layer_block_condition.projections.9.weight",
+        "layer_block_condition.projections.9.bias",
+        "layer_block_condition.projections.10.weight",
+        "layer_block_condition.projections.10.bias",
+        "layer_block_condition.projections.11.weight",
+        "layer_block_condition.projections.11.bias",
+        "layer_block_condition.projections.12.weight",
+        "layer_block_condition.projections.12.bias",
+        "layer_block_condition.projections.13.weight",
+        "layer_block_condition.projections.13.bias",
+        "layer_block_condition.projections.14.weight",
+        "layer_block_condition.projections.14.bias",
+        "layer_block_condition.projections.15.weight",
+        "layer_block_condition.projections.15.bias",
+        "layer_block_condition.projections.16.weight",
+        "layer_block_condition.projections.16.bias",
+        "layer_block_condition.projections.17.weight",
+        "layer_block_condition.projections.17.bias",
+        "layer_block_condition.projections.18.weight",
+        "layer_block_condition.projections.18.bias",
+        "layer_block_condition.projections.19.weight",
+        "layer_block_condition.projections.19.bias",
+        "layer_block_condition.projections.20.weight",
+        "layer_block_condition.projections.20.bias",
+        "layer_block_condition.projections.21.weight",
+        "layer_block_condition.projections.21.bias",
+        "layer_block_condition.projections.22.weight",
+        "layer_block_condition.projections.22.bias",
+        "layer_block_condition.projections.23.weight",
+        "layer_block_condition.projections.23.bias"
+      ],
+      "last": {
+        "step": 8,
+        "micro_step": 8,
+        "flow_loss": 2.331413507461548,
+        "parent_loss": 2.3364014625549316,
+        "gain": 0.004987955093383789,
+        "view_count": 2,
+        "target_support": 0.03547075018286705,
+        "hidden_support": 0.017587237060070038,
+        "gradient_norm_before_clip": 0.35985973477363586,
+        "elapsed_seconds": 6.594082593917847
+      },
+      "checkpoint": "/tmp/palr_ss_predicted_smoke_20260909_v1/checkpoints/last.pt"
+    },
+    "predicted_inference": {
+      "source_report": "/tmp/palr_predicted_inference_20260909_v1/report.json",
+      "passed": true,
+      "scope": "SS latent and decoded occupancy only",
+      "model": {
+        "format": "pose_aligned_layered_reconstruction.native_ss.v1",
+        "parent": "no-VGGT Native-SS step30000 EMA",
+        "parent_parameter_layout_preserved": true,
+        "appearance_input": "masked_target_dino",
+        "layer_input": "raw_rgb_dino_plus_visible_target_cue",
+        "query_grid": "dense_16_cubed",
+        "target_lari": {
+          "representation": "ordered_camera_depth_plus_stopping_index",
+          "target_ownership": true,
+          "confidence": true,
+          "input_channels": 1024,
+          "hidden_channels": 256,
+          "layers": 5,
+          "decoder_blocks": 3,
+          "minimum_depth_gap": 0.001,
+          "raster": "DINO_patch_grid",
+          "official_lari_checkpoint_compatible": false
+        },
+        "layer_match_features": 12,
+        "layer_channels": 128,
+        "new_view_gate": "zero_init_residual_logits",
+        "new_block_condition": "zero_init_independent_projection_every_block",
+        "layer_raster_sampling": "half_pixel_centers",
+        "layer_strength": "appearance_weights_times_absolute_target_support",
+        "stock_content_identity": {
+          "model_name": "ss_flow_img_dit_L_16l8_fp16",
+          "config_sha256": "bf69161da7ece9a87394dd4441f0cfa6d4261696a214a8f68388c81fa9a6b5b7",
+          "weights_sha256": "876df6751febc412d3e6f62c686f59da1634e4d3c4edba44fdf6a749bdbba73a"
+        },
+        "pretrained": "Stable-X/trellis-vggt-v0-2",
+        "lora_rank": 8,
+        "lora_alpha": 16,
+        "sampler": "FlowEulerGuidanceIntervalSampler",
+        "sampler_params": {
+          "steps": 25,
+          "cfg_strength": 5,
+          "cfg_interval": [
+            0.5,
+            1
+          ],
+          "rescale_t": 3
+        }
+      },
+      "parent": {
+        "path": "/data/zjr/proobjaverse_official_30k_checkpoint_archives/ProObjaverse_30K_noVGGT_SS_SLat_numbered_checkpoints_20260818_v1/ss/checkpoints/step_030000.pt",
+        "sha256": "042a1b5467b05975584aeb571dec6ffaed5096edcc6abe4aa88600c9c9506b7f",
+        "format": "pose_point_depth_mv.native_ss_genrecon_no_vggt.v1",
+        "step": 30000,
+        "weights": "ema",
+        "loaded_tensor_count": 298,
+        "freeze_parent": true,
+        "new_trainable_tensor_count": 104
+      },
+      "target_lari": {
+        "path": "/tmp/palr_lari_box_overfit_20260909_v1/checkpoints/last.pt",
+        "sha256": "27dca0099caa84acc3dd70368bfef866470d33e73e81b1411e1eb35f9bb71f69",
+        "step": 64,
+        "data_identity": {
+          "manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+          "manifest_sha256": "e66b4a0ebd3207fe733adeb46172e84d8c6dbcf6a8849fdcca3db6def73fc1de",
+          "config_hash": "f9841c7a796b6cc30600c9e6abba84595a0b15674d68e4e24f3839005233b504",
+          "sample_count": 1,
+          "object_count": 1,
+          "uid_hash": "57246080574cabf4961593ab0d6f84876a0db5dc24353bd2c782e7df35260769",
+          "object_uid_hash": "afcf55a931dbd003ec2818f135f0fd1eac8608d461c00c3058316569b8184090",
+          "paired_raw_and_masked": true,
+          "build_trellis_contexts": false,
+          "sample_hashes_verified_at_open": true,
+          "synthetic_fixture_only": true,
+          "ss_target_is_random_not_geometry_ground_truth": true
+        }
+      },
+      "layered_ss": {
+        "path": "/tmp/palr_ss_predicted_smoke_20260909_v1/checkpoints/last.pt",
+        "sha256": "841e398142d6c4d2dca0419f456cd326cedcd7a7ce6600aa0eb9dc6c067bbbd6",
+        "step": 8,
+        "data_identity": {
+          "manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+          "manifest_sha256": "e66b4a0ebd3207fe733adeb46172e84d8c6dbcf6a8849fdcca3db6def73fc1de",
+          "config_hash": "f9841c7a796b6cc30600c9e6abba84595a0b15674d68e4e24f3839005233b504",
+          "sample_count": 1,
+          "object_count": 1,
+          "uid_hash": "57246080574cabf4961593ab0d6f84876a0db5dc24353bd2c782e7df35260769",
+          "object_uid_hash": "afcf55a931dbd003ec2818f135f0fd1eac8608d461c00c3058316569b8184090",
+          "paired_raw_and_masked": true,
+          "build_trellis_contexts": true,
+          "sample_hashes_verified_at_open": true,
+          "synthetic_fixture_only": true,
+          "ss_target_is_random_not_geometry_ground_truth": true,
+          "layer_source": "predicted",
+          "parent": {
+            "path": "/data/zjr/proobjaverse_official_30k_checkpoint_archives/ProObjaverse_30K_noVGGT_SS_SLat_numbered_checkpoints_20260818_v1/ss/checkpoints/step_030000.pt",
+            "sha256": "042a1b5467b05975584aeb571dec6ffaed5096edcc6abe4aa88600c9c9506b7f",
+            "format": "pose_point_depth_mv.native_ss_genrecon_no_vggt.v1",
+            "step": 30000,
+            "weights": "ema",
+            "loaded_tensor_count": 298,
+            "freeze_parent": true,
+            "new_trainable_tensor_count": 104
+          },
+          "target_lari": {
+            "path": "/tmp/palr_lari_box_overfit_20260909_v1/checkpoints/last.pt",
+            "sha256": "27dca0099caa84acc3dd70368bfef866470d33e73e81b1411e1eb35f9bb71f69",
+            "step": 64,
+            "data_identity": {
+              "manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+              "manifest_sha256": "e66b4a0ebd3207fe733adeb46172e84d8c6dbcf6a8849fdcca3db6def73fc1de",
+              "config_hash": "f9841c7a796b6cc30600c9e6abba84595a0b15674d68e4e24f3839005233b504",
+              "sample_count": 1,
+              "object_count": 1,
+              "uid_hash": "57246080574cabf4961593ab0d6f84876a0db5dc24353bd2c782e7df35260769",
+              "object_uid_hash": "afcf55a931dbd003ec2818f135f0fd1eac8608d461c00c3058316569b8184090",
+              "paired_raw_and_masked": true,
+              "build_trellis_contexts": false,
+              "sample_hashes_verified_at_open": true,
+              "synthetic_fixture_only": true,
+              "ss_target_is_random_not_geometry_ground_truth": true
+            }
+          }
+        }
+      },
+      "layer_source": "predicted",
+      "records": [
+        {
+          "index": 0,
+          "uid": "box_scene_smoke",
+          "output": "/tmp/palr_predicted_inference_20260909_v1/00000.npz",
+          "active_coordinates": 23816,
+          "finite_latent_and_logits": true,
+          "cfg_positive_calls": 25,
+          "cfg_negative_calls": 19
+        }
+      ],
+      "args": {
+        "manifest": "/tmp/palr_source_infer_cache_20260909_v1/manifest.json",
+        "layered_ss_checkpoint": "/tmp/palr_ss_predicted_smoke_20260909_v1/checkpoints/last.pt",
+        "target_lari_checkpoint": "/tmp/palr_lari_box_overfit_20260909_v1/checkpoints/last.pt",
+        "parent_ss30k": "/data/zjr/proobjaverse_official_30k_checkpoint_archives/ProObjaverse_30K_noVGGT_SS_SLat_numbered_checkpoints_20260818_v1/ss/checkpoints/step_030000.pt",
+        "parent_weights": "ema",
+        "output_dir": "/tmp/palr_predicted_inference_20260909_v1",
+        "layer_source": "predicted",
+        "pretrained": "Stable-X/trellis-vggt-v0-2",
+        "device": "cuda:0",
+        "seed": 42,
+        "max_samples": 0,
+        "lari_layers": 5,
+        "lari_hidden_channels": 256,
+        "lari_decoder_blocks": 3,
+        "allow_layer_source_change": false,
+        "layer_channels": 128,
+        "steps": 25,
+        "cfg_strength": 5,
+        "amp_dtype": "bf16"
+      },
+      "decoder_content_identity": {
+        "model_name": "ss_dec_conv3d_16l8_fp16",
+        "config_sha256": "646781293f1cda74720de85d1cef50a957fb4aebd9a4bd014e454e32f2330ac5",
+        "weights_sha256": "1c76d4a40519aa2d711cc263a8404105231ac26db31d946bed48b84fee79009a"
+      }
+    }
+  }
+}
+

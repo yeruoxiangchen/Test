@@ -1,0 +1,11 @@
+{
+  "TRELLIS2": {
+    "url": "https://github.com/microsoft/TRELLIS.2.git",
+    "commit": "5565d240c4a494caaf9ece7a554542b76ffa36d3"
+  },
+  "ReconViaGen": {
+    "url": "https://github.com/GAP-LAB-CUHK-SZ/ReconViaGen.git",
+    "commit": "f6720923260927333e22761fa722144d214733d9",
+    "local_patch": "docs/reconviagen_local_changes.patch"
+  }
+}

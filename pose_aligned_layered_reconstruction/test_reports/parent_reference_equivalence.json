@@ -1,0 +1,15 @@
+{
+  "date": "2026-09-09",
+  "passed": true,
+  "scope": "one-off regression against the maintained parent implementation; reference imports are not in new production code",
+  "parent_sha256": "042a1b5467b05975584aeb571dec6ffaed5096edcc6abe4aa88600c9c9506b7f",
+  "input_manifest": "/tmp/palr_source_train_cache_20260909_v1/manifest.json",
+  "cpu_projection_max_abs_difference": 0.0,
+  "frustum_valid_identical": true,
+  "masked_context_exactly_equal": true,
+  "full_flow_bf16_gpu_records": [
+    {"mode": "correct", "max_abs_difference": 0.0, "finite": true},
+    {"mode": "pose_cyclic1", "max_abs_difference": 0.0, "finite": true},
+    {"mode": "unconditional", "max_abs_difference": 0.0, "finite": true}
+  ]
+}
