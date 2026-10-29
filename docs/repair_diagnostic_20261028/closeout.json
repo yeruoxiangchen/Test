@@ -1,0 +1,13 @@
+{
+  "time": "2026-10-29T00:43:09+00:00",
+  "complete": true,
+  "cases": 8,
+  "groups": 32,
+  "checks": {
+    "time": "2026-10-29T00:43:09+00:00",
+    "passed": true,
+    "endpoints_checked": 96,
+    "oracle_labels_separate": true
+  },
+  "report": "/data/zjr/trellis2_geometry_repair/outputs/repair_diagnostic_20261028/REPORT.md"
+}

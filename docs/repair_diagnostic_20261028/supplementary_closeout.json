@@ -1,0 +1,16 @@
+{
+  "time": "2026-10-29T00:50:46+00:00",
+  "complete": true,
+  "groups": 32,
+  "cases": 8,
+  "artifact_endpoints": 96,
+  "regression_tests": 22,
+  "test_log_sha256": "100f8cadbb12dd4a19faf494538e22e21344f33a42db384a6cd90619b0f62a62",
+  "support_audit_sha256": "fb139c0dbf4c4148450362d6db39a1477184cf8d639958806e039a148fd48b38",
+  "original_closeout": "/data/zjr/trellis2_geometry_repair/outputs/repair_diagnostic_20261028/closeout.json",
+  "analysis": "/data/zjr/trellis2_geometry_repair/outputs/repair_diagnostic_20261028/FINAL_ANALYSIS.md",
+  "actual_input_accepted": {
+    "latent_input": 0,
+    "mesh_input": 0
+  }
+}

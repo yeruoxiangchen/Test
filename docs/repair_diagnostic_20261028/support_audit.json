@@ -1,0 +1,219 @@
+{
+  "time": "2026-10-29T00:46:16+00:00",
+  "posthoc_diagnostic": true,
+  "records": [
+    {
+      "index": 5,
+      "seed": 42,
+      "uid": "omni_brussels_sprout_002",
+      "support_cells": 4700,
+      "teacher": {
+        "points": 1681,
+        "outside_fraction": 0.9898869720404521,
+        "beyond_conservative_margin_fraction": 0.9898869720404521,
+        "distance_mean": 0.0780042238069245,
+        "distance_median": 0.07965815124937392,
+        "distance_p95": 0.09414705276121399,
+        "distance_max": 0.100752905288706
+      },
+      "gt": {
+        "points": 1681,
+        "outside_fraction": 1.0,
+        "beyond_conservative_margin_fraction": 0.9898869720404521,
+        "distance_mean": 0.05633915968938807,
+        "distance_median": 0.05690974753912676,
+        "distance_p95": 0.06483227516318163,
+        "distance_max": 0.06711055539561894
+      },
+      "frozen_fit": true,
+      "gt_used_for_input_training": false
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "uid": "omni_brussels_sprout_002",
+      "support_cells": 4015,
+      "teacher": {
+        "points": 2357,
+        "outside_fraction": 0.7174374204497243,
+        "beyond_conservative_margin_fraction": 0.38396266440390325,
+        "distance_mean": 0.008358620330650051,
+        "distance_median": 0.00691163412922885,
+        "distance_p95": 0.022946278779254002,
+        "distance_max": 0.033273362058668654
+      },
+      "gt": {
+        "points": 2357,
+        "outside_fraction": 0.15994908782350445,
+        "beyond_conservative_margin_fraction": 0.0033941450997030122,
+        "distance_mean": 0.0005425188806902715,
+        "distance_median": 0.0,
+        "distance_p95": 0.004158428646991982,
+        "distance_max": 0.01366996585470659
+      },
+      "frozen_fit": true,
+      "gt_used_for_input_training": false
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "uid": "omni_carrot_009",
+      "support_cells": 953,
+      "teacher": {
+        "points": 206,
+        "outside_fraction": 1.0,
+        "beyond_conservative_margin_fraction": 1.0,
+        "distance_mean": 0.03294857068991203,
+        "distance_median": 0.03470350146916608,
+        "distance_p95": 0.04016785167167105,
+        "distance_max": 0.04308773934937149
+      },
+      "gt": {
+        "points": 206,
+        "outside_fraction": 0.019417475728155338,
+        "beyond_conservative_margin_fraction": 0.0,
+        "distance_mean": 2.4912288763461477e-05,
+        "distance_median": 0.0,
+        "distance_p95": 0.0,
+        "distance_max": 0.0019472240359137
+      },
+      "frozen_fit": true,
+      "gt_used_for_input_training": false
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "uid": "omni_carrot_009",
+      "support_cells": 1062,
+      "teacher": {
+        "points": 522,
+        "outside_fraction": 0.9865900383141762,
+        "beyond_conservative_margin_fraction": 0.7950191570881227,
+        "distance_mean": 0.013192648524751984,
+        "distance_median": 0.0140591356368049,
+        "distance_p95": 0.01919485816858191,
+        "distance_max": 0.021381252353096403
+      },
+      "gt": {
+        "points": 522,
+        "outside_fraction": 0.0,
+        "beyond_conservative_margin_fraction": 0.0,
+        "distance_mean": 0.0,
+        "distance_median": 0.0,
+        "distance_p95": 0.0,
+        "distance_max": 0.0
+      },
+      "frozen_fit": true,
+      "gt_used_for_input_training": false
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "uid": "omni_handbag_006",
+      "support_cells": 3618,
+      "teacher": {
+        "points": 2390,
+        "outside_fraction": 0.9150627615062762,
+        "beyond_conservative_margin_fraction": 0.8916317991631799,
+        "distance_mean": 0.12509804965444252,
+        "distance_median": 0.14366729844436807,
+        "distance_p95": 0.18837283376352074,
+        "distance_max": 0.21019490095118165
+      },
+      "gt": {
+        "points": 2390,
+        "outside_fraction": 0.999163179916318,
+        "beyond_conservative_margin_fraction": 0.9966527196652719,
+        "distance_mean": 0.16138510742520343,
+        "distance_median": 0.17946327618418728,
+        "distance_p95": 0.21124803153817776,
+        "distance_max": 0.2228681643024378
+      },
+      "frozen_fit": true,
+      "gt_used_for_input_training": false
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "uid": "omni_handbag_006",
+      "support_cells": 1715,
+      "teacher": {
+        "points": 2489,
+        "outside_fraction": 0.5773402973081558,
+        "beyond_conservative_margin_fraction": 0.14182402571313782,
+        "distance_mean": 0.004839599051218939,
+        "distance_median": 0.0019159198244912343,
+        "distance_p95": 0.02175023418709747,
+        "distance_max": 0.03052958857406529
+      },
+      "gt": {
+        "points": 2489,
+        "outside_fraction": 0.5938127762153476,
+        "beyond_conservative_margin_fraction": 0.189634391321816,
+        "distance_mean": 0.00458890487121557,
+        "distance_median": 0.0025800580077804253,
+        "distance_p95": 0.014484635162206059,
+        "distance_max": 0.02188859579106796
+      },
+      "frozen_fit": true,
+      "gt_used_for_input_training": false
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "uid": "omni_kite_004",
+      "support_cells": 547,
+      "teacher": {
+        "points": 2974,
+        "outside_fraction": 0.3184263618022865,
+        "beyond_conservative_margin_fraction": 0.09448554135843981,
+        "distance_mean": 0.002744635040559468,
+        "distance_median": 0.0,
+        "distance_p95": 0.015320547027998309,
+        "distance_max": 0.04367784953438701
+      },
+      "gt": {
+        "points": 2974,
+        "outside_fraction": 0.2175521183591123,
+        "beyond_conservative_margin_fraction": 0.010759919300605245,
+        "distance_mean": 0.0007817617464949972,
+        "distance_median": 0.0,
+        "distance_p95": 0.005382515070019376,
+        "distance_max": 0.015229918955891819
+      },
+      "frozen_fit": true,
+      "gt_used_for_input_training": false
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "uid": "omni_kite_004",
+      "support_cells": 431,
+      "teacher": {
+        "points": 2553,
+        "outside_fraction": 0.3826870348609479,
+        "beyond_conservative_margin_fraction": 0.09792401096748923,
+        "distance_mean": 0.0031724647932671966,
+        "distance_median": 0.0,
+        "distance_p95": 0.01720690083434059,
+        "distance_max": 0.04411317971105093
+      },
+      "gt": {
+        "points": 2553,
+        "outside_fraction": 0.2671367019193106,
+        "beyond_conservative_margin_fraction": 0.006658832745789268,
+        "distance_mean": 0.0013426227453541648,
+        "distance_median": 0.0,
+        "distance_p95": 0.007736663886970684,
+        "distance_max": 0.012728189296811288
+      },
+      "frozen_fit": true,
+      "gt_used_for_input_training": false
+    }
+  ],
+  "support_grid": 32,
+  "decoder_grid": 512,
+  "voxel_margin": 0.5,
+  "conservative_distance_threshold": 0.01014873520059889,
+  "explanation": "Distance to original occupied coarse-cell union after the SAME frozen inverse registration. Subdivisions remain in original parent cells; the generous margin also covers local adjacent-cell triangles. Outside support can reflect global misregistration or coarse geometry, which this audit does not separate. Inside support does not imply an optimizer can reach the target. No GT correction is fed back."
+}

@@ -59,3 +59,19 @@ bash visual_evidence_probe/run_failure_repair.sh status
 
 Every new dataset, output, temporary file and model/runtime cache belongs under
 `/data/zjr/`; home/Tracker is reserved for source and small documentation.
+
+## Follow-up diagnostic (2026-10-29)
+
+The separate four-arm diagnostic is complete: 32/32 groups, 8/8 evaluated
+cases, 96 endpoint checks and 22 passing CPU regressions. The uncapped robust
+objective restores gradients for large depth residuals while retaining fixed
+query domains, missing-ray penalties and exterior protection. OBJ surface
+parity and the original float64 GT sampling contract are checked explicitly.
+
+Both actual-input arms accepted 0/8 edits; delivered gain remains zero.
+Unfiltered mesh proposals can reduce CD while creating spikes. GT-target
+controls and the frozen-SS distance audit are diagnostics only. Read
+[the final analysis](docs/repair_diagnostic_20261028/FINAL_ANALYSIS.md) and
+[full report](docs/repair_diagnostic_20261028/REPORT.md). Source and commands
+are in `trellis2_geometry_repair/experiments/repair_diagnostic/` and
+`trellis2_geometry_repair/run_diagnostic.sh`.

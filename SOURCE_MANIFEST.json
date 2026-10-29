@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-28T14:24:50.115075+00:00",
+  "created_at": "2026-10-29T01:11:27.961172+00:00",
   "source_root": "/home/zjr/Tracker",
   "packages": [
     "trellis2_geometry_repair",
@@ -13,7 +13,7 @@
     "pixal3d_multiview"
   ],
   "counts": {
-    "trellis2_geometry_repair": 29,
+    "trellis2_geometry_repair": 49,
     "visual_evidence_probe": 204,
     "pose_aligned_reconstruction": 92,
     "pose_aligned_layered_reconstruction": 379,
@@ -24,180 +24,6 @@
     "pixal3d_multiview": 50
   },
   "files": [
-    {
-      "path": "trellis2_geometry_repair/PROTOCOL.md",
-      "bytes": 3471,
-      "sha256": "abc617826d3f59ff39aab71f5e257af85547c65dc0e0fcf1753cbc688067330a",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/README.md",
-      "bytes": 1115,
-      "sha256": "f7bb213072ce001a910356d4ec2346d3a6fa1045ed653b79b97d9c0cde711780",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/VALIDATION.md",
-      "bytes": 3043,
-      "sha256": "eace46300496f0ced4cffdcb4eb3294f51de2f1dd36656bfa2dc73d44b4ceca7",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/__init__.py",
-      "bytes": 74,
-      "sha256": "c81c6b2f7bca7f7c7c27ee3c4d8607ecf8cea2ff654601dce5e7bbfcffbfc385",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/assets.py",
-      "bytes": 3951,
-      "sha256": "a3cab80eeecca8d04c22713d57211df285e897dd197e1b7e529fc44c34cc6c17",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/compat.py",
-      "bytes": 4136,
-      "sha256": "18244896291b98da6e2df5816fa826d8b2182e8a63a38859aea55950b35c0e05",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/config.py",
-      "bytes": 3018,
-      "sha256": "822e6966f6909f6ded4ee92a506663953ba2c739fd39651e93a4c936fb527df1",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/converter_audit.py",
-      "bytes": 2599,
-      "sha256": "2208981d73de437e5a55558bb534d7b65ae4eb577acaf912de7de42944b32a31",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/edit.py",
-      "bytes": 8844,
-      "sha256": "646f4cad357ffb35444e6a03c93d724a5d3c67185104d07109608bcfc2798623",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/environment.py",
-      "bytes": 724,
-      "sha256": "e1bd9cb56f798765a1a1a35c032926b24ee6831eae650415067fa6a747172df6",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/evaluate.py",
-      "bytes": 3762,
-      "sha256": "40824043708806e877b4d9cd796285007fbd48443438545dec84591927ab73ef",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/evidence.py",
-      "bytes": 6126,
-      "sha256": "c8a9d6dcce6ea9d7e8912c4616c971fe9eaa5419704a6a8e0c7609c8f94680c2",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/fdg.py",
-      "bytes": 2243,
-      "sha256": "a5a7b61dac5ecd8b4a6eeb1d6de4c777c2a05081d482731434971e355631819a",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/features.py",
-      "bytes": 1057,
-      "sha256": "b5182b4cd1304c7c1d1ea7f738e04e40defe97a3fd3e0ce20632de0a5c8048c0",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/figures.py",
-      "bytes": 3769,
-      "sha256": "15b91e6695a664110c74681236a58cba000cecb87cb7270eff0f392eedf5b2d2",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/fit.py",
-      "bytes": 4031,
-      "sha256": "9d01d3f3a8ebd14e90d85483e9fc85852359512c197e2bcbf220b6ac22449f54",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/generate.py",
-      "bytes": 6085,
-      "sha256": "ab0aee0fca76b026e5069c4173b8672815aacccbc5145028c19569f3cd91202d",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/geometry.py",
-      "bytes": 3671,
-      "sha256": "d891573d75881b752e9d606a9b76be4b78744d408d1120a34711bcd374970487",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/metrics.py",
-      "bytes": 942,
-      "sha256": "f28a9e1a4d9b2e4a1b9a056581c2317b486f48f4aab035977a64e3320a270d6c",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/pipeline.py",
-      "bytes": 3113,
-      "sha256": "67cec5b85e521ac1cf5539223f4c2cb0b126fc26b1b3054da386f188eb726904",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/prepare.py",
-      "bytes": 1400,
-      "sha256": "b9ccb31af1fc67077754d79d955ca1b9598bd3fd4c6193a5283e9d1a4d5d28f0",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/replay.py",
-      "bytes": 2900,
-      "sha256": "0f34b90bc27c2e0b4ee07dc270917f407b4deb8247d0dd2c6d8bcde1f1927d4c",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/report.py",
-      "bytes": 4949,
-      "sha256": "a69cbc8b088d6b78df4f57060ecee757bf448d124af825d252e2ed7dbc9b317f",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/run.sh",
-      "bytes": 3040,
-      "sha256": "c5869e91cfaaadd05d0e7614f5be108eba11030435b6a00a8bd20ce6c7b28a17",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/runtime.py",
-      "bytes": 6532,
-      "sha256": "ff1a5c2c1e98a02fde97a9cc9e5251db4866c90d07f04dade37fceb3bca11016",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/smoke.py",
-      "bytes": 7360,
-      "sha256": "983d17d484fcee066e541e88e695a455b967625d62840ae64402e47c8a27737c",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/status.py",
-      "bytes": 1320,
-      "sha256": "552ce41174ff7bfe43dae1286477ec81dff10ae90043ed298e862061a07183ce",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/test_core.py",
-      "bytes": 4543,
-      "sha256": "1a3084985ee8a005a42d9edb9182b3cdb27e5ad1110fb53cdb8b5ef5c5dc8179",
-      "materialized_symlink": false
-    },
-    {
-      "path": "trellis2_geometry_repair/审计.md",
-      "bytes": 7448,
-      "sha256": "0a39e79b7892007ac2f44506e8589f2e812a99cf6e792beff9d18a50d623a022",
-      "materialized_symlink": false
-    },
     {
       "path": "visual_evidence_probe/.gitignore",
       "bytes": 52,
@@ -6047,8 +5873,303 @@
       "bytes": 1811,
       "sha256": "21a0ab50539ead1e3a063243edc36a14a77d396995e24c1f8d66840634bbe95d",
       "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/PROTOCOL.md",
+      "bytes": 3471,
+      "sha256": "abc617826d3f59ff39aab71f5e257af85547c65dc0e0fcf1753cbc688067330a",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/README.md",
+      "bytes": 1785,
+      "sha256": "9cf6360304784c4718739f8dd03363cd51985f4c8d3dadd928e9f824c3f9b2a4",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/VALIDATION.md",
+      "bytes": 3800,
+      "sha256": "1e817fc562fe9696a7aa6f6a1faf654a3d59ecca8ebfda6efd0957718e09c663",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/__init__.py",
+      "bytes": 74,
+      "sha256": "c81c6b2f7bca7f7c7c27ee3c4d8607ecf8cea2ff654601dce5e7bbfcffbfc385",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/assets.py",
+      "bytes": 3951,
+      "sha256": "a3cab80eeecca8d04c22713d57211df285e897dd197e1b7e529fc44c34cc6c17",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/compat.py",
+      "bytes": 4136,
+      "sha256": "18244896291b98da6e2df5816fa826d8b2182e8a63a38859aea55950b35c0e05",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/config.py",
+      "bytes": 3018,
+      "sha256": "822e6966f6909f6ded4ee92a506663953ba2c739fd39651e93a4c936fb527df1",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/converter_audit.py",
+      "bytes": 2599,
+      "sha256": "2208981d73de437e5a55558bb534d7b65ae4eb577acaf912de7de42944b32a31",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/edit.py",
+      "bytes": 8844,
+      "sha256": "646f4cad357ffb35444e6a03c93d724a5d3c67185104d07109608bcfc2798623",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/environment.py",
+      "bytes": 724,
+      "sha256": "e1bd9cb56f798765a1a1a35c032926b24ee6831eae650415067fa6a747172df6",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/evaluate.py",
+      "bytes": 3762,
+      "sha256": "40824043708806e877b4d9cd796285007fbd48443438545dec84591927ab73ef",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/evidence.py",
+      "bytes": 6126,
+      "sha256": "c8a9d6dcce6ea9d7e8912c4616c971fe9eaa5419704a6a8e0c7609c8f94680c2",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/fdg.py",
+      "bytes": 2243,
+      "sha256": "a5a7b61dac5ecd8b4a6eeb1d6de4c777c2a05081d482731434971e355631819a",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/features.py",
+      "bytes": 1057,
+      "sha256": "b5182b4cd1304c7c1d1ea7f738e04e40defe97a3fd3e0ce20632de0a5c8048c0",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/figures.py",
+      "bytes": 3769,
+      "sha256": "15b91e6695a664110c74681236a58cba000cecb87cb7270eff0f392eedf5b2d2",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/fit.py",
+      "bytes": 4031,
+      "sha256": "9d01d3f3a8ebd14e90d85483e9fc85852359512c197e2bcbf220b6ac22449f54",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/generate.py",
+      "bytes": 6085,
+      "sha256": "ab0aee0fca76b026e5069c4173b8672815aacccbc5145028c19569f3cd91202d",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/geometry.py",
+      "bytes": 3671,
+      "sha256": "d891573d75881b752e9d606a9b76be4b78744d408d1120a34711bcd374970487",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/metrics.py",
+      "bytes": 942,
+      "sha256": "f28a9e1a4d9b2e4a1b9a056581c2317b486f48f4aab035977a64e3320a270d6c",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/pipeline.py",
+      "bytes": 3113,
+      "sha256": "67cec5b85e521ac1cf5539223f4c2cb0b126fc26b1b3054da386f188eb726904",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/prepare.py",
+      "bytes": 1400,
+      "sha256": "b9ccb31af1fc67077754d79d955ca1b9598bd3fd4c6193a5283e9d1a4d5d28f0",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/replay.py",
+      "bytes": 2900,
+      "sha256": "0f34b90bc27c2e0b4ee07dc270917f407b4deb8247d0dd2c6d8bcde1f1927d4c",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/report.py",
+      "bytes": 4949,
+      "sha256": "a69cbc8b088d6b78df4f57060ecee757bf448d124af825d252e2ed7dbc9b317f",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/run.sh",
+      "bytes": 3040,
+      "sha256": "c5869e91cfaaadd05d0e7614f5be108eba11030435b6a00a8bd20ce6c7b28a17",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/run_diagnostic.sh",
+      "bytes": 2969,
+      "sha256": "6075dac674b84a4d6a82a96416aefc8322f533991d4897a9c3cad7fd5942dd86",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/runtime.py",
+      "bytes": 6623,
+      "sha256": "673671f1d6dc7dafdef3d3e25e8ade31bf880efb0383070c74b26e9654b9f0b0",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/smoke.py",
+      "bytes": 7360,
+      "sha256": "983d17d484fcee066e541e88e695a455b967625d62840ae64402e47c8a27737c",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/status.py",
+      "bytes": 1320,
+      "sha256": "552ce41174ff7bfe43dae1286477ec81dff10ae90043ed298e862061a07183ce",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/test_core.py",
+      "bytes": 4543,
+      "sha256": "1a3084985ee8a005a42d9edb9182b3cdb27e5ad1110fb53cdb8b5ef5c5dc8179",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/审计.md",
+      "bytes": 16315,
+      "sha256": "b919becf01d5c806c598dc1f3f2dcdafce80a4847deb2803de500ab348617d32",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/__init__.py",
+      "bytes": 80,
+      "sha256": "e5271c5ad4a8f27d8c35123432c6d2c868830ac18f9491b8c9995c31c48ddfc5",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/PROTOCOL.md",
+      "bytes": 5431,
+      "sha256": "3dd886af789ba41e3d7c402549199a27e8d2127a6c21de61d2db916b90b34e92",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/VISUAL_REVIEW.md",
+      "bytes": 1727,
+      "sha256": "0d55e295dc21fcd168402c54e2e4dd73c1ea151f04d09211e348f7a59a222388",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/__init__.py",
+      "bytes": 83,
+      "sha256": "88f0ac19841bee19f720ec7cee9e389b90253a3d01db72caa76d09a525ad6522",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/config.py",
+      "bytes": 2669,
+      "sha256": "7da9640d9ca4be4406d240be03aa192a3460d82ee2900a0c38be6ebd30018e73",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/data.py",
+      "bytes": 5366,
+      "sha256": "6f513f7da437fc88f1f0e8922bab1aacff43e233766a0cc5881e4d878ee7ad31",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/deformation.py",
+      "bytes": 3114,
+      "sha256": "1ad762e56c17b87f51dc7b30dae765c3a40330783e0f331967886e200c12999a",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/evaluate.py",
+      "bytes": 7002,
+      "sha256": "05fb474b6f9eba39f653e159efb8f88c04ca5774dd7da1d9e88e0ca6276b8442",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/finalize.py",
+      "bytes": 4846,
+      "sha256": "0e89b89412c4a5fe61bf969c264a4fa64811e53450120455d5f5347c6e292301",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/objective.py",
+      "bytes": 2979,
+      "sha256": "2beec3c1c9e975f3f8dc6c9a0f5933d7621d5f5f2fb9b56d76bf9214e7a55355",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/parallel.py",
+      "bytes": 2460,
+      "sha256": "1d07bbef1195eea4398fa09a915397dfbb0513344861743e777e75025ad7b5cb",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/pipeline.py",
+      "bytes": 3463,
+      "sha256": "ce38dedf199910987f9ef518ae143151877130eecc061afbbdf017049ae9b84f",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/prepare.py",
+      "bytes": 197,
+      "sha256": "8cee3aefa2395b4c5c5733b109de8fae0659f134403dc659c26b7fd911ca0bb4",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/replay.py",
+      "bytes": 2116,
+      "sha256": "bb5785d6241550711ac66743819c698644f6a026a06182fd76cc301435aaf805",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/report.py",
+      "bytes": 7832,
+      "sha256": "6b66bed836bd8271cc30352d8eae77fefdd9a6f28fe2dc293dcae75b87b6d080",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/runner.py",
+      "bytes": 13421,
+      "sha256": "56cea3f6378bf80bb5cc12dd4de2dc1388b261c0bdc6f4131713138773950850",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/status.py",
+      "bytes": 1487,
+      "sha256": "272161f1ed5412031ab121353b5ddce7117ebffd5cc0787f4e516a26f6e6ba2e",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/support_audit.py",
+      "bytes": 4162,
+      "sha256": "c6e08d49055d928a59bd34b2651dc3d7350b5d1db60a60ecab98ed7bc3f7c7db",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/repair_diagnostic/test_objective.py",
+      "bytes": 7355,
+      "sha256": "e6646d9a2f9355e339fbf689c06521278fd700539edd6120b78da9c3a288c62f",
+      "materialized_symlink": false
     }
   ],
   "skipped": [],
-  "excluded": "datasets, model weights, generated assets, caches, unrelated projects and upstream checkout trees"
+  "excluded": "datasets, model weights, generated assets, caches, unrelated projects and upstream checkout trees",
+  "update_scope": "Only trellis2_geometry_repair and its small diagnostic receipts; other projects remain the prior snapshot."
 }

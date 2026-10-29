@@ -10,7 +10,7 @@ NAMES=dict(ss_flow='ss_flow_img_dit_1_3B_64_bf16',ss_decoder='ss_dec_conv3d_16l8
            shape_flow='slat_flow_img2shape_dit_1_3B_512_bf16',shape_decoder='shape_dec_next_dc_f16c32_fp16')
 
 
-def load_model(role, device='cuda:0', checkpoint=False):
+def load_model(role, device='cuda:0', checkpoint=False, binding_root=None):
     setup()
     from trellis2 import models
     from safetensors.torch import load_file
@@ -26,7 +26,8 @@ def load_model(role, device='cuda:0', checkpoint=False):
         raise RuntimeError(f'checkpoint mismatch: {incompatible}')
     if role=='shape_decoder':
         model.set_resolution(PARAMS['resolution'])
-    write(OUT/'bindings'/f'{role}.json',dict(model=str(prefix),derived_buffers=sorted(permitted),
+    receipt_root=OUT if binding_root is None else binding_root
+    write(receipt_root/'bindings'/f'{role}.json',dict(model=str(prefix),derived_buffers=sorted(permitted),
                                           missing_learned_parameters=[],unexpected_keys=[],
                                           output_resolution=getattr(model,'resolution',None)))
     model.eval().requires_grad_(False)

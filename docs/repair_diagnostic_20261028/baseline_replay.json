@@ -1,0 +1,13 @@
+{
+  "time": "2026-10-28T23:59:58+00:00",
+  "native_vertices": 2101466,
+  "native_faces": 4238662,
+  "obj_vertices": 2099976,
+  "obj_faces": 4238662,
+  "pointwise_max": null,
+  "mask_difference_pixels": 0,
+  "common_depth_max": 0.00015628337860107422,
+  "same_face_index_triangle_position_max": 2.9802322387695312e-08,
+  "native_to_obj_nn_max": 0.0013873309620579936,
+  "native_to_obj_nn_mean": 3.788988061526808e-07
+}

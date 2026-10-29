@@ -48,3 +48,14 @@ CD improvement, but are not delivered method results. The 57.943888% average
 raw-to-delivered CD improvement includes global registration and must not be
 attributed to local editing. Native backend validation passed; natural repair
 effectiveness remains unestablished.
+
+The separate saturation/reachability diagnostic completed at 2026-10-29
+00:43:09 UTC: 32/32 arms, 8/8 evaluated cases, 96 endpoint state checks.
+Twenty-two CPU regressions pass. The old depth-field zero-gradient fraction
+averages 33.07% on the sealed queries; the new uncapped robust objective gives
+0%. Both actual-input arms accepted zero edits, so delivered gain remains zero.
+Unfiltered mesh proposals can improve CD while producing spikes; rendered
+comparisons were inspected and these are not counted as method successes.
+GT-target arms and the subsequent fixed-SS support audit are diagnostics only.
+See `outputs/repair_diagnostic_20261028/REPORT.md` and `FINAL_ANALYSIS.md`
+under the physical project store, and the appended audit sections4.2/4.3.

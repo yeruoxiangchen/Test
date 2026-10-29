@@ -20,3 +20,17 @@ See [PROTOCOL.md](PROTOCOL.md), [VALIDATION.md](VALIDATION.md), and [审计.md](
 four previously inspected development objects, two seeds, one reference image
 for stock generation and posed multiview images for registration and repair.
 It is a backend/repair pilot, not an independent generalization benchmark.
+
+The completed pilot accepted no natural-input edits. The follow-up keeps those
+results frozen and diagnoses depth-loss saturation and editing reachability:
+
+```bash
+bash trellis2_geometry_repair/run_diagnostic.sh tests
+bash trellis2_geometry_repair/run_diagnostic.sh launch t2-diagnostic-20261028 --gpu 6
+watch -n 10 -d 'bash /home/zjr/Tracker/trellis2_geometry_repair/run_diagnostic.sh status'
+```
+
+See [the four-arm diagnostic protocol](experiments/repair_diagnostic/PROTOCOL.md).
+Input-derived latent/mesh editors are reported separately from GT-target
+oracle diagnostics. Outputs live under
+`/data/zjr/trellis2_geometry_repair/outputs/repair_diagnostic_20261028/`.

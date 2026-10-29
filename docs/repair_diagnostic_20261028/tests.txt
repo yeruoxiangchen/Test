@@ -1,0 +1,27 @@
+test_edit_path_redecodes_native_topology_each_time (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_frozen_hooks_survive_checkpoint_backward_and_native_bypass (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_missing_rays_still_pay_error (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_native_decoder_rejects_default256_and_out_of_range_coords (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_repair_gate_abstains_without_target_gain (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_rotation_search_has24_proper_rotations (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_similarity_cannot_introduce_reflections (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_surface_sampling_is_reproducible (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_deleting_a_large_error_ray_does_not_reduce_loss (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_disappearing_rays_cannot_shrink_denominator (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_fast_connectivity_matches_reference_including_duplicate_faces (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_full_objective_preserves_zero_protection_at_baseline (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_graph_leaves_exterior_vertices_exact_and_has_gradients (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_gt_surface_sampling_keeps_float64_before_weighted_face_choice (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_heldout_depth_is_not_part_of_training_loss (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_large_error_retains_gradient_while_old_cap_saturates (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_large_target_gain_cannot_bypass_exterior_damage_gate (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_large_target_gain_cannot_bypass_local_support_loss_gate (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_matching_depth_has_zero_loss_and_gradient (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_oracle_loading_requires_both_input_decisions (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_support_distance_uses_cell_volume_and_nearest_union (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+test_surface_parity_accepts_obj_vertex_reindexing_but_rejects_deformation (trellis2_geometry_repair.experiments.repair_diagnostic.test_objective.LossTests) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.318s
+
+OK
