@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-29T08:28:03+00:00",
+  "complete": true,
+  "core_scientific_code_unchanged": true,
+  "inspected_figures": 8,
+  "method_GT_used": false,
+  "diagnostic_only_arms": [
+    "paired_input",
+    "oracle"
+  ],
+  "analysis": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/FINAL_ANALYSIS.md"
+}

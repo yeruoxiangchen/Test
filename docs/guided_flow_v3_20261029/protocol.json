@@ -1,0 +1,77 @@
+{
+  "params": {
+    "indices": [
+      5,
+      6,
+      10,
+      11
+    ],
+    "seeds": [
+      42,
+      43
+    ],
+    "side": 256,
+    "resolution": 512,
+    "support": "ss_t065_n101",
+    "flow_steps": 12,
+    "sigma_min": 1e-05,
+    "proposal_seeds": [
+      101,
+      202
+    ],
+    "bank_seeds": [
+      101,
+      202,
+      303,
+      404,
+      505,
+      606,
+      707,
+      808
+    ],
+    "guide_steps": [
+      9,
+      10,
+      11
+    ],
+    "guide_lr": 0.08,
+    "guide_cap": 0.25,
+    "backtracking": [
+      1.0,
+      0.5
+    ],
+    "max_queries": 512,
+    "field_anchors": 4096,
+    "subdivision_anchors": 512,
+    "min_queries": 16,
+    "point_scale": 0.02,
+    "free_depth_offsets": [
+      0.02,
+      0.05
+    ],
+    "loss_scale": 512.0,
+    "offload_flow": true,
+    "weights": {
+      "depth": 1.0,
+      "silhouette": 0.3,
+      "surface": 0.25,
+      "subdivision": 0.15,
+      "free": 0.1,
+      "protect": 1.0,
+      "field_protect": 0.05,
+      "prior": 0.01
+    },
+    "objective_fixed_support": true,
+    "missing_margin": 1.0
+  },
+  "arms": [
+    "prior",
+    "budget_prior",
+    "input",
+    "paired_input",
+    "oracle"
+  ],
+  "v2": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029",
+  "protocol_sha256": "02877d237b863da6555858875a03aa28a9b6be5eb5469a381550c928f5926a95",
+  "development_only": true
+}

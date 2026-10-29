@@ -1,0 +1,631 @@
+{
+  "time": "2026-10-29T08:20:44+00:00",
+  "complete": true,
+  "records": [
+    {
+      "index": 5,
+      "seed": 42,
+      "noise": 101,
+      "uid": "omni_brussels_sprout_002",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.03188282613049685,
+          "fscore_0p01": 0.19530892217682957,
+          "fscore_0p02": 0.3890729504383611,
+          "fscore_0p05": 0.7736956523982764
+        },
+        "input": {
+          "chamfer_l1": 0.03190329004403621,
+          "fscore_0p01": 0.1950616876485161,
+          "fscore_0p02": 0.3886172400736799,
+          "fscore_0p05": 0.7739524280960611
+        },
+        "paired_input": {
+          "chamfer_l1": 0.03203124756750319,
+          "fscore_0p01": 0.19453340357631327,
+          "fscore_0p02": 0.38849794455678704,
+          "fscore_0p05": 0.7725213767966084
+        },
+        "oracle": {
+          "chamfer_l1": 0.03187603638638505,
+          "fscore_0p01": 0.19471102003642987,
+          "fscore_0p02": 0.38922558193014284,
+          "fscore_0p05": 0.7749260344205698
+        }
+      },
+      "guided_vs_same_noise_prior": -0.000641847540603881,
+      "oracle_vs_paired_input": 0.00484561772971977,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 0.00012795752346697609,
+      "repeat_cd_relative": 0.004010793974237639
+    },
+    {
+      "index": 5,
+      "seed": 42,
+      "noise": 202,
+      "uid": "omni_brussels_sprout_002",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.03192203772948247,
+          "fscore_0p01": 0.19227704037712645,
+          "fscore_0p02": 0.38842201008368954,
+          "fscore_0p05": 0.7738484910868612
+        },
+        "input": {
+          "chamfer_l1": 0.03187942641349144,
+          "fscore_0p01": 0.19218341708542713,
+          "fscore_0p02": 0.390004681165702,
+          "fscore_0p05": 0.7741756353135313
+        },
+        "paired_input": {
+          "chamfer_l1": 0.031869229421798546,
+          "fscore_0p01": 0.19379480506277638,
+          "fscore_0p02": 0.39033394990955184,
+          "fscore_0p05": 0.7743826429492137
+        },
+        "oracle": {
+          "chamfer_l1": 0.03188890583550209,
+          "fscore_0p01": 0.19416642965972572,
+          "fscore_0p02": 0.3897806011737688,
+          "fscore_0p05": 0.7742927833137818
+        }
+      },
+      "guided_vs_same_noise_prior": 0.0013348557617822456,
+      "oracle_vs_paired_input": -0.0006174110281464218,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 1.019699169289151e-05,
+      "repeat_cd_relative": 0.0003198612032924194
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "noise": 101,
+      "uid": "omni_brussels_sprout_002",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.03037743745982273,
+          "fscore_0p01": 0.23385296169630643,
+          "fscore_0p02": 0.45832729485669416,
+          "fscore_0p05": 0.8076102315336162
+        },
+        "input": {
+          "chamfer_l1": 0.030377147983818763,
+          "fscore_0p01": 0.2335912389266915,
+          "fscore_0p02": 0.45794375742228427,
+          "fscore_0p05": 0.8077219139063834
+        },
+        "paired_input": {
+          "chamfer_l1": 0.030377147983818763,
+          "fscore_0p01": 0.2335912389266915,
+          "fscore_0p02": 0.45794375742228427,
+          "fscore_0p05": 0.8077219139063834
+        },
+        "oracle": {
+          "chamfer_l1": 0.030355791283035068,
+          "fscore_0p01": 0.23377186350808174,
+          "fscore_0p02": 0.45926657349964084,
+          "fscore_0p05": 0.8079581955147633
+        }
+      },
+      "guided_vs_same_noise_prior": 9.529309519567313e-06,
+      "oracle_vs_paired_input": 0.000703051543715406,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 0.0,
+      "repeat_cd_relative": 0.0
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "noise": 202,
+      "uid": "omni_brussels_sprout_002",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.030328747899578342,
+          "fscore_0p01": 0.23872558100582053,
+          "fscore_0p02": 0.46075764807984376,
+          "fscore_0p05": 0.8076933717750419
+        },
+        "input": {
+          "chamfer_l1": 0.03032382447885399,
+          "fscore_0p01": 0.23869888255989277,
+          "fscore_0p02": 0.4607823365803918,
+          "fscore_0p05": 0.807777123414785
+        },
+        "paired_input": {
+          "chamfer_l1": 0.03032382447885399,
+          "fscore_0p01": 0.23869888255989277,
+          "fscore_0p02": 0.4607823365803918,
+          "fscore_0p05": 0.807777123414785
+        },
+        "oracle": {
+          "chamfer_l1": 0.030327920751205106,
+          "fscore_0p01": 0.23836460325448752,
+          "fscore_0p02": 0.4600392725218374,
+          "fscore_0p05": 0.807821971817046
+        }
+      },
+      "guided_vs_same_noise_prior": 0.00016233511322833304,
+      "oracle_vs_paired_input": -0.00013508429169191438,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 0.0,
+      "repeat_cd_relative": 0.0
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "noise": 101,
+      "uid": "omni_carrot_009",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.006726081411614727,
+          "fscore_0p01": 0.8056416707397253,
+          "fscore_0p02": 0.9822845335640491,
+          "fscore_0p05": 1.0
+        },
+        "input": {
+          "chamfer_l1": 0.006736503163048973,
+          "fscore_0p01": 0.8057717980649962,
+          "fscore_0p02": 0.9818349792771968,
+          "fscore_0p05": 1.0
+        },
+        "paired_input": {
+          "chamfer_l1": 0.006732520523880812,
+          "fscore_0p01": 0.8061303990974125,
+          "fscore_0p02": 0.9823208867265825,
+          "fscore_0p05": 1.0
+        },
+        "oracle": {
+          "chamfer_l1": 0.006719926125016953,
+          "fscore_0p01": 0.8064817259625513,
+          "fscore_0p02": 0.981978865742155,
+          "fscore_0p05": 1.0
+        }
+      },
+      "guided_vs_same_noise_prior": -0.0015494536560693398,
+      "oracle_vs_paired_input": 0.0018706810947230752,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 3.982639168161571e-06,
+      "repeat_cd_relative": 0.0005912027459598208
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "noise": 202,
+      "uid": "omni_carrot_009",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.006777489315263403,
+          "fscore_0p01": 0.8029996162030987,
+          "fscore_0p02": 0.9822640106674266,
+          "fscore_0p05": 0.999969999099973
+        },
+        "input": {
+          "chamfer_l1": 0.0067899432846968855,
+          "fscore_0p01": 0.8013640238959354,
+          "fscore_0p02": 0.9815900962547236,
+          "fscore_0p05": 0.999979999599992
+        },
+        "paired_input": {
+          "chamfer_l1": 0.006775910097175849,
+          "fscore_0p01": 0.8026590888830786,
+          "fscore_0p02": 0.9821101914913112,
+          "fscore_0p05": 0.999969999099973
+        },
+        "oracle": {
+          "chamfer_l1": 0.006768513769038731,
+          "fscore_0p01": 0.8029761736446458,
+          "fscore_0p02": 0.9823111473007085,
+          "fscore_0p05": 0.999929995099657
+        }
+      },
+      "guided_vs_same_noise_prior": -0.0018375491061911324,
+      "oracle_vs_paired_input": 0.0010915623187210774,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 1.4033187521036126e-05,
+      "repeat_cd_relative": 0.002066760638879562
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "noise": 101,
+      "uid": "omni_carrot_009",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.008215373423040087,
+          "fscore_0p01": 0.729196434693178,
+          "fscore_0p02": 0.9132376015067233,
+          "fscore_0p05": 1.0
+        },
+        "input": {
+          "chamfer_l1": 0.00821009767668922,
+          "fscore_0p01": 0.7296181649238697,
+          "fscore_0p02": 0.9133883436429127,
+          "fscore_0p05": 1.0
+        },
+        "paired_input": {
+          "chamfer_l1": 0.008212646292874624,
+          "fscore_0p01": 0.7289328936321985,
+          "fscore_0p02": 0.9134374036608864,
+          "fscore_0p05": 1.0
+        },
+        "oracle": {
+          "chamfer_l1": 0.008212737650117808,
+          "fscore_0p01": 0.7291840280844177,
+          "fscore_0p02": 0.9134481782254091,
+          "fscore_0p05": 1.0
+        }
+      },
+      "guided_vs_same_noise_prior": 0.0006421797378158629,
+      "oracle_vs_paired_input": -1.11239714856451e-05,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 2.5486161854045702e-06,
+      "repeat_cd_relative": 0.00031042458759544475
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "noise": 202,
+      "uid": "omni_carrot_009",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.008187992883377985,
+          "fscore_0p01": 0.733333495323025,
+          "fscore_0p02": 0.9136476348711213,
+          "fscore_0p05": 1.0
+        },
+        "input": {
+          "chamfer_l1": 0.008186961503816865,
+          "fscore_0p01": 0.7336577775960529,
+          "fscore_0p02": 0.9130487460708615,
+          "fscore_0p05": 1.0
+        },
+        "paired_input": {
+          "chamfer_l1": 0.008184550341591407,
+          "fscore_0p01": 0.7335525490730644,
+          "fscore_0p02": 0.9133180339858976,
+          "fscore_0p05": 1.0
+        },
+        "oracle": {
+          "chamfer_l1": 0.008179303400456112,
+          "fscore_0p01": 0.7340719375578924,
+          "fscore_0p02": 0.9135076984378934,
+          "fscore_0p05": 1.0
+        }
+      },
+      "guided_vs_same_noise_prior": 0.00012596243985683306,
+      "oracle_vs_paired_input": 0.0006410787295951675,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 2.4111622254577997e-06,
+      "repeat_cd_relative": 0.00029451246647900877
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "noise": 101,
+      "uid": "omni_handbag_006",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.03814291611511216,
+          "fscore_0p01": 0.18620746125965226,
+          "fscore_0p02": 0.3504254627438974,
+          "fscore_0p05": 0.7058982933908284
+        },
+        "input": {
+          "chamfer_l1": 0.038155578233028106,
+          "fscore_0p01": 0.18606275397410255,
+          "fscore_0p02": 0.35053628392484343,
+          "fscore_0p05": 0.7064015542724534
+        },
+        "paired_input": {
+          "chamfer_l1": 0.038112371424682934,
+          "fscore_0p01": 0.18619356913859253,
+          "fscore_0p02": 0.35047815196214865,
+          "fscore_0p05": 0.7067663917354916
+        },
+        "oracle": {
+          "chamfer_l1": 0.038129752773524,
+          "fscore_0p01": 0.18576904320337198,
+          "fscore_0p02": 0.3503811175144073,
+          "fscore_0p05": 0.7064077339520495
+        }
+      },
+      "guided_vs_same_noise_prior": -0.00033196512499807925,
+      "oracle_vs_paired_input": -0.0004560552962549906,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 4.320680834517254e-05,
+      "repeat_cd_relative": 0.0011323851018924412
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "noise": 202,
+      "uid": "omni_handbag_006",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.037979343781419546,
+          "fscore_0p01": 0.18491374615629305,
+          "fscore_0p02": 0.3491778216713762,
+          "fscore_0p05": 0.7063769492087624
+        },
+        "input": {
+          "chamfer_l1": 0.037961511048235974,
+          "fscore_0p01": 0.18583181952350833,
+          "fscore_0p02": 0.34936575342465753,
+          "fscore_0p05": 0.7077549308374056
+        },
+        "paired_input": {
+          "chamfer_l1": 0.037985275477150096,
+          "fscore_0p01": 0.18475620927517772,
+          "fscore_0p02": 0.3489759238521837,
+          "fscore_0p05": 0.7077453413920628
+        },
+        "oracle": {
+          "chamfer_l1": 0.037890209464976156,
+          "fscore_0p01": 0.18536249272602234,
+          "fscore_0p02": 0.3496683894378384,
+          "fscore_0p05": 0.7067885775856113
+        }
+      },
+      "guided_vs_same_noise_prior": 0.0004695376857010358,
+      "oracle_vs_paired_input": 0.0025027069299820358,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 2.3764428914122004e-05,
+      "repeat_cd_relative": 0.0006260137770576524
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "noise": 101,
+      "uid": "omni_handbag_006",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.0457991370442995,
+          "fscore_0p01": 0.15274383232755823,
+          "fscore_0p02": 0.33556710904106357,
+          "fscore_0p05": 0.7284058232714278
+        },
+        "input": {
+          "chamfer_l1": 0.04577297229625929,
+          "fscore_0p01": 0.15450577663671375,
+          "fscore_0p02": 0.3370654856874707,
+          "fscore_0p05": 0.7291621193307093
+        },
+        "paired_input": {
+          "chamfer_l1": 0.04578233494431835,
+          "fscore_0p01": 0.15329583123018184,
+          "fscore_0p02": 0.33753049849075406,
+          "fscore_0p05": 0.7295042316631533
+        },
+        "oracle": {
+          "chamfer_l1": 0.0458444989600651,
+          "fscore_0p01": 0.15636491897044805,
+          "fscore_0p02": 0.3367688323740162,
+          "fscore_0p05": 0.7290897938757844
+        }
+      },
+      "guided_vs_same_noise_prior": 0.0005712934725145646,
+      "oracle_vs_paired_input": -0.001357816629980975,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 9.362648059056677e-06,
+      "repeat_cd_relative": 0.00020454533733265607
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "noise": 202,
+      "uid": "omni_handbag_006",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.04680166221342685,
+          "fscore_0p01": 0.15035632618025752,
+          "fscore_0p02": 0.33186505286356727,
+          "fscore_0p05": 0.7263493161255264
+        },
+        "input": {
+          "chamfer_l1": 0.046689107443105865,
+          "fscore_0p01": 0.1499078188319428,
+          "fscore_0p02": 0.33150742666348676,
+          "fscore_0p05": 0.7266539399122984
+        },
+        "paired_input": {
+          "chamfer_l1": 0.04667493057650004,
+          "fscore_0p01": 0.1493997846460618,
+          "fscore_0p02": 0.3319424781184877,
+          "fscore_0p05": 0.7265421753661387
+        },
+        "oracle": {
+          "chamfer_l1": 0.0467804074932851,
+          "fscore_0p01": 0.1517579469721768,
+          "fscore_0p02": 0.3315940685543964,
+          "fscore_0p05": 0.726090857142857
+        }
+      },
+      "guided_vs_same_noise_prior": 0.002404931042998249,
+      "oracle_vs_paired_input": -0.0022598194680158857,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 1.4176866605826455e-05,
+      "repeat_cd_relative": 0.0003036439842655381
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "noise": 101,
+      "uid": "omni_kite_004",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.006902982181347004,
+          "fscore_0p01": 0.797983059775079,
+          "fscore_0p02": 0.9573181210014924,
+          "fscore_0p05": 1.0
+        },
+        "input": {
+          "chamfer_l1": 0.0068299904163165405,
+          "fscore_0p01": 0.8014535920351012,
+          "fscore_0p02": 0.957009270472293,
+          "fscore_0p05": 0.999989999899999
+        },
+        "paired_input": {
+          "chamfer_l1": 0.006828507129292624,
+          "fscore_0p01": 0.8018721449865845,
+          "fscore_0p02": 0.957389823532481,
+          "fscore_0p05": 1.0
+        },
+        "oracle": {
+          "chamfer_l1": 0.006831087777725347,
+          "fscore_0p01": 0.8022087627752182,
+          "fscore_0p02": 0.9568063862001274,
+          "fscore_0p05": 1.0
+        }
+      },
+      "guided_vs_same_noise_prior": 0.010573946609292855,
+      "oracle_vs_paired_input": -0.0003779227851506891,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 1.4832870239168267e-06,
+      "repeat_cd_relative": 0.00021717263619774934
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "noise": 202,
+      "uid": "omni_kite_004",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.00674923669033395,
+          "fscore_0p01": 0.8078505467189465,
+          "fscore_0p02": 0.9596608696557613,
+          "fscore_0p05": 0.9997899558907372
+        },
+        "input": {
+          "chamfer_l1": 0.006695559591138444,
+          "fscore_0p01": 0.8085972677662943,
+          "fscore_0p02": 0.9593808323959505,
+          "fscore_0p05": 0.9997599423861727
+        },
+        "paired_input": {
+          "chamfer_l1": 0.006700962147612729,
+          "fscore_0p01": 0.8095526900879837,
+          "fscore_0p02": 0.9590721773647418,
+          "fscore_0p05": 0.999819967594167
+        },
+        "oracle": {
+          "chamfer_l1": 0.006670228639961246,
+          "fscore_0p01": 0.8099833068890447,
+          "fscore_0p02": 0.9592501771893457,
+          "fscore_0p05": 0.9997599423861727
+        }
+      },
+      "guided_vs_same_noise_prior": 0.007953062199223345,
+      "oracle_vs_paired_input": 0.004586432063704794,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 5.402556474284892e-06,
+      "repeat_cd_relative": 0.0008068864746473411
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "noise": 101,
+      "uid": "omni_kite_004",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.006358975038962593,
+          "fscore_0p01": 0.8238721885799513,
+          "fscore_0p02": 0.9730642817358778,
+          "fscore_0p05": 0.999969999099973
+        },
+        "input": {
+          "chamfer_l1": 0.006318444582822219,
+          "fscore_0p01": 0.8255792850227516,
+          "fscore_0p02": 0.9731597332511303,
+          "fscore_0p05": 0.999969999099973
+        },
+        "paired_input": {
+          "chamfer_l1": 0.006319062401088534,
+          "fscore_0p01": 0.8254754871348001,
+          "fscore_0p02": 0.9734768674500781,
+          "fscore_0p05": 0.999969999099973
+        },
+        "oracle": {
+          "chamfer_l1": 0.006284794661280836,
+          "fscore_0p01": 0.8250951261684507,
+          "fscore_0p02": 0.9739656997946612,
+          "fscore_0p05": 0.999969999099973
+        }
+      },
+      "guided_vs_same_noise_prior": 0.006373740405023877,
+      "oracle_vs_paired_input": 0.005422915241633769,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 6.17818266315448e-07,
+      "repeat_cd_relative": 9.778011949255573e-05
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "noise": 202,
+      "uid": "omni_kite_004",
+      "surface": {
+        "prior": {
+          "chamfer_l1": 0.0064599099192364845,
+          "fscore_0p01": 0.8119656248000985,
+          "fscore_0p02": 0.977998527607362,
+          "fscore_0p05": 0.9999599983999361
+        },
+        "input": {
+          "chamfer_l1": 0.006390202797284463,
+          "fscore_0p01": 0.8137418197888534,
+          "fscore_0p02": 0.978178936392075,
+          "fscore_0p05": 0.9999599983999361
+        },
+        "paired_input": {
+          "chamfer_l1": 0.006406257275261251,
+          "fscore_0p01": 0.8130057922799087,
+          "fscore_0p02": 0.9779687851365584,
+          "fscore_0p05": 0.9999599983999361
+        },
+        "oracle": {
+          "chamfer_l1": 0.006371742909761264,
+          "fscore_0p01": 0.8149175821616387,
+          "fscore_0p02": 0.9779586240746043,
+          "fscore_0p05": 0.9999599983999361
+        }
+      },
+      "guided_vs_same_noise_prior": 0.010790726623671051,
+      "oracle_vs_paired_input": 0.005387602154735334,
+      "repeat_comparable": true,
+      "repeat_cd_absolute": 1.605447797678808e-05,
+      "repeat_cd_relative": 0.00251235813417541
+    }
+  ],
+  "guided_vs_same_noise_prior": {
+    "mean": 0.0023157053107978366,
+    "by_object": {
+      "omni_brussels_sprout_002": 0.00021621816098156625,
+      "omni_carrot_009": -0.0006547151461469441,
+      "omni_handbag_006": 0.0007784492690539425,
+      "omni_kite_004": 0.008922868959302782
+    }
+  },
+  "oracle_vs_paired_input": {
+    "mean": 0.0013647758959877442,
+    "by_object": {
+      "omni_brussels_sprout_002": 0.0011990434883992099,
+      "omni_carrot_009": 0.0008980495428884187,
+      "omni_handbag_006": -0.00039274611606745385,
+      "omni_kite_004": 0.003754756668730802
+    }
+  },
+  "same_target_repeat": {
+    "mean": 0.0008433963238440774,
+    "by_object": {
+      "omni_brussels_sprout_002": 0.0010826637943825146,
+      "omni_carrot_009": 0.0008157251097284591,
+      "omni_handbag_006": 0.0005666470501370719,
+      "omni_kite_004": 0.000908549341128264
+    }
+  },
+  "OBJ_replay_max_cd_difference": 1.5601289727468215e-07,
+  "OBJ_replay_max_fscore_difference": 2.854332195834086e-05,
+  "GT_used": true,
+  "diagnostic_only": true,
+  "selection_changed": false,
+  "seconds": 332.0101843755692
+}

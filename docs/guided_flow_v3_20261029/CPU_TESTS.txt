@@ -1,0 +1,27 @@
+test_absent_child_gets_route_gradient_in_correct_native_channel (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_actual_input_record_never_reads_diagnostic_target (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_budget_prefix_is_selected_from_cost_without_quality_or_GT (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_deleting_all_fine_surface_cells_is_penalized (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_deleting_exterior_anchors_is_penalized (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_deleting_parent_cannot_lower_frozen_routing_objective (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_depth_query_denominator_is_fixed_when_mesh_hit_disappears (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_euler_correction_matches_upstream_velocity_conversion (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_field_reference_has_zero_gradient_at_identity (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_free_space_has_fixed_sample_count_and_rewards_removing_false_surface (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_guide_calls_and_exterior_are_exact (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_insufficient_budget_bank_is_explicit (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_large_half_precision_routing_reduction_stays_finite (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_last_euler_correction_retains_sigma_min_factor (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_match_does_not_alias_missing_cell_to_existing_row (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_missing_surface_loss_supplies_field_gradient (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_no_guide_matches_v2_sampler_exactly (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_out_of_bounds_query_does_not_alias_packed_spatial_key (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_query_cap_is_frozen_and_view_balanced (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_soft_edge_event_is_probability_of_any_crossing (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_soft_edge_event_is_stable_with_no_hard_surface (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+test_unreachable_coarse_parent_is_reported_not_fabricated (trellis2_geometry_repair.experiments.guided_flow.test_guidance.GuidanceTests) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.508s
+
+OK

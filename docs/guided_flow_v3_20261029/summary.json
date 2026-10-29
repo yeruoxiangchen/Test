@@ -1,0 +1,5033 @@
+{
+  "time": "2026-10-29T08:11:54+00:00",
+  "cases": 8,
+  "complete": true,
+  "arms": {
+    "prior": {
+      "diagnostic_only": false,
+      "accepted": 1,
+      "endpoints": {
+        "accepted": {
+          "cd_gain": {
+            "mean": 0.0010112420995736365,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.004044968398294546,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": -0.00019792725399308056,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0007917090159723222,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0004339783501405778,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0017359134005623111,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "bad_error_gain": {
+            "mean": -0.00017046040473971,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.00068184161895884,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "good_error_gain": {
+            "mean": -0.0238666176881667,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0954664707526668,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          }
+        },
+        "candidate": {
+          "cd_gain": {
+            "mean": 0.021378007138614784,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.006018967961205534,
+              "omni_carrot_009": 0.005040551163001983,
+              "omni_handbag_006": 0.0011174613271261566,
+              "omni_kite_004": 0.07333504810312547
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": 0.011254505033574735,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.003902978279127625,
+              "omni_carrot_009": 0.0011860873936148653,
+              "omni_handbag_006": -0.00135966160990722,
+              "omni_kite_004": 0.04128861607146367
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0014414752959414773,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0026712080287194795,
+              "omni_carrot_009": -0.00030465904457249726,
+              "omni_handbag_006": 0.002672654806600422,
+              "omni_kite_004": 0.000726697393018505
+            }
+          },
+          "bad_error_gain": {
+            "mean": 0.032376048635859314,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.00038005840193235265,
+              "omni_carrot_009": 0.014215675636182696,
+              "omni_handbag_006": -0.0033587574656339944,
+              "omni_kite_004": 0.11902733477482091
+            }
+          },
+          "good_error_gain": {
+            "mean": -1.3623161680469082,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.5049663304332023,
+              "omni_carrot_009": -0.2920427311083161,
+              "omni_handbag_006": -2.2800454961266032,
+              "omni_kite_004": -2.372210114519511
+            }
+          }
+        }
+      }
+    },
+    "budget_prior": {
+      "diagnostic_only": false,
+      "accepted": 1,
+      "endpoints": {
+        "accepted": {
+          "cd_gain": {
+            "mean": 0.0010112420995736365,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.004044968398294546,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": -0.00019792725399308056,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0007917090159723222,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0004339783501405778,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0017359134005623111,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "bad_error_gain": {
+            "mean": -0.00017046040473971,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.00068184161895884,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "good_error_gain": {
+            "mean": -0.0238666176881667,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0954664707526668,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          }
+        },
+        "candidate": {
+          "cd_gain": {
+            "mean": 0.017640446272396193,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.005137206819351035,
+              "omni_carrot_009": 0.005040551163001983,
+              "omni_handbag_006": -0.005270841487853922,
+              "omni_kite_004": 0.06565486859508568
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": 0.009721431927174132,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.003312700924700554,
+              "omni_carrot_009": 0.0011860873936148653,
+              "omni_handbag_006": 0.00022584248479716462,
+              "omni_kite_004": 0.03416109690558394
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0008627547090208007,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0013518428821472361,
+              "omni_carrot_009": -0.00030465904457249726,
+              "omni_handbag_006": 0.0003088634266927015,
+              "omni_kite_004": 0.0020949715718157624
+            }
+          },
+          "bad_error_gain": {
+            "mean": 0.03237183827897008,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.00047116736393723683,
+              "omni_carrot_009": 0.014215675636182696,
+              "omni_handbag_006": -0.0018199240661059485,
+              "omni_kite_004": 0.11756276890974082
+            }
+          },
+          "good_error_gain": {
+            "mean": -1.4948464081497872,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.37406647678292476,
+              "omni_carrot_009": -0.2920427311083161,
+              "omni_handbag_006": -2.944845337370756,
+              "omni_kite_004": -2.368431087337152
+            }
+          }
+        }
+      }
+    },
+    "input": {
+      "diagnostic_only": false,
+      "accepted": 1,
+      "endpoints": {
+        "accepted": {
+          "cd_gain": {
+            "mean": 0.0011772726385057618,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.004709090554023047,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": -0.0002076988796595354,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0008307955186381416,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0006303677067115085,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.002521470826846034,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "bad_error_gain": {
+            "mean": -0.00016785370919424752,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0006714148367769901,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "good_error_gain": {
+            "mean": -0.023006691232724374,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0920267649308975,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          }
+        },
+        "candidate": {
+          "cd_gain": {
+            "mean": 0.023088379565476286,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.006764098042083975,
+              "omni_carrot_009": 0.004345333265344278,
+              "omni_handbag_006": 0.0012433397149464482,
+              "omni_kite_004": 0.08000074723953045
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": 0.011803320479221991,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0038553836373325934,
+              "omni_carrot_009": 0.0014080483188417814,
+              "omni_handbag_006": -0.0005547104467916314,
+              "omni_kite_004": 0.04250456040750522
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.00169387158231276,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0034691097052772235,
+              "omni_carrot_009": -0.0008288805881285777,
+              "omni_handbag_006": 0.003500852691363021,
+              "omni_kite_004": 0.0006344045207393734
+            }
+          },
+          "bad_error_gain": {
+            "mean": 0.03246904442397921,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0002737567441164971,
+              "omni_carrot_009": 0.013051303103017626,
+              "omni_handbag_006": -0.0033062237347470016,
+              "omni_kite_004": 0.1204048550717627
+            }
+          },
+          "good_error_gain": {
+            "mean": -1.3612766930755777,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.4766336037073118,
+              "omni_carrot_009": -0.32667533627377354,
+              "omni_handbag_006": -2.282969902557186,
+              "omni_kite_004": -2.3588279297640398
+            }
+          }
+        }
+      }
+    },
+    "paired_input": {
+      "diagnostic_only": true,
+      "accepted": 1,
+      "endpoints": {
+        "accepted": {
+          "cd_gain": {
+            "mean": 0.001216511071723647,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.004866044286894588,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": -7.242006746857599e-06,
+            "by_object": {
+              "omni_brussels_sprout_002": -2.8968026987430395e-05,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0006729708283733649,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0026918833134934594,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "bad_error_gain": {
+            "mean": -0.00016848154135306318,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0006739261654122527,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "good_error_gain": {
+            "mean": -0.02510373115621457,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.10041492462485828,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          }
+        },
+        "candidate": {
+          "cd_gain": {
+            "mean": 0.023242255640262666,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.006921051774955516,
+              "omni_carrot_009": 0.004778476391233844,
+              "omni_handbag_006": 0.0017017041027599916,
+              "omni_kite_004": 0.07956779029210131
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": 0.01200792752694698,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.004657211128983305,
+              "omni_carrot_009": 0.001534734573555685,
+              "omni_handbag_006": -0.0010906082191252803,
+              "omni_kite_004": 0.04293037262437421
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0018781773842131907,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.003639522191924649,
+              "omni_carrot_009": -0.0004461509002521291,
+              "omni_handbag_006": 0.003680694140571289,
+              "omni_kite_004": 0.0006386441046089542
+            }
+          },
+          "bad_error_gain": {
+            "mean": 0.032680939133846836,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.0002762680727517597,
+              "omni_carrot_009": 0.01302839953190035,
+              "omni_handbag_006": -0.0032155821708693085,
+              "omni_kite_004": 0.12118720724710805
+            }
+          },
+          "good_error_gain": {
+            "mean": -1.356352714859305,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.48502176340127257,
+              "omni_carrot_009": -0.3313197395867685,
+              "omni_handbag_006": -2.2544265372499654,
+              "omni_kite_004": -2.3546428191992135
+            }
+          }
+        }
+      }
+    },
+    "oracle": {
+      "diagnostic_only": true,
+      "accepted": 0,
+      "endpoints": {
+        "accepted": {
+          "cd_gain": {
+            "mean": 0.0,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": 0.0,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "bad_error_gain": {
+            "mean": 0.0,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          },
+          "good_error_gain": {
+            "mean": 0.0,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0,
+              "omni_carrot_009": 0.0,
+              "omni_handbag_006": 0.0,
+              "omni_kite_004": 0.0
+            }
+          }
+        },
+        "candidate": {
+          "cd_gain": {
+            "mean": 0.02521647068362799,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.0067483494494881705,
+              "omni_carrot_009": 0.006033977620800608,
+              "omni_handbag_006": 0.003921738171910778,
+              "omni_kite_004": 0.0841618174923124
+            }
+          },
+          "fscore_0p01_delta": {
+            "mean": 0.012470764113321351,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.004943337879272758,
+              "omni_carrot_009": 0.0019558205875598866,
+              "omni_handbag_006": 2.8397444722730314e-05,
+              "omni_kite_004": 0.04295550054173003
+            }
+          },
+          "fscore_0p02_delta": {
+            "mean": 0.0015124533997214681,
+            "by_object": {
+              "omni_brussels_sprout_002": 0.002713806172942951,
+              "omni_carrot_009": -0.0005274611721335365,
+              "omni_handbag_006": 0.00289140840887403,
+              "omni_kite_004": 0.0009720601892024283
+            }
+          },
+          "bad_error_gain": {
+            "mean": 0.03357827604288154,
+            "by_object": {
+              "omni_brussels_sprout_002": -5.449089598553189e-05,
+              "omni_carrot_009": 0.014315111564937137,
+              "omni_handbag_006": -0.003883452420554579,
+              "omni_kite_004": 0.12393593592312915
+            }
+          },
+          "good_error_gain": {
+            "mean": -1.3273683778019654,
+            "by_object": {
+              "omni_brussels_sprout_002": -0.4874443354106272,
+              "omni_carrot_009": -0.3049628428657879,
+              "omni_handbag_006": -2.2094922948617572,
+              "omni_kite_004": -2.3075740380696894
+            }
+          }
+        }
+      }
+    }
+  },
+  "records": [
+    {
+      "time": "2026-10-29T07:41:16+00:00",
+      "index": 5,
+      "seed": 42,
+      "uid": "omni_brussels_sprout_002",
+      "baseline": {
+        "surface": {
+          "chamfer_l1": 0.032182458009228435,
+          "fscore_0p01": 0.19385274111675124,
+          "fscore_0p02": 0.3849501832825649,
+          "fscore_0p05": 0.7700949483840847
+        },
+        "novel_clipped_error": {
+          "all": 0.05662192404270172,
+          "bad": 0.05859407037496567,
+          "good": 0.002000687178224325
+        },
+        "novel_unclipped": {
+          "fixed_queries": 98222,
+          "hits": 98222,
+          "common_hit_mae": 0.05543052777647972,
+          "fixed_unclipped_depth_with_missing_penalty": 0.05543052777647972,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "v2": {
+        "surface": {
+          "chamfer_l1": 0.031922103957974894,
+          "fscore_0p01": 0.1922693230848066,
+          "fscore_0p02": 0.38842201008368954,
+          "fscore_0p05": 0.7738484910868612
+        },
+        "novel_clipped_error": {
+          "all": 0.056712351739406586,
+          "bad": 0.05867397412657738,
+          "good": 0.002382684266194701
+        },
+        "novel_unclipped": {
+          "fixed_queries": 98222,
+          "hits": 98050,
+          "common_hit_mae": 0.05551091954112053,
+          "fixed_unclipped_depth_with_missing_penalty": 0.05558882653713226,
+          "lost_fraction": 0.0017511352198198438,
+          "missing_penalty": 0.1
+        }
+      },
+      "endpoints": {
+        "prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.031922103957974894,
+              "fscore_0p01": 0.1922693230848066,
+              "fscore_0p02": 0.38842201008368954,
+              "fscore_0p05": 0.7738484910868612
+            },
+            "novel_clipped_error": {
+              "all": 0.056712351739406586,
+              "bad": 0.05867397412657738,
+              "good": 0.002382684266194701
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98050,
+              "common_hit_mae": 0.05551091954112053,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05558882653713226,
+              "lost_fraction": 0.0017511352198198438,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.031922103957974894,
+              "fscore_0p01": 0.1922693230848066,
+              "fscore_0p02": 0.38842201008368954,
+              "fscore_0p05": 0.7738484910868612
+            },
+            "novel_clipped_error": {
+              "all": 0.056712351739406586,
+              "bad": 0.05867397412657738,
+              "good": 0.002382684266194701
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98050,
+              "common_hit_mae": 0.05551091954112053,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05558882653713226,
+              "lost_fraction": 0.0017511352198198438,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.031922103957974894,
+              "fscore_0p01": 0.1922693230848066,
+              "fscore_0p02": 0.38842201008368954,
+              "fscore_0p05": 0.7738484910868612
+            },
+            "novel_clipped_error": {
+              "all": 0.056712351739406586,
+              "bad": 0.05867397412657738,
+              "good": 0.002382684266194701
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98050,
+              "common_hit_mae": 0.05551091954112053,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05558882653713226,
+              "lost_fraction": 0.0017511352198198438,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.031922103957974894,
+              "fscore_0p01": 0.1922693230848066,
+              "fscore_0p02": 0.38842201008368954,
+              "fscore_0p05": 0.7738484910868612
+            },
+            "novel_clipped_error": {
+              "all": 0.056712351739406586,
+              "bad": 0.05867397412657738,
+              "good": 0.002382684266194701
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98050,
+              "common_hit_mae": 0.05551091954112053,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05558882653713226,
+              "lost_fraction": 0.0017511352198198438,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03187935779119543,
+              "fscore_0p01": 0.19219115007947496,
+              "fscore_0p02": 0.389993124936257,
+              "fscore_0p05": 0.7741756353135313
+            },
+            "novel_clipped_error": {
+              "all": 0.05671069771051407,
+              "bad": 0.05867275223135948,
+              "good": 0.0023689207155257463
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98052,
+              "common_hit_mae": 0.05550460144877434,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05558161437511444,
+              "lost_fraction": 0.0017307731322944164,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.03187935779119543,
+              "fscore_0p01": 0.19219115007947496,
+              "fscore_0p02": 0.389993124936257,
+              "fscore_0p05": 0.7741756353135313
+            },
+            "novel_clipped_error": {
+              "all": 0.05671069771051407,
+              "bad": 0.05867275223135948,
+              "good": 0.0023689207155257463
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98052,
+              "common_hit_mae": 0.05550460144877434,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05558161437511444,
+              "lost_fraction": 0.0017307731322944164,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "paired_input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03186925547736037,
+              "fscore_0p01": 0.19379480506277638,
+              "fscore_0p02": 0.39033394990955184,
+              "fscore_0p05": 0.7743826429492137
+            },
+            "novel_clipped_error": {
+              "all": 0.05671215057373047,
+              "bad": 0.05867304652929306,
+              "good": 0.0024024848826229572
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98052,
+              "common_hit_mae": 0.055511221289634705,
+              "fixed_unclipped_depth_with_missing_penalty": 0.055588219314813614,
+              "lost_fraction": 0.0017307731322944164,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.03186925547736037,
+              "fscore_0p01": 0.19379480506277638,
+              "fscore_0p02": 0.39033394990955184,
+              "fscore_0p05": 0.7743826429492137
+            },
+            "novel_clipped_error": {
+              "all": 0.05671215057373047,
+              "bad": 0.05867304652929306,
+              "good": 0.0024024848826229572
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98052,
+              "common_hit_mae": 0.055511221289634705,
+              "fixed_unclipped_depth_with_missing_penalty": 0.055588219314813614,
+              "lost_fraction": 0.0017307731322944164,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "oracle": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.032182458009228435,
+              "fscore_0p01": 0.19385274111675124,
+              "fscore_0p02": 0.3849501832825649,
+              "fscore_0p05": 0.7700949483840847
+            },
+            "novel_clipped_error": {
+              "all": 0.05662192404270172,
+              "bad": 0.05859407037496567,
+              "good": 0.002000687178224325
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98222,
+              "common_hit_mae": 0.05543052777647972,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05543052777647972,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.031876045020539714,
+              "fscore_0p01": 0.19471102003642987,
+              "fscore_0p02": 0.38922558193014284,
+              "fscore_0p05": 0.7749260344205698
+            },
+            "novel_clipped_error": {
+              "all": 0.05670082941651344,
+              "bad": 0.05865853279829025,
+              "good": 0.0024795925710350275
+            },
+            "novel_unclipped": {
+              "fixed_queries": 98222,
+              "hits": 98052,
+              "common_hit_mae": 0.05550188198685646,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05557889863848686,
+              "lost_fraction": 0.0017307731322944164,
+              "missing_penalty": 0.1
+            }
+          }
+        }
+      },
+      "selections": {
+        "prior": {
+          "accepted_edit": true,
+          "candidates": 2,
+          "accepted": {
+            "name": "prior_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/prior_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2107854,
+              "composite_cells": 2106877,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          },
+          "candidate": {
+            "name": "prior_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/prior_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2107854,
+              "composite_cells": 2106877,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted_edit": true,
+          "candidates": 4,
+          "accepted": {
+            "name": "prior_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/prior_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2107854,
+              "composite_cells": 2106877,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          },
+          "candidate": {
+            "name": "prior_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/prior_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/prior_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2107854,
+              "composite_cells": 2106877,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "input": {
+          "accepted_edit": true,
+          "candidates": 2,
+          "accepted": {
+            "name": "input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2108288,
+              "composite_cells": 2107311,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          },
+          "candidate": {
+            "name": "input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2108288,
+              "composite_cells": 2107311,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "paired_input": {
+          "accepted_edit": true,
+          "candidates": 2,
+          "accepted": {
+            "name": "paired_input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/paired_input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/paired_input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/paired_input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/paired_input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2108294,
+              "composite_cells": 2107318,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          },
+          "candidate": {
+            "name": "paired_input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/paired_input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/paired_input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/paired_input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/paired_input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2108294,
+              "composite_cells": 2107318,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "oracle": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/005/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "oracle_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/oracle_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/candidates/oracle_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/oracle_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/42/exports/oracle_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 1804547,
+              "native_candidate_cells": 2104354,
+              "composite_cells": 2103834,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        }
+      },
+      "budget": {
+        "input_seconds": 57.305797604843974,
+        "prior_seconds": 65.66356251016259,
+        "prior_candidates": 4,
+        "sufficient": true,
+        "ratio": 1.1458450148962267,
+        "GT_used": false
+      },
+      "domains": {
+        "input": {
+          "arm": "input",
+          "diagnostic_only": false,
+          "gt_used": false,
+          "target_queries": 709,
+          "surface_queries": 426,
+          "query_ids_sha256": "af5444b67021e2191e0ec8ad5c786e16430b296709e95bcb7e22e34f50cdaaaf",
+          "target_outside_envelope": 71,
+          "protected_pixels": 96584,
+          "domain": {
+            "global_verified_pixels": 789,
+            "local_verified_pixels": 709,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "paired_input": {
+          "arm": "paired_input",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 709,
+          "surface_queries": 426,
+          "query_ids_sha256": "af5444b67021e2191e0ec8ad5c786e16430b296709e95bcb7e22e34f50cdaaaf",
+          "target_outside_envelope": 71,
+          "protected_pixels": 96584,
+          "domain": {
+            "global_verified_pixels": 789,
+            "local_verified_pixels": 709,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "oracle": {
+          "arm": "oracle",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 709,
+          "surface_queries": 426,
+          "query_ids_sha256": "af5444b67021e2191e0ec8ad5c786e16430b296709e95bcb7e22e34f50cdaaaf",
+          "target_outside_envelope": 73,
+          "protected_pixels": 96584,
+          "domain": {
+            "global_verified_pixels": 789,
+            "local_verified_pixels": 709,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        }
+      },
+      "GT_used_for_method": false,
+      "diagnostic_arms": [
+        "paired_input",
+        "oracle"
+      ],
+      "base_cd_replay_error": 0.0,
+      "figure": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/005_42.jpg"
+    },
+    {
+      "time": "2026-10-29T07:50:58+00:00",
+      "index": 5,
+      "seed": 43,
+      "uid": "omni_brussels_sprout_002",
+      "baseline": {
+        "surface": {
+          "chamfer_l1": 0.03044897192917579,
+          "fscore_0p01": 0.22933620641562064,
+          "fscore_0p02": 0.4588870588235294,
+          "fscore_0p05": 0.8067750027871025
+        },
+        "novel_clipped_error": {
+          "all": 0.05104855075478554,
+          "bad": 0.053543224930763245,
+          "good": 0.0020077405497431755
+        },
+        "novel_unclipped": {
+          "fixed_queries": 103004,
+          "hits": 103004,
+          "common_hit_mae": 0.04968873783946037,
+          "fixed_unclipped_depth_with_missing_penalty": 0.04968873783946037,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "v2": {
+        "surface": {
+          "chamfer_l1": 0.030444241731322496,
+          "fscore_0p01": 0.22929703748910202,
+          "fscore_0p02": 0.45842706911216274,
+          "fscore_0p05": 0.806511343782913
+        },
+        "novel_clipped_error": {
+          "all": 0.05103502795100212,
+          "bad": 0.05351759120821953,
+          "good": 0.0022321688011288643
+        },
+        "novel_unclipped": {
+          "fixed_queries": 103004,
+          "hits": 102973,
+          "common_hit_mae": 0.049610685557127,
+          "fixed_unclipped_depth_with_missing_penalty": 0.04962585121393204,
+          "lost_fraction": 0.00030095918918959796,
+          "missing_penalty": 0.1
+        }
+      },
+      "endpoints": {
+        "prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03044897192917579,
+              "fscore_0p01": 0.22933620641562064,
+              "fscore_0p02": 0.4588870588235294,
+              "fscore_0p05": 0.8067750027871025
+            },
+            "novel_clipped_error": {
+              "all": 0.05104855075478554,
+              "bad": 0.053543224930763245,
+              "good": 0.0020077405497431755
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 103004,
+              "common_hit_mae": 0.04968873783946037,
+              "fixed_unclipped_depth_with_missing_penalty": 0.04968873783946037,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.030328759414617226,
+              "fscore_0p01": 0.23872558100582053,
+              "fscore_0p02": 0.46075764807984376,
+              "fscore_0p05": 0.8076933717750419
+            },
+            "novel_clipped_error": {
+              "all": 0.05109740048646927,
+              "bad": 0.05351090803742409,
+              "good": 0.0036520794965326786
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 102963,
+              "common_hit_mae": 0.051474858075380325,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05149417743086815,
+              "lost_fraction": 0.0003980427864007652,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03044897192917579,
+              "fscore_0p01": 0.22933620641562064,
+              "fscore_0p02": 0.4588870588235294,
+              "fscore_0p05": 0.8067750027871025
+            },
+            "novel_clipped_error": {
+              "all": 0.05104855075478554,
+              "bad": 0.053543224930763245,
+              "good": 0.0020077405497431755
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 103004,
+              "common_hit_mae": 0.04968873783946037,
+              "fixed_unclipped_depth_with_missing_penalty": 0.04968873783946037,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.030382456855130358,
+              "fscore_0p01": 0.2375450262969664,
+              "fscore_0p02": 0.4581189177866993,
+              "fscore_0p05": 0.806718382637134
+            },
+            "novel_clipped_error": {
+              "all": 0.05108124017715454,
+              "bad": 0.05352066457271576,
+              "good": 0.00312645360827446
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 102958,
+              "common_hit_mae": 0.05129988491535187,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05132162943482399,
+              "lost_fraction": 0.000446584599558264,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03044897192917579,
+              "fscore_0p01": 0.22933620641562064,
+              "fscore_0p02": 0.4588870588235294,
+              "fscore_0p05": 0.8067750027871025
+            },
+            "novel_clipped_error": {
+              "all": 0.05104855075478554,
+              "bad": 0.053543224930763245,
+              "good": 0.0020077405497431755
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 103004,
+              "common_hit_mae": 0.04968873783946037,
+              "fixed_unclipped_depth_with_missing_penalty": 0.04968873783946037,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.030323826198539364,
+              "fscore_0p01": 0.2387085647275621,
+              "fscore_0p02": 0.4607823365803918,
+              "fscore_0p05": 0.807777123414785
+            },
+            "novel_clipped_error": {
+              "all": 0.051082793623209,
+              "bad": 0.053500641137361526,
+              "good": 0.0035521220415830612
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 102962,
+              "common_hit_mae": 0.05143175646662712,
+              "fixed_unclipped_depth_with_missing_penalty": 0.051451560109853745,
+              "lost_fraction": 0.00040775115485303104,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "paired_input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03044897192917579,
+              "fscore_0p01": 0.22933620641562064,
+              "fscore_0p02": 0.4588870588235294,
+              "fscore_0p05": 0.8067750027871025
+            },
+            "novel_clipped_error": {
+              "all": 0.05104855075478554,
+              "bad": 0.053543224930763245,
+              "good": 0.0020077405497431755
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 103004,
+              "common_hit_mae": 0.04968873783946037,
+              "fixed_unclipped_depth_with_missing_penalty": 0.04968873783946037,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.030323826198539364,
+              "fscore_0p01": 0.2387085647275621,
+              "fscore_0p02": 0.4607823365803918,
+              "fscore_0p05": 0.807777123414785
+            },
+            "novel_clipped_error": {
+              "all": 0.051082793623209,
+              "bad": 0.053500641137361526,
+              "good": 0.0035521220415830612
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 102962,
+              "common_hit_mae": 0.05143175646662712,
+              "fixed_unclipped_depth_with_missing_penalty": 0.051451560109853745,
+              "lost_fraction": 0.00040775115485303104,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "oracle": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03044897192917579,
+              "fscore_0p01": 0.22933620641562064,
+              "fscore_0p02": 0.4588870588235294,
+              "fscore_0p05": 0.8067750027871025
+            },
+            "novel_clipped_error": {
+              "all": 0.05104855075478554,
+              "bad": 0.053543224930763245,
+              "good": 0.0020077405497431755
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 103004,
+              "common_hit_mae": 0.04968873783946037,
+              "fixed_unclipped_depth_with_missing_penalty": 0.04968873783946037,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.0303279195859782,
+              "fscore_0p01": 0.23836460325448752,
+              "fscore_0p02": 0.4600392725218374,
+              "fscore_0p05": 0.807821971817046
+            },
+            "novel_clipped_error": {
+              "all": 0.05106953904032707,
+              "bad": 0.053490154445171356,
+              "good": 0.0034844703041017056
+            },
+            "novel_unclipped": {
+              "fixed_queries": 103004,
+              "hits": 102964,
+              "common_hit_mae": 0.05138703063130379,
+              "fixed_unclipped_depth_with_missing_penalty": 0.05140591040253639,
+              "lost_fraction": 0.0003883344470523298,
+              "missing_penalty": 0.1
+            }
+          }
+        }
+      },
+      "selections": {
+        "prior": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/005/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/prior_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/candidates/prior_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/prior_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/prior_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 909664,
+              "native_candidate_cells": 1052066,
+              "composite_cells": 1051744,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted_edit": false,
+          "candidates": 5,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/005/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n303",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/prior_n303_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/candidates/prior_n303.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/prior_n303_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/prior_n303_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 909664,
+              "native_candidate_cells": 1049946,
+              "composite_cells": 1050046,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/005/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/candidates/input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 909664,
+              "native_candidate_cells": 1052624,
+              "composite_cells": 1052278,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "paired_input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/005/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "paired_input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/paired_input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/candidates/paired_input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/paired_input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/paired_input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 909664,
+              "native_candidate_cells": 1052624,
+              "composite_cells": 1052278,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "oracle": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/005/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "oracle_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/oracle_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/candidates/oracle_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/oracle_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/005/43/exports/oracle_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 909664,
+              "native_candidate_cells": 1052497,
+              "composite_cells": 1052179,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        }
+      },
+      "budget": {
+        "input_seconds": 45.945111667737365,
+        "prior_seconds": 56.9655184764415,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.2398602682348612,
+        "GT_used": false
+      },
+      "domains": {
+        "input": {
+          "arm": "input",
+          "diagnostic_only": false,
+          "gt_used": false,
+          "target_queries": 584,
+          "surface_queries": 421,
+          "query_ids_sha256": "1a16c801b7c56e0dc589dff4d228647e95e6382bcbe064f9f725824c46dddcb5",
+          "target_outside_envelope": 0,
+          "protected_pixels": 101313,
+          "domain": {
+            "global_verified_pixels": 698,
+            "local_verified_pixels": 584,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "paired_input": {
+          "arm": "paired_input",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 584,
+          "surface_queries": 421,
+          "query_ids_sha256": "1a16c801b7c56e0dc589dff4d228647e95e6382bcbe064f9f725824c46dddcb5",
+          "target_outside_envelope": 0,
+          "protected_pixels": 101313,
+          "domain": {
+            "global_verified_pixels": 698,
+            "local_verified_pixels": 584,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "oracle": {
+          "arm": "oracle",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 584,
+          "surface_queries": 421,
+          "query_ids_sha256": "1a16c801b7c56e0dc589dff4d228647e95e6382bcbe064f9f725824c46dddcb5",
+          "target_outside_envelope": 0,
+          "protected_pixels": 101313,
+          "domain": {
+            "global_verified_pixels": 698,
+            "local_verified_pixels": 584,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        }
+      },
+      "GT_used_for_method": false,
+      "diagnostic_arms": [
+        "paired_input",
+        "oracle"
+      ],
+      "base_cd_replay_error": 0.0,
+      "figure": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/005_43.jpg"
+    },
+    {
+      "time": "2026-10-29T07:59:33+00:00",
+      "index": 6,
+      "seed": 42,
+      "uid": "omni_carrot_009",
+      "baseline": {
+        "surface": {
+          "chamfer_l1": 0.006771241526178001,
+          "fscore_0p01": 0.8021786749389543,
+          "fscore_0p02": 0.9833038206314505,
+          "fscore_0p05": 1.0
+        },
+        "novel_clipped_error": {
+          "all": 0.01982935145497322,
+          "bad": 0.026226956397294998,
+          "good": 0.001955346204340458
+        },
+        "novel_unclipped": {
+          "fixed_queries": 41240,
+          "hits": 41240,
+          "common_hit_mae": 0.020377738401293755,
+          "fixed_unclipped_depth_with_missing_penalty": 0.020377738401293755,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "v2": {
+        "surface": {
+          "chamfer_l1": 0.006771241526178001,
+          "fscore_0p01": 0.8021786749389543,
+          "fscore_0p02": 0.9833038206314505,
+          "fscore_0p05": 1.0
+        },
+        "novel_clipped_error": {
+          "all": 0.01982935145497322,
+          "bad": 0.026226956397294998,
+          "good": 0.001955346204340458
+        },
+        "novel_unclipped": {
+          "fixed_queries": 41240,
+          "hits": 41240,
+          "common_hit_mae": 0.020377738401293755,
+          "fixed_unclipped_depth_with_missing_penalty": 0.020377738401293755,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "endpoints": {
+        "prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006771241526178001,
+              "fscore_0p01": 0.8021786749389543,
+              "fscore_0p02": 0.9833038206314505,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01982935145497322,
+              "bad": 0.026226956397294998,
+              "good": 0.001955346204340458
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41240,
+              "common_hit_mae": 0.020377738401293755,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020377738401293755,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.0067260765439586916,
+              "fscore_0p01": 0.8056521584875702,
+              "fscore_0p02": 0.9822845335640491,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01962638460099697,
+              "bad": 0.02562233805656433,
+              "good": 0.0028745371382683516
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41186,
+              "common_hit_mae": 0.0200927946716547,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020197423174977303,
+              "lost_fraction": 0.0013094083406031132,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006771241526178001,
+              "fscore_0p01": 0.8021786749389543,
+              "fscore_0p02": 0.9833038206314505,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01982935145497322,
+              "bad": 0.026226956397294998,
+              "good": 0.001955346204340458
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41240,
+              "common_hit_mae": 0.020377738401293755,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020377738401293755,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.0067260765439586916,
+              "fscore_0p01": 0.8056521584875702,
+              "fscore_0p02": 0.9822845335640491,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01962638460099697,
+              "bad": 0.02562233805656433,
+              "good": 0.0028745371382683516
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41186,
+              "common_hit_mae": 0.0200927946716547,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020197423174977303,
+              "lost_fraction": 0.0013094083406031132,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006771241526178001,
+              "fscore_0p01": 0.8021786749389543,
+              "fscore_0p02": 0.9833038206314505,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01982935145497322,
+              "bad": 0.026226956397294998,
+              "good": 0.001955346204340458
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41240,
+              "common_hit_mae": 0.020377738401293755,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020377738401293755,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.0067363471501516985,
+              "fscore_0p01": 0.8057717980649962,
+              "fscore_0p02": 0.9818349792771968,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.019727719947695732,
+              "bad": 0.025696393102407455,
+              "good": 0.0030520898289978504
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41180,
+              "common_hit_mae": 0.02033139020204544,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020447297021746635,
+              "lost_fraction": 0.0014548981562256813,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "paired_input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006771241526178001,
+              "fscore_0p01": 0.8021786749389543,
+              "fscore_0p02": 0.9833038206314505,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01982935145497322,
+              "bad": 0.026226956397294998,
+              "good": 0.001955346204340458
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41240,
+              "common_hit_mae": 0.020377738401293755,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020377738401293755,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006732458568442219,
+              "fscore_0p01": 0.8061303990974125,
+              "fscore_0p02": 0.9823311507379135,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01972930319607258,
+              "bad": 0.025695016607642174,
+              "good": 0.0030619455501437187
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41179,
+              "common_hit_mae": 0.02032054029405117,
+              "fixed_unclipped_depth_with_missing_penalty": 0.02043839544057846,
+              "lost_fraction": 0.0014791464200243354,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "oracle": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006771241526178001,
+              "fscore_0p01": 0.8021786749389543,
+              "fscore_0p02": 0.9833038206314505,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01982935145497322,
+              "bad": 0.026226956397294998,
+              "good": 0.001955346204340458
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41240,
+              "common_hit_mae": 0.020377738401293755,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020377738401293755,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006719791159546825,
+              "fscore_0p01": 0.806453182640593,
+              "fscore_0p02": 0.981978865742155,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.019639568403363228,
+              "bad": 0.025626789778470993,
+              "good": 0.002912109950557351
+            },
+            "novel_unclipped": {
+              "fixed_queries": 41240,
+              "hits": 41188,
+              "common_hit_mae": 0.020145853981375694,
+              "fixed_unclipped_depth_with_missing_penalty": 0.020246542990207672,
+              "lost_fraction": 0.0012609116965904832,
+              "missing_penalty": 0.1
+            }
+          }
+        }
+      },
+      "selections": {
+        "prior": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/prior_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/candidates/prior_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/prior_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/prior_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 225563,
+              "native_candidate_cells": 253775,
+              "composite_cells": 252908,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted_edit": false,
+          "candidates": 5,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/prior_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/candidates/prior_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/prior_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/prior_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 225563,
+              "native_candidate_cells": 253775,
+              "composite_cells": 252908,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "input_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/input_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/candidates/input_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/input_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/input_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 225563,
+              "native_candidate_cells": 254003,
+              "composite_cells": 253127,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "paired_input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "paired_input_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/paired_input_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/candidates/paired_input_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/paired_input_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/paired_input_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 225563,
+              "native_candidate_cells": 254081,
+              "composite_cells": 253117,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "oracle": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "oracle_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/oracle_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/candidates/oracle_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/oracle_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/42/exports/oracle_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 225563,
+              "native_candidate_cells": 253996,
+              "composite_cells": 253090,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        }
+      },
+      "budget": {
+        "input_seconds": 25.316667864099145,
+        "prior_seconds": 26.90319038927555,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.0626671145544477,
+        "GT_used": false
+      },
+      "domains": {
+        "input": {
+          "arm": "input",
+          "diagnostic_only": false,
+          "gt_used": false,
+          "target_queries": 32,
+          "surface_queries": 32,
+          "query_ids_sha256": "8190beb286720c633879cc38b6a8d6598978096d6ce8fae9353231cd5e0f2463",
+          "target_outside_envelope": 0,
+          "protected_pixels": 48273,
+          "domain": {
+            "global_verified_pixels": 32,
+            "local_verified_pixels": 32,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "paired_input": {
+          "arm": "paired_input",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 32,
+          "surface_queries": 32,
+          "query_ids_sha256": "8190beb286720c633879cc38b6a8d6598978096d6ce8fae9353231cd5e0f2463",
+          "target_outside_envelope": 0,
+          "protected_pixels": 48273,
+          "domain": {
+            "global_verified_pixels": 32,
+            "local_verified_pixels": 32,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "oracle": {
+          "arm": "oracle",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 32,
+          "surface_queries": 32,
+          "query_ids_sha256": "8190beb286720c633879cc38b6a8d6598978096d6ce8fae9353231cd5e0f2463",
+          "target_outside_envelope": 0,
+          "protected_pixels": 48273,
+          "domain": {
+            "global_verified_pixels": 32,
+            "local_verified_pixels": 32,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        }
+      },
+      "GT_used_for_method": false,
+      "diagnostic_arms": [
+        "paired_input",
+        "oracle"
+      ],
+      "base_cd_replay_error": 0.0,
+      "figure": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/006_42.jpg"
+    },
+    {
+      "time": "2026-10-29T08:06:11+00:00",
+      "index": 6,
+      "seed": 43,
+      "uid": "omni_carrot_009",
+      "baseline": {
+        "surface": {
+          "chamfer_l1": 0.008216023359279687,
+          "fscore_0p01": 0.7344348040844112,
+          "fscore_0p02": 0.9132376658928649,
+          "fscore_0p05": 1.0
+        },
+        "novel_clipped_error": {
+          "all": 0.01900336891412735,
+          "bad": 0.025033334270119667,
+          "good": 0.00200117495842278
+        },
+        "novel_unclipped": {
+          "fixed_queries": 40360,
+          "hits": 40360,
+          "common_hit_mae": 0.0125833535566926,
+          "fixed_unclipped_depth_with_missing_penalty": 0.0125833535566926,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "v2": {
+        "surface": {
+          "chamfer_l1": 0.008216023359279687,
+          "fscore_0p01": 0.7344348040844112,
+          "fscore_0p02": 0.9132376658928649,
+          "fscore_0p05": 1.0
+        },
+        "novel_clipped_error": {
+          "all": 0.01900336891412735,
+          "bad": 0.025033334270119667,
+          "good": 0.00200117495842278
+        },
+        "novel_unclipped": {
+          "fixed_queries": 40360,
+          "hits": 40360,
+          "common_hit_mae": 0.0125833535566926,
+          "fixed_unclipped_depth_with_missing_penalty": 0.0125833535566926,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "endpoints": {
+        "prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.008216023359279687,
+              "fscore_0p01": 0.7344348040844112,
+              "fscore_0p02": 0.9132376658928649,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01900336891412735,
+              "bad": 0.025033334270119667,
+              "good": 0.00200117495842278
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40360,
+              "common_hit_mae": 0.0125833535566926,
+              "fixed_unclipped_depth_with_missing_penalty": 0.0125833535566926,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.008187998635088803,
+              "fscore_0p01": 0.733333495323025,
+              "fscore_0p02": 0.9136476348711213,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.018963709473609924,
+              "bad": 0.024898704141378403,
+              "good": 0.0022292975336313248
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40334,
+              "common_hit_mae": 0.012516189366579056,
+              "fixed_unclipped_depth_with_missing_penalty": 0.012572546489536762,
+              "lost_fraction": 0.0006442021694965661,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.008216023359279687,
+              "fscore_0p01": 0.7344348040844112,
+              "fscore_0p02": 0.9132376658928649,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01900336891412735,
+              "bad": 0.025033334270119667,
+              "good": 0.00200117495842278
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40360,
+              "common_hit_mae": 0.0125833535566926,
+              "fixed_unclipped_depth_with_missing_penalty": 0.0125833535566926,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.008187998635088803,
+              "fscore_0p01": 0.733333495323025,
+              "fscore_0p02": 0.9136476348711213,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.018963709473609924,
+              "bad": 0.024898704141378403,
+              "good": 0.0022292975336313248
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40334,
+              "common_hit_mae": 0.012516189366579056,
+              "fixed_unclipped_depth_with_missing_penalty": 0.012572546489536762,
+              "lost_fraction": 0.0006442021694965661,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.008216023359279687,
+              "fscore_0p01": 0.7344348040844112,
+              "fscore_0p02": 0.9132376658928649,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01900336891412735,
+              "bad": 0.025033334270119667,
+              "good": 0.00200117495842278
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40360,
+              "common_hit_mae": 0.0125833535566926,
+              "fixed_unclipped_depth_with_missing_penalty": 0.0125833535566926,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.008186960439549215,
+              "fscore_0p01": 0.7336577775960529,
+              "fscore_0p02": 0.9130487460708615,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01894327998161316,
+              "bad": 0.024886315688490868,
+              "good": 0.0021861952263861895
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40335,
+              "common_hit_mae": 0.012472904287278652,
+              "fixed_unclipped_depth_with_missing_penalty": 0.012527121230959892,
+              "lost_fraction": 0.000619425147306174,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "paired_input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.008216023359279687,
+              "fscore_0p01": 0.7344348040844112,
+              "fscore_0p02": 0.9132376658928649,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01900336891412735,
+              "bad": 0.025033334270119667,
+              "good": 0.00200117495842278
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40360,
+              "common_hit_mae": 0.0125833535566926,
+              "fixed_unclipped_depth_with_missing_penalty": 0.0125833535566926,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.008184561301022623,
+              "fscore_0p01": 0.7335525490730644,
+              "fscore_0p02": 0.9133180339858976,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01894732005894184,
+              "bad": 0.024888776242733,
+              "good": 0.0021946970373392105
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40335,
+              "common_hit_mae": 0.012491724453866482,
+              "fixed_unclipped_depth_with_missing_penalty": 0.012545929290354252,
+              "lost_fraction": 0.000619425147306174,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "oracle": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.008216023359279687,
+              "fscore_0p01": 0.7344348040844112,
+              "fscore_0p02": 0.9132376658928649,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.01900336891412735,
+              "bad": 0.025033334270119667,
+              "good": 0.00200117495842278
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40360,
+              "common_hit_mae": 0.0125833535566926,
+              "fixed_unclipped_depth_with_missing_penalty": 0.0125833535566926,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.008179301103889728,
+              "fscore_0p01": 0.7340719375578924,
+              "fscore_0p02": 0.9135076984378934,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.018960367888212204,
+              "bad": 0.024889476597309113,
+              "good": 0.002242554910480976
+            },
+            "novel_unclipped": {
+              "fixed_queries": 40360,
+              "hits": 40335,
+              "common_hit_mae": 0.012518083676695824,
+              "fixed_unclipped_depth_with_missing_penalty": 0.0125722736120224,
+              "lost_fraction": 0.000619425147306174,
+              "missing_penalty": 0.1
+            }
+          }
+        }
+      },
+      "selections": {
+        "prior": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/prior_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/candidates/prior_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/prior_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/prior_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 241756,
+              "native_candidate_cells": 275605,
+              "composite_cells": 275412,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted_edit": false,
+          "candidates": 5,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/prior_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/candidates/prior_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/prior_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/prior_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 241756,
+              "native_candidate_cells": 275605,
+              "composite_cells": 275412,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/candidates/input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 241756,
+              "native_candidate_cells": 275657,
+              "composite_cells": 275423,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "paired_input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "paired_input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/paired_input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/candidates/paired_input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/paired_input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/paired_input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 241756,
+              "native_candidate_cells": 275643,
+              "composite_cells": 275422,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "oracle": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/006/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/006/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "oracle_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/oracle_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/candidates/oracle_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/oracle_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/006/43/exports/oracle_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 241756,
+              "native_candidate_cells": 275618,
+              "composite_cells": 275420,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        }
+      },
+      "budget": {
+        "input_seconds": 23.810603270307183,
+        "prior_seconds": 27.732824886217713,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.1647258396347187,
+        "GT_used": false
+      },
+      "domains": {
+        "input": {
+          "arm": "input",
+          "diagnostic_only": false,
+          "gt_used": false,
+          "target_queries": 19,
+          "surface_queries": 19,
+          "query_ids_sha256": "266d0076fb727a84c2ba9beb37e570254556390aed410b798421e6f2e3b455db",
+          "target_outside_envelope": 0,
+          "protected_pixels": 44239,
+          "domain": {
+            "global_verified_pixels": 20,
+            "local_verified_pixels": 19,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "paired_input": {
+          "arm": "paired_input",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 19,
+          "surface_queries": 19,
+          "query_ids_sha256": "266d0076fb727a84c2ba9beb37e570254556390aed410b798421e6f2e3b455db",
+          "target_outside_envelope": 0,
+          "protected_pixels": 44239,
+          "domain": {
+            "global_verified_pixels": 20,
+            "local_verified_pixels": 19,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "oracle": {
+          "arm": "oracle",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 19,
+          "surface_queries": 19,
+          "query_ids_sha256": "266d0076fb727a84c2ba9beb37e570254556390aed410b798421e6f2e3b455db",
+          "target_outside_envelope": 0,
+          "protected_pixels": 44239,
+          "domain": {
+            "global_verified_pixels": 20,
+            "local_verified_pixels": 19,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        }
+      },
+      "GT_used_for_method": false,
+      "diagnostic_arms": [
+        "paired_input",
+        "oracle"
+      ],
+      "base_cd_replay_error": 0.0,
+      "figure": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/006_43.jpg"
+    },
+    {
+      "time": "2026-10-29T07:50:21+00:00",
+      "index": 10,
+      "seed": 42,
+      "uid": "omni_handbag_006",
+      "baseline": {
+        "surface": {
+          "chamfer_l1": 0.03830467441296264,
+          "fscore_0p01": 0.18608215282531992,
+          "fscore_0p02": 0.3477909950932286,
+          "fscore_0p05": 0.7055696195389105
+        },
+        "novel_clipped_error": {
+          "all": 0.07002276927232742,
+          "bad": 0.07234807312488556,
+          "good": 0.0019397423602640629
+        },
+        "novel_unclipped": {
+          "fixed_queries": 56162,
+          "hits": 56162,
+          "common_hit_mae": 0.1019539088010788,
+          "fixed_unclipped_depth_with_missing_penalty": 0.1019539088010788,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "v2": {
+        "surface": {
+          "chamfer_l1": 0.03830467441296264,
+          "fscore_0p01": 0.18608215282531992,
+          "fscore_0p02": 0.3477909950932286,
+          "fscore_0p05": 0.7055696195389105
+        },
+        "novel_clipped_error": {
+          "all": 0.07002276927232742,
+          "bad": 0.07234807312488556,
+          "good": 0.0019397423602640629
+        },
+        "novel_unclipped": {
+          "fixed_queries": 56162,
+          "hits": 56162,
+          "common_hit_mae": 0.1019539088010788,
+          "fixed_unclipped_depth_with_missing_penalty": 0.1019539088010788,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "endpoints": {
+        "prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03830467441296264,
+              "fscore_0p01": 0.18608215282531992,
+              "fscore_0p02": 0.3477909950932286,
+              "fscore_0p05": 0.7055696195389105
+            },
+            "novel_clipped_error": {
+              "all": 0.07002276927232742,
+              "bad": 0.07234807312488556,
+              "good": 0.0019397423602640629
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56162,
+              "common_hit_mae": 0.1019539088010788,
+              "fixed_unclipped_depth_with_missing_penalty": 0.1019539088010788,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.03814305911824216,
+              "fscore_0p01": 0.18620746125965226,
+              "fscore_0p02": 0.3504254627438974,
+              "fscore_0p05": 0.7058982933908284
+            },
+            "novel_clipped_error": {
+              "all": 0.06994142383337021,
+              "bad": 0.07220638543367386,
+              "good": 0.0036252522841095924
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56031,
+              "common_hit_mae": 0.10186684876680374,
+              "fixed_unclipped_depth_with_missing_penalty": 0.10186249017715454,
+              "lost_fraction": 0.0023325379006564617,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03830467441296264,
+              "fscore_0p01": 0.18608215282531992,
+              "fscore_0p02": 0.3477909950932286,
+              "fscore_0p05": 0.7055696195389105
+            },
+            "novel_clipped_error": {
+              "all": 0.07002276927232742,
+              "bad": 0.07234807312488556,
+              "good": 0.0019397423602640629
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56162,
+              "common_hit_mae": 0.1019539088010788,
+              "fixed_unclipped_depth_with_missing_penalty": 0.1019539088010788,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.03814305911824216,
+              "fscore_0p01": 0.18620746125965226,
+              "fscore_0p02": 0.3504254627438974,
+              "fscore_0p05": 0.7058982933908284
+            },
+            "novel_clipped_error": {
+              "all": 0.06994142383337021,
+              "bad": 0.07220638543367386,
+              "good": 0.0036252522841095924
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56031,
+              "common_hit_mae": 0.10186684876680374,
+              "fixed_unclipped_depth_with_missing_penalty": 0.10186249017715454,
+              "lost_fraction": 0.0023325379006564617,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03830467441296264,
+              "fscore_0p01": 0.18608215282531992,
+              "fscore_0p02": 0.3477909950932286,
+              "fscore_0p05": 0.7055696195389105
+            },
+            "novel_clipped_error": {
+              "all": 0.07002276927232742,
+              "bad": 0.07234807312488556,
+              "good": 0.0019397423602640629
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56162,
+              "common_hit_mae": 0.1019539088010788,
+              "fixed_unclipped_depth_with_missing_penalty": 0.1019539088010788,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.03815548127017115,
+              "fscore_0p01": 0.18605541927672792,
+              "fscore_0p02": 0.3505834818670155,
+              "fscore_0p05": 0.7064015542724534
+            },
+            "novel_clipped_error": {
+              "all": 0.06995225697755814,
+              "bad": 0.07221171259880066,
+              "good": 0.003797324141487479
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56022,
+              "common_hit_mae": 0.10192567110061646,
+              "fixed_unclipped_depth_with_missing_penalty": 0.10192088037729263,
+              "lost_fraction": 0.002492788713425398,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "paired_input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03830467441296264,
+              "fscore_0p01": 0.18608215282531992,
+              "fscore_0p02": 0.3477909950932286,
+              "fscore_0p05": 0.7055696195389105
+            },
+            "novel_clipped_error": {
+              "all": 0.07002276927232742,
+              "bad": 0.07234807312488556,
+              "good": 0.0019397423602640629
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56162,
+              "common_hit_mae": 0.1019539088010788,
+              "fixed_unclipped_depth_with_missing_penalty": 0.1019539088010788,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.038112400551751614,
+              "fscore_0p01": 0.18619356913859253,
+              "fscore_0p02": 0.35047815196214865,
+              "fscore_0p05": 0.7067663917354916
+            },
+            "novel_clipped_error": {
+              "all": 0.0699477270245552,
+              "bad": 0.07220926880836487,
+              "good": 0.0037318116519600153
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56024,
+              "common_hit_mae": 0.10188602656126022,
+              "fixed_unclipped_depth_with_missing_penalty": 0.10188138484954834,
+              "lost_fraction": 0.002457177499309182,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "oracle": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.03830467441296264,
+              "fscore_0p01": 0.18608215282531992,
+              "fscore_0p02": 0.3477909950932286,
+              "fscore_0p05": 0.7055696195389105
+            },
+            "novel_clipped_error": {
+              "all": 0.07002276927232742,
+              "bad": 0.07234807312488556,
+              "good": 0.0019397423602640629
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56162,
+              "common_hit_mae": 0.1019539088010788,
+              "fixed_unclipped_depth_with_missing_penalty": 0.1019539088010788,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.037890262103204675,
+              "fscore_0p01": 0.18536249272602234,
+              "fscore_0p02": 0.34966124661549197,
+              "fscore_0p05": 0.7067885775856113
+            },
+            "novel_clipped_error": {
+              "all": 0.06998897343873978,
+              "bad": 0.07225769013166428,
+              "good": 0.003562890226021409
+            },
+            "novel_unclipped": {
+              "fixed_queries": 56162,
+              "hits": 56010,
+              "common_hit_mae": 0.10220447182655334,
+              "fixed_unclipped_depth_with_missing_penalty": 0.10219849646091461,
+              "lost_fraction": 0.0027064562309533358,
+              "missing_penalty": 0.1
+            }
+          }
+        }
+      },
+      "selections": {
+        "prior": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/prior_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/candidates/prior_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/prior_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/prior_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 873736,
+              "native_candidate_cells": 1013124,
+              "composite_cells": 1008659,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted_edit": false,
+          "candidates": 4,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/prior_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/candidates/prior_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/prior_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/prior_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 873736,
+              "native_candidate_cells": 1013124,
+              "composite_cells": 1008659,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "input_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/input_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/candidates/input_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/input_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/input_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 873736,
+              "native_candidate_cells": 1013743,
+              "composite_cells": 1009249,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "paired_input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "paired_input_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/paired_input_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/candidates/paired_input_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/paired_input_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/paired_input_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 873736,
+              "native_candidate_cells": 1013780,
+              "composite_cells": 1009271,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "oracle": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "oracle_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/oracle_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/candidates/oracle_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/oracle_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/42/exports/oracle_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 873736,
+              "native_candidate_cells": 1008405,
+              "composite_cells": 1007710,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        }
+      },
+      "budget": {
+        "input_seconds": 42.42370033822954,
+        "prior_seconds": 45.66523062810302,
+        "prior_candidates": 4,
+        "sufficient": true,
+        "ratio": 1.0764084760176476,
+        "GT_used": false
+      },
+      "domains": {
+        "input": {
+          "arm": "input",
+          "diagnostic_only": false,
+          "gt_used": false,
+          "target_queries": 1730,
+          "surface_queries": 340,
+          "query_ids_sha256": "aa0ca0291ff348479d4c573cbd9868c6ea84ea4adce731d20f01c18254e7a39e",
+          "target_outside_envelope": 220,
+          "protected_pixels": 71465,
+          "domain": {
+            "global_verified_pixels": 2031,
+            "local_verified_pixels": 1730,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "paired_input": {
+          "arm": "paired_input",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 1730,
+          "surface_queries": 340,
+          "query_ids_sha256": "aa0ca0291ff348479d4c573cbd9868c6ea84ea4adce731d20f01c18254e7a39e",
+          "target_outside_envelope": 220,
+          "protected_pixels": 71465,
+          "domain": {
+            "global_verified_pixels": 2031,
+            "local_verified_pixels": 1730,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "oracle": {
+          "arm": "oracle",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 1730,
+          "surface_queries": 340,
+          "query_ids_sha256": "aa0ca0291ff348479d4c573cbd9868c6ea84ea4adce731d20f01c18254e7a39e",
+          "target_outside_envelope": 312,
+          "protected_pixels": 71465,
+          "domain": {
+            "global_verified_pixels": 2031,
+            "local_verified_pixels": 1730,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        }
+      },
+      "GT_used_for_method": false,
+      "diagnostic_arms": [
+        "paired_input",
+        "oracle"
+      ],
+      "base_cd_replay_error": 0.0,
+      "figure": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/010_42.jpg"
+    },
+    {
+      "time": "2026-10-29T07:58:10+00:00",
+      "index": 10,
+      "seed": 43,
+      "uid": "omni_handbag_006",
+      "baseline": {
+        "surface": {
+          "chamfer_l1": 0.045708484015878376,
+          "fscore_0p01": 0.155588463981705,
+          "fscore_0p02": 0.33285626707853155,
+          "fscore_0p05": 0.7307787354706169
+        },
+        "novel_clipped_error": {
+          "all": 0.07095056027173996,
+          "bad": 0.07212933152914047,
+          "good": 0.002009822754189372
+        },
+        "novel_unclipped": {
+          "fixed_queries": 69306,
+          "hits": 69306,
+          "common_hit_mae": 0.07796121388673782,
+          "fixed_unclipped_depth_with_missing_penalty": 0.07796121388673782,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "v2": {
+        "surface": {
+          "chamfer_l1": 0.045708484015878376,
+          "fscore_0p01": 0.155588463981705,
+          "fscore_0p02": 0.33285626707853155,
+          "fscore_0p05": 0.7307787354706169
+        },
+        "novel_clipped_error": {
+          "all": 0.07095056027173996,
+          "bad": 0.07212933152914047,
+          "good": 0.002009822754189372
+        },
+        "novel_unclipped": {
+          "fixed_queries": 69306,
+          "hits": 69306,
+          "common_hit_mae": 0.07796121388673782,
+          "fixed_unclipped_depth_with_missing_penalty": 0.07796121388673782,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "endpoints": {
+        "prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.045708484015878376,
+              "fscore_0p01": 0.155588463981705,
+              "fscore_0p02": 0.33285626707853155,
+              "fscore_0p05": 0.7307787354706169
+            },
+            "novel_clipped_error": {
+              "all": 0.07095056027173996,
+              "bad": 0.07212933152914047,
+              "good": 0.002009822754189372
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 69306,
+              "common_hit_mae": 0.07796121388673782,
+              "fixed_unclipped_depth_with_missing_penalty": 0.07796121388673782,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.04579918257871831,
+              "fscore_0p01": 0.15274383232755823,
+              "fscore_0p02": 0.33556710904106357,
+              "fscore_0p05": 0.7284058232714278
+            },
+            "novel_clipped_error": {
+              "all": 0.07169053703546524,
+              "bad": 0.0727551206946373,
+              "good": 0.00942839216440916
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 68668,
+              "common_hit_mae": 0.08266818523406982,
+              "fixed_unclipped_depth_with_missing_penalty": 0.08282773196697235,
+              "lost_fraction": 0.009205551818013191,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.045708484015878376,
+              "fscore_0p01": 0.155588463981705,
+              "fscore_0p02": 0.33285626707853155,
+              "fscore_0p05": 0.7307787354706169
+            },
+            "novel_clipped_error": {
+              "all": 0.07095056027173996,
+              "bad": 0.07212933152914047,
+              "good": 0.002009822754189372
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 69306,
+              "common_hit_mae": 0.07796121388673782,
+              "fixed_unclipped_depth_with_missing_penalty": 0.07796121388673782,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.046383181852932526,
+              "fscore_0p01": 0.155914840516967,
+              "fscore_0p02": 0.33083952628124813,
+              "fscore_0p05": 0.7275346279265349
+            },
+            "novel_clipped_error": {
+              "all": 0.07151719927787781,
+              "bad": 0.07253313064575195,
+              "good": 0.012100651860237122
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 68726,
+              "common_hit_mae": 0.08286118507385254,
+              "fixed_unclipped_depth_with_missing_penalty": 0.08300461620092392,
+              "lost_fraction": 0.008368683978915215,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.045708484015878376,
+              "fscore_0p01": 0.155588463981705,
+              "fscore_0p02": 0.33285626707853155,
+              "fscore_0p05": 0.7307787354706169
+            },
+            "novel_clipped_error": {
+              "all": 0.07095056027173996,
+              "bad": 0.07212933152914047,
+              "good": 0.002009822754189372
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 69306,
+              "common_hit_mae": 0.07796121388673782,
+              "fixed_unclipped_depth_with_missing_penalty": 0.07796121388673782,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.0457728519612141,
+              "fscore_0p01": 0.15450577663671375,
+              "fscore_0p02": 0.3370654856874707,
+              "fscore_0p05": 0.7291621193307093
+            },
+            "novel_clipped_error": {
+              "all": 0.07167506217956543,
+              "bad": 0.07274223119020462,
+              "good": 0.009261858649551868
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 68661,
+              "common_hit_mae": 0.08265450596809387,
+              "fixed_unclipped_depth_with_missing_penalty": 0.08281593024730682,
+              "lost_fraction": 0.00930655375123024,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "paired_input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.045708484015878376,
+              "fscore_0p01": 0.155588463981705,
+              "fscore_0p02": 0.33285626707853155,
+              "fscore_0p05": 0.7307787354706169
+            },
+            "novel_clipped_error": {
+              "all": 0.07095056027173996,
+              "bad": 0.07212933152914047,
+              "good": 0.002009822754189372
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 69306,
+              "common_hit_mae": 0.07796121388673782,
+              "fixed_unclipped_depth_with_missing_penalty": 0.07796121388673782,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.045782357355612355,
+              "fscore_0p01": 0.15329583123018184,
+              "fscore_0p02": 0.33753049849075406,
+              "fscore_0p05": 0.7295042316631533
+            },
+            "novel_clipped_error": {
+              "all": 0.07166381925344467,
+              "bad": 0.07273159176111221,
+              "good": 0.009215003810822964
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 68667,
+              "common_hit_mae": 0.08263643085956573,
+              "fixed_unclipped_depth_with_missing_penalty": 0.08279652148485184,
+              "lost_fraction": 0.009219980798661709,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "oracle": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.045708484015878376,
+              "fscore_0p01": 0.155588463981705,
+              "fscore_0p02": 0.33285626707853155,
+              "fscore_0p05": 0.7307787354706169
+            },
+            "novel_clipped_error": {
+              "all": 0.07095056027173996,
+              "bad": 0.07212933152914047,
+              "good": 0.002009822754189372
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 69306,
+              "common_hit_mae": 0.07796121388673782,
+              "fixed_unclipped_depth_with_missing_penalty": 0.07796121388673782,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.045844483576122155,
+              "fscore_0p01": 0.15636491897044805,
+              "fscore_0p02": 0.3367688323740162,
+              "fscore_0p05": 0.7290897938757844
+            },
+            "novel_clipped_error": {
+              "all": 0.0717109888792038,
+              "bad": 0.07277966290712357,
+              "good": 0.009209408424794674
+            },
+            "novel_unclipped": {
+              "fixed_queries": 69306,
+              "hits": 68651,
+              "common_hit_mae": 0.08285263925790787,
+              "fixed_unclipped_depth_with_missing_penalty": 0.08301469683647156,
+              "lost_fraction": 0.009450840763747692,
+              "missing_penalty": 0.1
+            }
+          }
+        }
+      },
+      "selections": {
+        "prior": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/prior_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/candidates/prior_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/prior_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/prior_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 342713,
+              "native_candidate_cells": 519333,
+              "composite_cells": 513028,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted_edit": false,
+          "candidates": 5,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n404",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/prior_n404_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/candidates/prior_n404.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/prior_n404_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/prior_n404_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 342713,
+              "native_candidate_cells": 502850,
+              "composite_cells": 505465,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "input_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/input_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/candidates/input_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/input_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/input_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 342713,
+              "native_candidate_cells": 520508,
+              "composite_cells": 514136,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "paired_input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "paired_input_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/paired_input_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/candidates/paired_input_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/paired_input_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/paired_input_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 342713,
+              "native_candidate_cells": 520567,
+              "composite_cells": 514219,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "oracle": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/010/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/010/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "oracle_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/oracle_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/candidates/oracle_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/oracle_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/010/43/exports/oracle_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 342713,
+              "native_candidate_cells": 519726,
+              "composite_cells": 513453,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        }
+      },
+      "budget": {
+        "input_seconds": 35.44182783737779,
+        "prior_seconds": 41.308028884232044,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.1655163236436588,
+        "GT_used": false
+      },
+      "domains": {
+        "input": {
+          "arm": "input",
+          "diagnostic_only": false,
+          "gt_used": false,
+          "target_queries": 1964,
+          "surface_queries": 340,
+          "query_ids_sha256": "3214cbaa47aab8dcbfb1a3be875b433c697955cdaf2bc463d1d5e7eb201f1332",
+          "target_outside_envelope": 0,
+          "protected_pixels": 37120,
+          "domain": {
+            "global_verified_pixels": 1964,
+            "local_verified_pixels": 1964,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "paired_input": {
+          "arm": "paired_input",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 1964,
+          "surface_queries": 340,
+          "query_ids_sha256": "3214cbaa47aab8dcbfb1a3be875b433c697955cdaf2bc463d1d5e7eb201f1332",
+          "target_outside_envelope": 0,
+          "protected_pixels": 37120,
+          "domain": {
+            "global_verified_pixels": 1964,
+            "local_verified_pixels": 1964,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "oracle": {
+          "arm": "oracle",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 1964,
+          "surface_queries": 340,
+          "query_ids_sha256": "3214cbaa47aab8dcbfb1a3be875b433c697955cdaf2bc463d1d5e7eb201f1332",
+          "target_outside_envelope": 0,
+          "protected_pixels": 37120,
+          "domain": {
+            "global_verified_pixels": 1964,
+            "local_verified_pixels": 1964,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        }
+      },
+      "GT_used_for_method": false,
+      "diagnostic_arms": [
+        "paired_input",
+        "oracle"
+      ],
+      "base_cd_replay_error": 0.0,
+      "figure": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/010_43.jpg"
+    },
+    {
+      "time": "2026-10-29T08:06:24+00:00",
+      "index": 11,
+      "seed": 42,
+      "uid": "omni_kite_004",
+      "baseline": {
+        "surface": {
+          "chamfer_l1": 0.006992473936303213,
+          "fscore_0p01": 0.7862981539748742,
+          "fscore_0p02": 0.9574018429620972,
+          "fscore_0p05": 1.0
+        },
+        "novel_clipped_error": {
+          "all": 0.020817475393414497,
+          "bad": 0.026754798367619514,
+          "good": 0.0019262824207544327
+        },
+        "novel_unclipped": {
+          "fixed_queries": 28157,
+          "hits": 28157,
+          "common_hit_mae": 0.011621501296758652,
+          "fixed_unclipped_depth_with_missing_penalty": 0.011621501296758652,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "v2": {
+        "surface": {
+          "chamfer_l1": 0.00702762651736762,
+          "fscore_0p01": 0.7842594953242529,
+          "fscore_0p02": 0.9557630253998118,
+          "fscore_0p05": 1.0
+        },
+        "novel_clipped_error": {
+          "all": 0.020666100084781647,
+          "bad": 0.026390867307782173,
+          "good": 0.00245121237821877
+        },
+        "novel_unclipped": {
+          "fixed_queries": 28157,
+          "hits": 28053,
+          "common_hit_mae": 0.011657780036330223,
+          "fixed_unclipped_depth_with_missing_penalty": 0.011984077282249928,
+          "lost_fraction": 0.003693575272336602,
+          "missing_penalty": 0.1
+        }
+      },
+      "endpoints": {
+        "prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006992473936303213,
+              "fscore_0p01": 0.7862981539748742,
+              "fscore_0p02": 0.9574018429620972,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.020817475393414497,
+              "bad": 0.026754798367619514,
+              "good": 0.0019262824207544327
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 28157,
+              "common_hit_mae": 0.011621501296758652,
+              "fixed_unclipped_depth_with_missing_penalty": 0.011621501296758652,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.0067492153852798204,
+              "fscore_0p01": 0.8078618359370184,
+              "fscore_0p02": 0.9596608696557613,
+              "fscore_0p05": 0.9997899558907372
+            },
+            "novel_clipped_error": {
+              "all": 0.02026781067252159,
+              "bad": 0.024414459243416786,
+              "good": 0.007074140012264252
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 27656,
+              "common_hit_mae": 0.011013710871338844,
+              "fixed_unclipped_depth_with_missing_penalty": 0.01259705051779747,
+              "lost_fraction": 0.017793089151382446,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006992473936303213,
+              "fscore_0p01": 0.7862981539748742,
+              "fscore_0p02": 0.9574018429620972,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.020817475393414497,
+              "bad": 0.026754798367619514,
+              "good": 0.0019262824207544327
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 28157,
+              "common_hit_mae": 0.011621501296758652,
+              "fixed_unclipped_depth_with_missing_penalty": 0.011621501296758652,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.00679133961291146,
+              "fscore_0p01": 0.795338951457284,
+              "fscore_0p02": 0.9610606357425835,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.02016923949122429,
+              "bad": 0.0243754331022501,
+              "good": 0.006786104291677475
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 27672,
+              "common_hit_mae": 0.010916880331933498,
+              "fixed_unclipped_depth_with_missing_penalty": 0.012451322749257088,
+              "lost_fraction": 0.01722484640777111,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006992473936303213,
+              "fscore_0p01": 0.7862981539748742,
+              "fscore_0p02": 0.9574018429620972,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.020817475393414497,
+              "bad": 0.026754798367619514,
+              "good": 0.0019262824207544327
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 28157,
+              "common_hit_mae": 0.011621501296758652,
+              "fixed_unclipped_depth_with_missing_penalty": 0.011621501296758652,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006695540579922815,
+              "fscore_0p01": 0.8085972677662943,
+              "fscore_0p02": 0.9593808323959505,
+              "fscore_0p05": 0.9997599423861727
+            },
+            "novel_clipped_error": {
+              "all": 0.020241999998688698,
+              "bad": 0.024388425052165985,
+              "good": 0.00704902783036232
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 27647,
+              "common_hit_mae": 0.010964551940560341,
+              "fixed_unclipped_depth_with_missing_penalty": 0.012577224522829056,
+              "lost_fraction": 0.018112724646925926,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "paired_input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006992473936303213,
+              "fscore_0p01": 0.7862981539748742,
+              "fscore_0p02": 0.9574018429620972,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.020817475393414497,
+              "bad": 0.026754798367619514,
+              "good": 0.0019262824207544327
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 28157,
+              "common_hit_mae": 0.011621501296758652,
+              "fixed_unclipped_depth_with_missing_penalty": 0.011621501296758652,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006700943533387814,
+              "fscore_0p01": 0.8095526900879837,
+              "fscore_0p02": 0.9590721773647418,
+              "fscore_0p05": 0.999819967594167
+            },
+            "novel_clipped_error": {
+              "all": 0.02022654190659523,
+              "bad": 0.024376319721341133,
+              "good": 0.007022913545370102
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 27652,
+              "common_hit_mae": 0.010963506065309048,
+              "fixed_unclipped_depth_with_missing_penalty": 0.012560389004647732,
+              "lost_fraction": 0.017935149371623993,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "oracle": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.006992473936303213,
+              "fscore_0p01": 0.7862981539748742,
+              "fscore_0p02": 0.9574018429620972,
+              "fscore_0p05": 1.0
+            },
+            "novel_clipped_error": {
+              "all": 0.020817475393414497,
+              "bad": 0.026754798367619514,
+              "good": 0.0019262824207544327
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 28157,
+              "common_hit_mae": 0.011621501296758652,
+              "fixed_unclipped_depth_with_missing_penalty": 0.011621501296758652,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006670215867053259,
+              "fscore_0p01": 0.8099833068890447,
+              "fscore_0p02": 0.9592501771893457,
+              "fscore_0p05": 0.9997599423861727
+            },
+            "novel_clipped_error": {
+              "all": 0.020205993205308914,
+              "bad": 0.02433544397354126,
+              "good": 0.007067031227052212
+            },
+            "novel_unclipped": {
+              "fixed_queries": 28157,
+              "hits": 27646,
+              "common_hit_mae": 0.010936815291643143,
+              "fixed_unclipped_depth_with_missing_penalty": 0.012553153559565544,
+              "lost_fraction": 0.018148239701986313,
+              "missing_penalty": 0.1
+            }
+          }
+        }
+      },
+      "selections": {
+        "prior": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/prior_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/candidates/prior_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/prior_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/prior_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 54244,
+              "native_candidate_cells": 139464,
+              "composite_cells": 140324,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted_edit": false,
+          "candidates": 5,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n303",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/prior_n303_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/candidates/prior_n303.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/prior_n303_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/prior_n303_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 54244,
+              "native_candidate_cells": 128499,
+              "composite_cells": 130840,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/candidates/input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 54244,
+              "native_candidate_cells": 141942,
+              "composite_cells": 142539,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "paired_input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "paired_input_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/paired_input_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/candidates/paired_input_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/paired_input_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/paired_input_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 54244,
+              "native_candidate_cells": 141942,
+              "composite_cells": 142575,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "oracle": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/42/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/42/original_latent.pt"
+          },
+          "candidate": {
+            "name": "oracle_n202",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/oracle_n202_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/candidates/oracle_n202.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/oracle_n202_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/42/exports/oracle_n202_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 54244,
+              "native_candidate_cells": 141908,
+              "composite_cells": 142522,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        }
+      },
+      "budget": {
+        "input_seconds": 25.694506764411926,
+        "prior_seconds": 26.51008817180991,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.0317414696797218,
+        "GT_used": false
+      },
+      "domains": {
+        "input": {
+          "arm": "input",
+          "diagnostic_only": false,
+          "gt_used": false,
+          "target_queries": 4272,
+          "surface_queries": 340,
+          "query_ids_sha256": "3f762d2587106ca41318551923c7cae75001ee69b6592655233e0da22a63eaff",
+          "target_outside_envelope": 4,
+          "protected_pixels": 15558,
+          "domain": {
+            "global_verified_pixels": 5443,
+            "local_verified_pixels": 4272,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "paired_input": {
+          "arm": "paired_input",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 4272,
+          "surface_queries": 340,
+          "query_ids_sha256": "3f762d2587106ca41318551923c7cae75001ee69b6592655233e0da22a63eaff",
+          "target_outside_envelope": 4,
+          "protected_pixels": 15558,
+          "domain": {
+            "global_verified_pixels": 5443,
+            "local_verified_pixels": 4272,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "oracle": {
+          "arm": "oracle",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 4272,
+          "surface_queries": 340,
+          "query_ids_sha256": "3f762d2587106ca41318551923c7cae75001ee69b6592655233e0da22a63eaff",
+          "target_outside_envelope": 8,
+          "protected_pixels": 15558,
+          "domain": {
+            "global_verified_pixels": 5443,
+            "local_verified_pixels": 4272,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        }
+      },
+      "GT_used_for_method": false,
+      "diagnostic_arms": [
+        "paired_input",
+        "oracle"
+      ],
+      "base_cd_replay_error": 0.0,
+      "figure": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/011_42.jpg"
+    },
+    {
+      "time": "2026-10-29T08:11:48+00:00",
+      "index": 11,
+      "seed": 43,
+      "uid": "omni_kite_004",
+      "baseline": {
+        "surface": {
+          "chamfer_l1": 0.007160008566167367,
+          "fscore_0p01": 0.7628692779991612,
+          "fscore_0p02": 0.9738699136435048,
+          "fscore_0p05": 0.999969999099973
+        },
+        "novel_clipped_error": {
+          "all": 0.024570956826210022,
+          "bad": 0.03137483820319176,
+          "good": 0.0019042643252760172
+        },
+        "novel_unclipped": {
+          "fixed_queries": 26518,
+          "hits": 26518,
+          "common_hit_mae": 0.01147614885121584,
+          "fixed_unclipped_depth_with_missing_penalty": 0.01147614885121584,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "v2": {
+        "surface": {
+          "chamfer_l1": 0.007160008566167367,
+          "fscore_0p01": 0.7628692779991612,
+          "fscore_0p02": 0.9738699136435048,
+          "fscore_0p05": 0.999969999099973
+        },
+        "novel_clipped_error": {
+          "all": 0.024570956826210022,
+          "bad": 0.03137483820319176,
+          "good": 0.0019042643252760172
+        },
+        "novel_unclipped": {
+          "fixed_queries": 26518,
+          "hits": 26518,
+          "common_hit_mae": 0.01147614885121584,
+          "fixed_unclipped_depth_with_missing_penalty": 0.01147614885121584,
+          "lost_fraction": 0.0,
+          "missing_penalty": 0.1
+        }
+      },
+      "endpoints": {
+        "prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.007160008566167367,
+              "fscore_0p01": 0.7628692779991612,
+              "fscore_0p02": 0.9738699136435048,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.024570956826210022,
+              "bad": 0.03137483820319176,
+              "good": 0.0019042643252760172
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26518,
+              "common_hit_mae": 0.01147614885121584,
+              "fixed_unclipped_depth_with_missing_penalty": 0.01147614885121584,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006358936271304719,
+              "fscore_0p01": 0.8238828281799443,
+              "fscore_0p02": 0.9730642817358778,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.0218481607735157,
+              "bad": 0.026650382205843925,
+              "good": 0.005849878769367933
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26167,
+              "common_hit_mae": 0.009824838489294052,
+              "fixed_unclipped_depth_with_missing_penalty": 0.011018424294888973,
+              "lost_fraction": 0.013236292637884617,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.007160008566167367,
+              "fscore_0p01": 0.7628692779991612,
+              "fscore_0p02": 0.9738699136435048,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.024570956826210022,
+              "bad": 0.03137483820319176,
+              "good": 0.0019042643252760172
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26518,
+              "common_hit_mae": 0.01147614885121584,
+              "fixed_unclipped_depth_with_missing_penalty": 0.01147614885121584,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006425783079709684,
+              "fscore_0p01": 0.8221506743279193,
+              "fscore_0p02": 0.97440106400665,
+              "fscore_0p05": 0.999929995099657
+            },
+            "novel_clipped_error": {
+              "all": 0.022016460075974464,
+              "bad": 0.026788048446178436,
+              "good": 0.006120229605585337
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26136,
+              "common_hit_mae": 0.009978944435715675,
+              "fixed_unclipped_depth_with_missing_penalty": 0.011275725439190865,
+              "lost_fraction": 0.014405309222638607,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.007160008566167367,
+              "fscore_0p01": 0.7628692779991612,
+              "fscore_0p02": 0.9738699136435048,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.024570956826210022,
+              "bad": 0.03137483820319176,
+              "good": 0.0019042643252760172
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26518,
+              "common_hit_mae": 0.01147614885121584,
+              "fixed_unclipped_depth_with_missing_penalty": 0.01147614885121584,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006318444160434948,
+              "fscore_0p01": 0.8255792850227516,
+              "fscore_0p02": 0.9731597332511303,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.021799122914671898,
+              "bad": 0.02659447304904461,
+              "good": 0.005823737476021051
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26164,
+              "common_hit_mae": 0.009786047972738743,
+              "fixed_unclipped_depth_with_missing_penalty": 0.010990351438522339,
+              "lost_fraction": 0.013349423184990883,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "paired_input": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.007160008566167367,
+              "fscore_0p01": 0.7628692779991612,
+              "fscore_0p02": 0.9738699136435048,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.024570956826210022,
+              "bad": 0.03137483820319176,
+              "good": 0.0019042643252760172
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26518,
+              "common_hit_mae": 0.01147614885121584,
+              "fixed_unclipped_depth_with_missing_penalty": 0.01147614885121584,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.006319111707008355,
+              "fscore_0p01": 0.8254754871348001,
+              "fscore_0p02": 0.9734768674500781,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.021774565801024437,
+              "bad": 0.026559576392173767,
+              "good": 0.0058336141519248486
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26169,
+              "common_hit_mae": 0.00978278648108244,
+              "fixed_unclipped_depth_with_missing_penalty": 0.01097012311220169,
+              "lost_fraction": 0.013160872273147106,
+              "missing_penalty": 0.1
+            }
+          }
+        },
+        "oracle": {
+          "accepted": {
+            "surface": {
+              "chamfer_l1": 0.007160008566167367,
+              "fscore_0p01": 0.7628692779991612,
+              "fscore_0p02": 0.9738699136435048,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.024570956826210022,
+              "bad": 0.03137483820319176,
+              "good": 0.0019042643252760172
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26518,
+              "common_hit_mae": 0.01147614885121584,
+              "fixed_unclipped_depth_with_missing_penalty": 0.01147614885121584,
+              "lost_fraction": 0.0,
+              "missing_penalty": 0.1
+            }
+          },
+          "candidate": {
+            "surface": {
+              "chamfer_l1": 0.0062847890378422925,
+              "fscore_0p01": 0.8250951261684507,
+              "fscore_0p02": 0.9739656997946612,
+              "fscore_0p05": 0.999969999099973
+            },
+            "novel_clipped_error": {
+              "all": 0.021627316251397133,
+              "bad": 0.02643502876162529,
+              "good": 0.0056107379496097565
+            },
+            "novel_unclipped": {
+              "fixed_queries": 26518,
+              "hits": 26202,
+              "common_hit_mae": 0.009737396612763405,
+              "fixed_unclipped_depth_with_missing_penalty": 0.010813004337251186,
+              "lost_fraction": 0.01191643439233303,
+              "missing_penalty": 0.1
+            }
+          }
+        }
+      },
+      "selections": {
+        "prior": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/prior_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/candidates/prior_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/prior_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/prior_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 35376,
+              "native_candidate_cells": 126409,
+              "composite_cells": 125914,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "budget_prior": {
+          "accepted_edit": false,
+          "candidates": 6,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "prior_n505",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/prior_n505_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/candidates/prior_n505.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/prior_n505_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/prior_n505_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 35376,
+              "native_candidate_cells": 123415,
+              "composite_cells": 122584,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "input_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/input_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/candidates/input_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/input_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/input_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 35376,
+              "native_candidate_cells": 129027,
+              "composite_cells": 128347,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "paired_input": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "paired_input_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/paired_input_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/candidates/paired_input_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/paired_input_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/paired_input_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 35376,
+              "native_candidate_cells": 128982,
+              "composite_cells": 128317,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        },
+        "oracle": {
+          "accepted_edit": false,
+          "candidates": 2,
+          "accepted": {
+            "name": "base",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/011/43/registered_base.obj",
+            "kind": "direct_native_decode",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/011/43/original_latent.pt"
+          },
+          "candidate": {
+            "name": "oracle_n101",
+            "kind": "direct_native_decode",
+            "mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/oracle_n101_native.obj",
+            "latent": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/candidates/oracle_n101.pt",
+            "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/oracle_n101_composite.obj",
+            "composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/objects/011/43/exports/oracle_n101_composite_fields.pt",
+            "composite_not_method_output": true,
+            "field_checks": {
+              "exterior_fields_exact": true,
+              "baseline_exterior_cells": 35376,
+              "native_candidate_cells": 129258,
+              "composite_cells": 128638,
+              "output": "native FDG local composite; not direct decode of saved latent"
+            }
+          }
+        }
+      },
+      "budget": {
+        "input_seconds": 26.64331205934286,
+        "prior_seconds": 30.55178625881672,
+        "prior_candidates": 6,
+        "sufficient": true,
+        "ratio": 1.14669625873722,
+        "GT_used": false
+      },
+      "domains": {
+        "input": {
+          "arm": "input",
+          "diagnostic_only": false,
+          "gt_used": false,
+          "target_queries": 4082,
+          "surface_queries": 340,
+          "query_ids_sha256": "253649bb1c5b6394ceb8d934fc63935fc938ffdb54861565fc9dabb55c796fe9",
+          "target_outside_envelope": 2,
+          "protected_pixels": 13597,
+          "domain": {
+            "global_verified_pixels": 5093,
+            "local_verified_pixels": 4082,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "paired_input": {
+          "arm": "paired_input",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 4082,
+          "surface_queries": 340,
+          "query_ids_sha256": "253649bb1c5b6394ceb8d934fc63935fc938ffdb54861565fc9dabb55c796fe9",
+          "target_outside_envelope": 2,
+          "protected_pixels": 13597,
+          "domain": {
+            "global_verified_pixels": 5093,
+            "local_verified_pixels": 4082,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        },
+        "oracle": {
+          "arm": "oracle",
+          "diagnostic_only": true,
+          "gt_used": true,
+          "target_queries": 4082,
+          "surface_queries": 340,
+          "query_ids_sha256": "253649bb1c5b6394ceb8d934fc63935fc938ffdb54861565fc9dabb55c796fe9",
+          "target_outside_envelope": 5,
+          "protected_pixels": 13597,
+          "domain": {
+            "global_verified_pixels": 5093,
+            "local_verified_pixels": 4082,
+            "domain": "fixed input-defined edit envelope",
+            "gt_used": false
+          }
+        }
+      },
+      "GT_used_for_method": false,
+      "diagnostic_arms": [
+        "paired_input",
+        "oracle"
+      ],
+      "base_cd_replay_error": 0.0,
+      "figure": "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/011_43.jpg"
+    }
+  ],
+  "costs": [
+    {
+      "index": 5,
+      "seed": 42,
+      "budget": {
+        "input_seconds": 57.305797604843974,
+        "prior_seconds": 65.66356251016259,
+        "prior_candidates": 4,
+        "sufficient": true,
+        "ratio": 1.1458450148962267,
+        "GT_used": false
+      },
+      "peak_gib": 6.318073749542236,
+      "full_bank_sampling_seconds": 83.58069392479956,
+      "guided_sampling_seconds": 45.535677406936884
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "budget": {
+        "input_seconds": 45.945111667737365,
+        "prior_seconds": 56.9655184764415,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.2398602682348612,
+        "GT_used": false
+      },
+      "peak_gib": 3.837399482727051,
+      "full_bank_sampling_seconds": 73.29466356150806,
+      "guided_sampling_seconds": 42.68357516825199
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "budget": {
+        "input_seconds": 25.316667864099145,
+        "prior_seconds": 26.90319038927555,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.0626671145544477,
+        "GT_used": false
+      },
+      "peak_gib": 3.5161566734313965,
+      "full_bank_sampling_seconds": 40.3455022405833,
+      "guided_sampling_seconds": 24.74238639138639
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "budget": {
+        "input_seconds": 23.810603270307183,
+        "prior_seconds": 27.732824886217713,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.1647258396347187,
+        "GT_used": false
+      },
+      "peak_gib": 3.521057605743408,
+      "full_bank_sampling_seconds": 42.15035635046661,
+      "guided_sampling_seconds": 23.218082193285227
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "budget": {
+        "input_seconds": 42.42370033822954,
+        "prior_seconds": 45.66523062810302,
+        "prior_candidates": 4,
+        "sufficient": true,
+        "ratio": 1.0764084760176476,
+        "GT_used": false
+      },
+      "peak_gib": 3.7248430252075195,
+      "full_bank_sampling_seconds": 81.42616848275065,
+      "guided_sampling_seconds": 40.420625852420926
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "budget": {
+        "input_seconds": 35.44182783737779,
+        "prior_seconds": 41.308028884232044,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.1655163236436588,
+        "GT_used": false
+      },
+      "peak_gib": 3.555952548980713,
+      "full_bank_sampling_seconds": 61.193986643105745,
+      "guided_sampling_seconds": 34.169250359758735
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "budget": {
+        "input_seconds": 25.694506764411926,
+        "prior_seconds": 26.51008817180991,
+        "prior_candidates": 5,
+        "sufficient": true,
+        "ratio": 1.0317414696797218,
+        "GT_used": false
+      },
+      "peak_gib": 3.506330966949463,
+      "full_bank_sampling_seconds": 39.65723448432982,
+      "guided_sampling_seconds": 25.261148946359754
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "budget": {
+        "input_seconds": 26.64331205934286,
+        "prior_seconds": 30.55178625881672,
+        "prior_candidates": 6,
+        "sufficient": true,
+        "ratio": 1.14669625873722,
+        "GT_used": false
+      },
+      "peak_gib": 3.5019874572753906,
+      "full_bank_sampling_seconds": 39.04540555924177,
+      "guided_sampling_seconds": 26.285968368873
+    }
+  ],
+  "v2_delivered_cd_gain": {
+    "mean": 0.00040226035691205415,
+    "by_object": {
+      "omni_brussels_sprout_002": 0.00412264257830129,
+      "omni_carrot_009": 0.0,
+      "omni_handbag_006": 0.0,
+      "omni_kite_004": -0.002513601150653073
+    }
+  },
+  "method_GT_used": false,
+  "development_only": true,
+  "failed_checks": {
+    "observed_gain": 44,
+    "mask_safe": 58,
+    "training_nonregression": 41,
+    "photo_safe": 50,
+    "exterior_safe": 17,
+    "topology_safe": 8
+  },
+  "coarse_reachability": [
+    {
+      "index": 5,
+      "seed": 42,
+      "arm": "input",
+      "noise": 101,
+      "queries": 426,
+      "coarse_reachable": 348,
+      "outside_envelope": 71
+    },
+    {
+      "index": 5,
+      "seed": 42,
+      "arm": "input",
+      "noise": 202,
+      "queries": 426,
+      "coarse_reachable": 348,
+      "outside_envelope": 71
+    },
+    {
+      "index": 5,
+      "seed": 42,
+      "arm": "paired_input",
+      "noise": 101,
+      "queries": 426,
+      "coarse_reachable": 348,
+      "outside_envelope": 71
+    },
+    {
+      "index": 5,
+      "seed": 42,
+      "arm": "paired_input",
+      "noise": 202,
+      "queries": 426,
+      "coarse_reachable": 348,
+      "outside_envelope": 71
+    },
+    {
+      "index": 5,
+      "seed": 42,
+      "arm": "oracle",
+      "noise": 101,
+      "queries": 426,
+      "coarse_reachable": 159,
+      "outside_envelope": 73
+    },
+    {
+      "index": 5,
+      "seed": 42,
+      "arm": "oracle",
+      "noise": 202,
+      "queries": 426,
+      "coarse_reachable": 159,
+      "outside_envelope": 73
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "arm": "input",
+      "noise": 101,
+      "queries": 421,
+      "coarse_reachable": 411,
+      "outside_envelope": 0
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "arm": "input",
+      "noise": 202,
+      "queries": 421,
+      "coarse_reachable": 411,
+      "outside_envelope": 0
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "arm": "paired_input",
+      "noise": 101,
+      "queries": 421,
+      "coarse_reachable": 411,
+      "outside_envelope": 0
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "arm": "paired_input",
+      "noise": 202,
+      "queries": 421,
+      "coarse_reachable": 411,
+      "outside_envelope": 0
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "arm": "oracle",
+      "noise": 101,
+      "queries": 421,
+      "coarse_reachable": 383,
+      "outside_envelope": 0
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "arm": "oracle",
+      "noise": 202,
+      "queries": 421,
+      "coarse_reachable": 383,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "arm": "input",
+      "noise": 101,
+      "queries": 32,
+      "coarse_reachable": 31,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "arm": "input",
+      "noise": 202,
+      "queries": 32,
+      "coarse_reachable": 31,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "arm": "paired_input",
+      "noise": 101,
+      "queries": 32,
+      "coarse_reachable": 31,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "arm": "paired_input",
+      "noise": 202,
+      "queries": 32,
+      "coarse_reachable": 31,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "arm": "oracle",
+      "noise": 101,
+      "queries": 32,
+      "coarse_reachable": 30,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "arm": "oracle",
+      "noise": 202,
+      "queries": 32,
+      "coarse_reachable": 30,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "arm": "input",
+      "noise": 101,
+      "queries": 19,
+      "coarse_reachable": 11,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "arm": "input",
+      "noise": 202,
+      "queries": 19,
+      "coarse_reachable": 11,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "arm": "paired_input",
+      "noise": 101,
+      "queries": 19,
+      "coarse_reachable": 11,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "arm": "paired_input",
+      "noise": 202,
+      "queries": 19,
+      "coarse_reachable": 11,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "arm": "oracle",
+      "noise": 101,
+      "queries": 19,
+      "coarse_reachable": 19,
+      "outside_envelope": 0
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "arm": "oracle",
+      "noise": 202,
+      "queries": 19,
+      "coarse_reachable": 19,
+      "outside_envelope": 0
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "arm": "input",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 112,
+      "outside_envelope": 220
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "arm": "input",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 112,
+      "outside_envelope": 220
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "arm": "paired_input",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 112,
+      "outside_envelope": 220
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "arm": "paired_input",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 112,
+      "outside_envelope": 220
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "arm": "oracle",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 15,
+      "outside_envelope": 312
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "arm": "oracle",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 15,
+      "outside_envelope": 312
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "arm": "input",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 337,
+      "outside_envelope": 0
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "arm": "input",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 337,
+      "outside_envelope": 0
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "arm": "paired_input",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 337,
+      "outside_envelope": 0
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "arm": "paired_input",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 337,
+      "outside_envelope": 0
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "arm": "oracle",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 323,
+      "outside_envelope": 0
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "arm": "oracle",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 323,
+      "outside_envelope": 0
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "arm": "input",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 307,
+      "outside_envelope": 4
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "arm": "input",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 307,
+      "outside_envelope": 4
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "arm": "paired_input",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 307,
+      "outside_envelope": 4
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "arm": "paired_input",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 307,
+      "outside_envelope": 4
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "arm": "oracle",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 325,
+      "outside_envelope": 8
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "arm": "oracle",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 325,
+      "outside_envelope": 8
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "arm": "input",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 317,
+      "outside_envelope": 2
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "arm": "input",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 317,
+      "outside_envelope": 2
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "arm": "paired_input",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 317,
+      "outside_envelope": 2
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "arm": "paired_input",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 317,
+      "outside_envelope": 2
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "arm": "oracle",
+      "noise": 101,
+      "queries": 340,
+      "coarse_reachable": 329,
+      "outside_envelope": 5
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "arm": "oracle",
+      "noise": 202,
+      "queries": 340,
+      "coarse_reachable": 329,
+      "outside_envelope": 5
+    }
+  ],
+  "numerical_repeats": [
+    {
+      "index": 5,
+      "seed": 42,
+      "noise": 101,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.017974592745304108,
+      "rms_normalized_delta": 0.0009982036426663399
+    },
+    {
+      "index": 5,
+      "seed": 42,
+      "noise": 202,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.027049386873841286,
+      "rms_normalized_delta": 0.0011727631790563464
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "noise": 101,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.0,
+      "rms_normalized_delta": 0.0
+    },
+    {
+      "index": 5,
+      "seed": 43,
+      "noise": 202,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.0,
+      "rms_normalized_delta": 0.0
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "noise": 101,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.018980225548148155,
+      "rms_normalized_delta": 0.0009135694708675146
+    },
+    {
+      "index": 6,
+      "seed": 42,
+      "noise": 202,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.013257578015327454,
+      "rms_normalized_delta": 0.000991635024547577
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "noise": 101,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.10080050677061081,
+      "rms_normalized_delta": 0.0018058931455016136
+    },
+    {
+      "index": 6,
+      "seed": 43,
+      "noise": 202,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.00011551498027984053,
+      "rms_normalized_delta": 2.1259104414639296e-06
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "noise": 101,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.2875489294528961,
+      "rms_normalized_delta": 0.005056235007941723
+    },
+    {
+      "index": 10,
+      "seed": 42,
+      "noise": 202,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.024105112999677658,
+      "rms_normalized_delta": 0.0008377257618121803
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "noise": 101,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.05387650057673454,
+      "rms_normalized_delta": 0.0018960620509460568
+    },
+    {
+      "index": 10,
+      "seed": 43,
+      "noise": 202,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.06118672341108322,
+      "rms_normalized_delta": 0.0021214683074504137
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "noise": 101,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.09056437015533447,
+      "rms_normalized_delta": 0.002920745173469186
+    },
+    {
+      "index": 11,
+      "seed": 42,
+      "noise": 202,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.04600081965327263,
+      "rms_normalized_delta": 0.0024594345595687628
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "noise": 101,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.01755404844880104,
+      "rms_normalized_delta": 0.002448761835694313
+    },
+    {
+      "index": 11,
+      "seed": 43,
+      "noise": 202,
+      "identical_target_domain": true,
+      "max_normalized_delta": 0.08266806602478027,
+      "rms_normalized_delta": 0.0032248208299279213
+    }
+  ],
+  "input_incremental_cd_gain": {
+    "prior": {
+      "mean": 0.00016738467033586036,
+      "by_object": {
+        "omni_brussels_sprout_002": 0.0006695386813434414,
+        "omni_carrot_009": 0.0,
+        "omni_handbag_006": 0.0,
+        "omni_kite_004": 0.0
+      }
+    },
+    "budget_prior": {
+      "mean": 0.00016738467033586036,
+      "by_object": {
+        "omni_brussels_sprout_002": 0.0006695386813434414,
+        "omni_carrot_009": 0.0,
+        "omni_handbag_006": 0.0,
+        "omni_kite_004": 0.0
+      }
+    },
+    "v2": {
+      "mean": 0.0007732201024891543,
+      "by_object": {
+        "omni_brussels_sprout_002": 0.0005918524329054072,
+        "omni_carrot_009": 0.0,
+        "omni_handbag_006": 0.0,
+        "omni_kite_004": 0.00250102797705121
+      }
+    }
+  },
+  "guidance_updates": {
+    "input": {
+      "attempted": 48,
+      "accepted": 48
+    },
+    "paired_input": {
+      "attempted": 48,
+      "accepted": 48
+    },
+    "oracle": {
+      "attempted": 48,
+      "accepted": 48
+    }
+  }
+}

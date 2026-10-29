@@ -1,0 +1,140 @@
+{
+  "time": "2026-10-29T07:26:09+00:00",
+  "passed": true,
+  "native_field_max_difference": 0.0,
+  "native_mesh_exact": true,
+  "absent_child_before": -4.8359375,
+  "absent_child_curve": [
+    {
+      "step": 1,
+      "logit": 35.6875
+    }
+  ],
+  "native_child_created": true,
+  "real_guide": [
+    9,
+    10,
+    11
+  ],
+  "real_geometry_update": {
+    "arm": "input",
+    "diagnostic_only": false,
+    "gt_used": false,
+    "target_queries": 709,
+    "surface_queries": 426,
+    "query_ids_sha256": "af5444b67021e2191e0ec8ad5c786e16430b296709e95bcb7e22e34f50cdaaaf",
+    "target_outside_envelope": 71,
+    "protected_pixels": 96584,
+    "domain": {
+      "global_verified_pixels": 789,
+      "local_verified_pixels": 709,
+      "domain": "fixed input-defined edit envelope",
+      "gt_used": false
+    }
+  },
+  "real_guide_curve": [
+    {
+      "step": 11,
+      "time": 0.214285714,
+      "gradient_norm": 0.13599616289138794,
+      "accepted": true,
+      "step_fraction": 1.0,
+      "before": {
+        "surface": 4.241221904754639,
+        "subdivision": 103.93598937988281,
+        "free": 0.04269622266292572,
+        "field_protect": 0.016584616154432297,
+        "depth": 9.231456756591797,
+        "silhouette": 0.1191399097442627,
+        "protect": 0.0001770881499396637,
+        "loss": 25.923179626464844,
+        "surface_queries": 426,
+        "surface_cells": 296901,
+        "free_cells": 10,
+        "routing": [
+          {
+            "grid": 32,
+            "queries": 426,
+            "reachable_parent": 106,
+            "fixed_denominator": 426,
+            "missing_penalty_max": 128.375
+          },
+          {
+            "grid": 64,
+            "queries": 426,
+            "reachable_parent": 77,
+            "fixed_denominator": 426,
+            "missing_penalty_max": 156.0
+          },
+          {
+            "grid": 128,
+            "queries": 426,
+            "reachable_parent": 45,
+            "fixed_denominator": 426,
+            "missing_penalty_max": 124.125
+          },
+          {
+            "grid": 256,
+            "queries": 426,
+            "reachable_parent": 15,
+            "fixed_denominator": 426,
+            "missing_penalty_max": 66.0625
+          }
+        ],
+        "prior": 0.0
+      },
+      "after": {
+        "surface": 4.235946178436279,
+        "subdivision": 100.01203155517578,
+        "free": 0.056778434664011,
+        "field_protect": 0.01644461415708065,
+        "depth": 8.962742805480957,
+        "silhouette": 0.11906226724386215,
+        "protect": 0.00036700471537187696,
+        "loss": 25.066131591796875,
+        "surface_queries": 426,
+        "surface_cells": 297034,
+        "free_cells": 12,
+        "routing": [
+          {
+            "grid": 32,
+            "queries": 426,
+            "reachable_parent": 106,
+            "fixed_denominator": 426,
+            "missing_penalty_max": 128.375
+          },
+          {
+            "grid": 64,
+            "queries": 426,
+            "reachable_parent": 89,
+            "fixed_denominator": 426,
+            "missing_penalty_max": 156.0
+          },
+          {
+            "grid": 128,
+            "queries": 426,
+            "reachable_parent": 58,
+            "fixed_denominator": 426,
+            "missing_penalty_max": 124.125
+          },
+          {
+            "grid": 256,
+            "queries": 426,
+            "reachable_parent": 30,
+            "fixed_denominator": 426,
+            "missing_penalty_max": 66.0625
+          }
+        ],
+        "prior": 0.0012400115374475718
+      },
+      "clean_delta_max": 0.24000000953674316,
+      "seconds": 2.4520325381308794
+    }
+  ],
+  "real_guide_exterior_exact": true,
+  "zero_guide_v2_features_exact": true,
+  "zero_guide_v2_coords_exact": true,
+  "GT_used": false,
+  "controlled_route_target": true,
+  "seconds": 52.84766759350896
+}

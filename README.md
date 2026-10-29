@@ -106,3 +106,29 @@ watch -n 10 -d 'bash /home/zjr/Tracker/trellis2_geometry_repair/run_local_regene
 
 Read `trellis2_geometry_repair/experiments/local_regeneration/PROTOCOL.md` and
 audit sections5.1–5.3 for evidence, limitations, preserved failures and storage.
+
+## Native geometry-guided Flow V3 (2026-10-29)
+
+V3 updates predicted clean latents during the last three Euler steps using
+native continuous surface fields, subdivision logits, input geometry and
+preservation losses. Weights remain frozen. The same SS/noise prior controls
+and a measured-cost prior bank accompany input-guided proposals. Method
+choices are sealed before paired GT-domain/input-depth and GT-depth diagnostics.
+
+All8 cases and full readback of112 latents/36 composites completed.22 CPU
+regressions and native GPU parity/missing-child/zero-guide checks passed.
+The initial variable-domain objective and the subsequent FP16 reduction bug
+were audited and corrected before the final experiment; their artifacts stay
+separate. Actual input accepted1/8: delivered CD gain0.1177% vs base, only
+0.0167% vs budget-matched prior. Metrics remain mixed and numerically sensitive.
+Read `docs/guided_flow_v3_20261029/FINAL_ANALYSIS.md` and the fixed-noise audit;
+technical validation does not establish reliable repair.
+
+```bash
+bash trellis2_geometry_repair/run_guided_flow.sh tests
+bash trellis2_geometry_repair/run_guided_flow.sh status
+```
+
+The original-machine launchers and inherited data/cache dependencies remain
+explicit. Physical V3 outputs are under
+`/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029`.

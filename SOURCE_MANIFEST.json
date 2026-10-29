@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-29T05:14:17.206348+00:00",
+  "created_at": "2026-10-29T08:43:22.363286+00:00",
   "source_root": "/home/zjr/Tracker",
   "packages": [
     "trellis2_geometry_repair",
@@ -13,7 +13,7 @@
     "pixal3d_multiview"
   ],
   "counts": {
-    "trellis2_geometry_repair": 70,
+    "trellis2_geometry_repair": 91,
     "visual_evidence_probe": 204,
     "pose_aligned_reconstruction": 92,
     "pose_aligned_layered_reconstruction": 379,
@@ -5882,14 +5882,14 @@
     },
     {
       "path": "trellis2_geometry_repair/README.md",
-      "bytes": 3470,
-      "sha256": "3256fe7a8f65b43dbe467efef0771a34dd505661d03f006d380a467fc677f2e2",
+      "bytes": 3927,
+      "sha256": "85b884476efa5ff28b0c18fe4c0d254b52185ccadee80d333623871f2fed2b21",
       "materialized_symlink": false
     },
     {
       "path": "trellis2_geometry_repair/VALIDATION.md",
-      "bytes": 5546,
-      "sha256": "08115ac37a9d20eb48a63562f8172060be897bfc3609e9958b593bc1d5c8c812",
+      "bytes": 6039,
+      "sha256": "bfb3ce6820f00d723ed79b67811659c8759fce12c3d3f940491c0f0a91d14162",
       "materialized_symlink": false
     },
     {
@@ -5950,6 +5950,126 @@
       "path": "trellis2_geometry_repair/experiments/__init__.py",
       "bytes": 80,
       "sha256": "e5271c5ad4a8f27d8c35123432c6d2c868830ac18f9491b8c9995c31c48ddfc5",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/PROTOCOL.md",
+      "bytes": 7163,
+      "sha256": "02877d237b863da6555858875a03aa28a9b6be5eb5469a381550c928f5926a95",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/PROTOCOL_V3_INITIAL.md",
+      "bytes": 6226,
+      "sha256": "add617c1b000438b80dc5eb8864a0de180d5ce9a4977addda2b8ed259c3b7d7a",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/README.md",
+      "bytes": 2723,
+      "sha256": "4bffe1f480e2928711da7441ed857276518ba54488e4447c1c23fa6f6b7728dd",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/__init__.py",
+      "bytes": 79,
+      "sha256": "4c8eb217c5251a088a04779f7b86c7e744516050acc7dc4b3962046c024811e6",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/backend.py",
+      "bytes": 1442,
+      "sha256": "87f081f1486fd3d985952e603ad5f0b0451967eecb46387bc67de29062a796fd",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/config.py",
+      "bytes": 3017,
+      "sha256": "3e45a02cda104f067399ab0866eb1c56cd989445a8274bc475e7a2f84624d56a",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/data.py",
+      "bytes": 5303,
+      "sha256": "d54872acd84db69e997c8a6ea98b6112bec07a1a2f70a0e4ace6ae6dda056809",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/evaluate.py",
+      "bytes": 6391,
+      "sha256": "213cb57a2f9dfca1880026ac924ee7e327365265362389fa5a16156148080492",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/generation.py",
+      "bytes": 5221,
+      "sha256": "2a63fa2708ed023fe484bfa52f86559cfa5c9f7e5f800d886380e6af65a10c7f",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/guide.py",
+      "bytes": 2890,
+      "sha256": "1e812000dedf7571815675c0f38e37818decde28d5c228ec88159cea529be228",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/integration.py",
+      "bytes": 1657,
+      "sha256": "a109a1a3d3056425ba79e9d18cd773617544a75de6af20dff251ac82971c2883",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/objective.py",
+      "bytes": 9009,
+      "sha256": "b08b1a083179a1e642bb122aa869d702003a71c2e6939c823ef54dd1416e1acc",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/paired_audit.py",
+      "bytes": 5971,
+      "sha256": "c6df6d9dc35b352e5960d74ac11cfe4ff0242e856aac89abe3f9520f630412b4",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/pipeline.py",
+      "bytes": 4451,
+      "sha256": "74571746d65b92e4c2911c4ba3dcd0c44375c6a7bd61a7912666200ca0a78b36",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/prepare.py",
+      "bytes": 1189,
+      "sha256": "1f9e1a911e05773f0cc3498813aaceb1441a05792a90534f0b6fca139b3c1e33",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/report.py",
+      "bytes": 12330,
+      "sha256": "3c35778868b975578fc7b7deb6fb52e135ce7d38860be4a07cd84fda973371a8",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/selection.py",
+      "bytes": 6635,
+      "sha256": "80d122e3c0dd796a805502ecc05e2f0970e82fe27bb83449998271ecdf54a495",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/smoke.py",
+      "bytes": 6449,
+      "sha256": "8e82b93a74f48ac9d3d5cd7970fc9858797d51dedc16114c150749921485c28b",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/status.py",
+      "bytes": 1310,
+      "sha256": "89ee404100326b3c94fe9cc1fac096c8aea24ab916ec2ef50bed99a9cda569ee",
+      "materialized_symlink": false
+    },
+    {
+      "path": "trellis2_geometry_repair/experiments/guided_flow/test_guidance.py",
+      "bytes": 10195,
+      "sha256": "d3dc34d471932ed730c641248d22705fabb4942fad275a6db6a40cb04489c9f7",
       "materialized_symlink": false
     },
     {
@@ -6259,6 +6379,12 @@
       "materialized_symlink": false
     },
     {
+      "path": "trellis2_geometry_repair/run_guided_flow.sh",
+      "bytes": 3179,
+      "sha256": "72391245f3eb8a9d8c051d72603693f3a1d2f42860d810dff7611b06f8667ef8",
+      "materialized_symlink": false
+    },
+    {
       "path": "trellis2_geometry_repair/run_local_regeneration.sh",
       "bytes": 3172,
       "sha256": "fea41dbf63d1652395679bafe4f072547d98945b4a02c71927d386b16a6018eb",
@@ -6290,14 +6416,14 @@
     },
     {
       "path": "trellis2_geometry_repair/审计.md",
-      "bytes": 29957,
-      "sha256": "7281c25a7043857c9fb73e0f50836e5d8ebabbc3a0fbb6813e97121ad0b8e47b",
+      "bytes": 43208,
+      "sha256": "9d14ec8ae605e5833f5e937e643550b7846ca0a877acff114b942331284ca949",
       "materialized_symlink": false
     }
   ],
   "skipped": [],
   "excluded": "datasets, model weights, generated assets, caches, unrelated projects and upstream checkout trees",
-  "update_scope": "Only trellis2_geometry_repair and its small local-regeneration receipts; all other source packages remain the prior snapshot.",
+  "update_scope": "Only trellis2_geometry_repair and its small V3 receipts; all other source packages remain the previous snapshot and used shared helpers were verified identical.",
   "local_regeneration_receipts": [
     {
       "path": "docs/local_regeneration_20261029/FINAL_ANALYSIS.md",
@@ -6373,6 +6499,78 @@
       "path": "docs/local_regeneration_20261029/v2_tests.log",
       "bytes": 3327,
       "sha256": "a8bfbd4b52b29944cf8498390d39f369f9cee10e243ce322f655a06e273d8aa0"
+    }
+  ],
+  "guided_flow_v3_receipts": [
+    {
+      "path": "docs/guided_flow_v3_20261029/CPU_TESTS.txt",
+      "bytes": 3174,
+      "sha256": "e594b54af8d4fccc27155fcbd73882161f87461ebf57a15fc0f8a29cf4f32899"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/FINAL_ANALYSIS.md",
+      "bytes": 6860,
+      "sha256": "f6e90f00bef64386e5e25d10a7d3b4ebe211d98eb02a085fb530122cf0f61d21"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/PAIRED_GEOMETRY_AUDIT.md",
+      "bytes": 786,
+      "sha256": "01facb8aafa50210623a67f9ee3125a359db14b41ed588b7f36274a5ae1a9669"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/README.md",
+      "bytes": 791,
+      "sha256": "356354bad2cbbc3b78f5c9543dc4ecafc6dc7cf886859a6ecc68c49a8068cc1d"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/REPORT.md",
+      "bytes": 2911,
+      "sha256": "34f12fab1d35688e6bf343feba2cb5f90156d3b7d92b00fd4e97d1ed320a5482"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/artifact_checks.json",
+      "bytes": 229,
+      "sha256": "1b1dd0d6b32d2b95b1d5604dcc68f180470661a6bf9f72d43e72a1b3a252cc6c"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/closeout.json",
+      "bytes": 338,
+      "sha256": "59d620cc83637b73986cc7c315f6e0eecaa27c5137bc56e5f581584c1028a953"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/core_source_freeze.json",
+      "bytes": 7045,
+      "sha256": "4ad7a87856240e0e9613c1c906a8adc09c4805be9c3695d2e3c90db58b841db2"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/final_analysis.json",
+      "bytes": 331,
+      "sha256": "2d1e0351f4175004d6c9613feb79eb9f71f1af1e30e3147d7c3f16b59ce4f581"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/paired_geometry_audit.json",
+      "bytes": 20521,
+      "sha256": "d587463d52095281498f3cfe11122b2aa75093742fb592e12bf59d8079dd7c15"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/protocol.json",
+      "bytes": 1368,
+      "sha256": "e671ddf832762e9ba09f843fb5a897f71992fa040add26ac7d51d85f1b664279"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/smoke_complete.json",
+      "bytes": 3831,
+      "sha256": "5c468e8de7c36acc84c282c00f7962190b83e15c2d6740d1ab1a6c4c6cc945a0"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/summary.json",
+      "bytes": 192626,
+      "sha256": "db7ff66e63004b2028ee2e91766b8faf422a8aa5a540c1f805ec98d719ba77c6"
+    },
+    {
+      "path": "docs/guided_flow_v3_20261029/visual_audit.json",
+      "bytes": 947,
+      "sha256": "8b80bacc2c9898879ac9331b61165ef5570e1b1e7cb88001083978586c95ce35"
     }
   ]
 }

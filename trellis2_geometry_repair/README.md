@@ -64,3 +64,11 @@ V2 closeout: all eight cases and full artifact checks completed at
 `/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/FINAL_ANALYSIS.md`.
 Adaptive delivered CD gain is only0.0402% with mixed F-score/novel-view results;
 this validates the implementation, not reliable geometry repair.
+
+The separate V3 implementation is described in
+[guided_flow/README.md](experiments/guided_flow/README.md). It guides native
+Flow clean-state predictions using continuous decoder fields and subdivision
+logits, with input-only selections sealed before paired GT diagnostics.
+Monitor it using `bash trellis2_geometry_repair/run_guided_flow.sh status`.
+Its physical outputs are under
+`/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029`.

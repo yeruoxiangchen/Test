@@ -90,3 +90,12 @@ The 13 scientific implementation files and v2 protocol match the launch snapshot
 Adaptive accepted3/8; delivered CD improved only0.0402% and metrics are mixed.
 See audit §5.3 and the data-side FINAL_ANALYSIS.md; completion is a technical
 result, not a claim of useful reconstruction improvement.
+
+## Guided Flow V3 completed
+
+Completed 2026-10-29T08:12:02+00:00: 22 CPU tests, native GPU parity/missing-child
+gradient/zero-guide replay checks, 8 complete cases, 112 saved latents and
+36 composites passed full readback. Sixteen fixed-noise geometry pairs and
+all eight comparison figures were audited after sealing. Core scientific
+code matches the launch snapshot. Actual input accepted1/8 with only0.1177%
+delivered CD gain; read audit §6.3 for mixed metrics and numerical sensitivity.

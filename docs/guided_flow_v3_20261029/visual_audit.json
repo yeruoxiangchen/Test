@@ -1,0 +1,16 @@
+{
+  "time": "2026-10-29T08:28:03+00:00",
+  "inspected": [
+    "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/005_42.jpg",
+    "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/005_43.jpg",
+    "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/006_42.jpg",
+    "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/006_43.jpg",
+    "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/010_42.jpg",
+    "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/010_43.jpg",
+    "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/011_42.jpg",
+    "/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029/figures/011_43.jpg"
+  ],
+  "cases": 8,
+  "common_cameras_and_crops": true,
+  "method_and_diagnostics_labeled": true
+}
