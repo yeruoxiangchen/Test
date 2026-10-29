@@ -1,0 +1,63 @@
+{
+  "params": {
+    "indices": [
+      5,
+      6,
+      10,
+      11
+    ],
+    "seeds": [
+      42,
+      43
+    ],
+    "side": 256,
+    "grid": 32,
+    "shape_times": [
+      0.35,
+      0.75
+    ],
+    "proposal_seeds": [
+      101,
+      202
+    ],
+    "ss_times": [
+      0.65,
+      1.0
+    ],
+    "flow_steps": 12,
+    "sigma_min": 1e-05,
+    "buffer_cells": 2,
+    "max_core_cells": 1024,
+    "depth_floor": 0.005,
+    "photo_max_cost": 0.3,
+    "photo_min_gain": 0.015,
+    "photo_min_std": 0.02,
+    "consistency_depth": 0.02,
+    "min_trusted_pixels": 16,
+    "mask_tolerance": 0.002,
+    "registration_steps": 30,
+    "registration_lr": 0.025,
+    "registration_finalists": 2,
+    "ss_guidance_steps": 6,
+    "ss_guidance_lr": 0.06,
+    "ss_guidance_cap": 1.0,
+    "min_mask_gain": 0.001,
+    "min_depth_gain": 0.05,
+    "photo_tolerance": 0.002,
+    "max_added_small_area": 0.003,
+    "max_surface_ratio": 1.35,
+    "profile": "voxel_aware_anchored_v2",
+    "voxel_aware": true,
+    "anchor_support": true,
+    "anchor_min_rays": 3,
+    "mask_deficit_fraction": 0.05,
+    "local_depth_scoring": true
+  },
+  "arms": [
+    "shape",
+    "adaptive"
+  ],
+  "base": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028",
+  "protocol_sha256": "8b7071751a192eca9b6eac87d0f8fef61b8322547a0f78e04564d11c0f8e87b4",
+  "development_only": true
+}

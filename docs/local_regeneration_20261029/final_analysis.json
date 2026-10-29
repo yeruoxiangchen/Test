@@ -1,0 +1,72 @@
+{
+  "time": "2026-10-29T05:06:42+00:00",
+  "complete": true,
+  "technical_closeout": {
+    "time": "2026-10-29T05:03:33+00:00",
+    "complete": true,
+    "cases": 8,
+    "checks": {
+      "time": "2026-10-29T05:03:33+00:00",
+      "passed": true,
+      "candidate_latents": 64,
+      "serialized_composites": 13,
+      "ss_supports": 16,
+      "input_cases": 8,
+      "indices": [
+        5,
+        6,
+        10,
+        11
+      ],
+      "seeds": [
+        42,
+        43
+      ],
+      "partial": false
+    },
+    "report": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/REPORT.md"
+  },
+  "metrics": {
+    "shape": {
+      "accepted": 2,
+      "cd_gain": -0.0006089817426615824,
+      "fscore_0p01_delta": -0.0002597284471424974,
+      "fscore_0p02_delta": -0.0002623509092065032,
+      "novel_error_gain": {
+        "all": 0.0009420563271234478,
+        "bad": 0.0017601509559782465,
+        "good": -0.04803635548084138,
+        "selected_bad": -0.0019839708896001902
+      }
+    },
+    "adaptive": {
+      "accepted": 3,
+      "cd_gain": 0.00040226035691205415,
+      "fscore_0p01_delta": -0.00045765570113557794,
+      "fscore_0p02_delta": 0.00017162744093407456,
+      "novel_error_gain": {
+        "all": 0.0007424258433627142,
+        "bad": 0.0015896905512385363,
+        "good": -0.07190297316900808,
+        "selected_bad": -0.003932580511614563
+      }
+    }
+  },
+  "input_stage_seconds": {
+    "min": 136.0987660754472,
+    "median": 185.5265000127256,
+    "max": 538.1456880439073
+  },
+  "inspected_figures": [
+    "005_42",
+    "005_43",
+    "006_42",
+    "006_43",
+    "010_42",
+    "010_43",
+    "011_42",
+    "011_43"
+  ],
+  "core_scientific_source_unchanged": true,
+  "GT_used_for_decisions": false
+}

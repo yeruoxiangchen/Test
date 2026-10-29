@@ -1,0 +1,30 @@
+test_boundary_voxel_uses_foreground_footprint_instead_of_center (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_connected_region_does_not_merge_distant_errors (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_coordinate_join_handles_new_and_reordered_cells (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_empty_field_region_preserves_storage_order_and_values (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_field_buffer_blends_existing_cells_without_duplicates (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_field_composition_replaces_core_but_freezes_exterior (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_footprint_rejects_background_and_outside_image (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_full_mask_has_identical_euler_updates (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_full_noise_schedule_matches_standard_rescaling (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_local_scoring_keeps_target_or_baseline_inside_fixed_envelope (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_native_support_mode_does_not_add_anchors_without_request (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_no_region_is_exact_identity_without_model_calls (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_outside_follows_reference_noise_and_ends_exact (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_partial_sampling_starts_at_requested_time (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_region_budget_remains_bounded (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_restoration_uses_denormalized_original_bits (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_verified_support_anchors_survive_native_threshold_and_preserve_outside (trellis2_geometry_repair.experiments.local_regeneration.test_local.LocalTests) ... ok
+test_edit_path_redecodes_native_topology_each_time (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_frozen_hooks_survive_checkpoint_backward_and_native_bypass (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_missing_rays_still_pay_error (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_native_decoder_rejects_default256_and_out_of_range_coords (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_repair_gate_abstains_without_target_gain (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_rotation_search_has24_proper_rotations (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_similarity_cannot_introduce_reflections (trellis2_geometry_repair.test_core.CoreTests) ... ok
+test_surface_sampling_is_reproducible (trellis2_geometry_repair.test_core.CoreTests) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.018s
+
+OK

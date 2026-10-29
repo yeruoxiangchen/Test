@@ -1,0 +1,570 @@
+{
+  "time": "2026-10-29T04:37:49+00:00",
+  "index": 5,
+  "seed": 42,
+  "uid": "omni_brussels_sprout_002",
+  "previous_baseline": {
+    "surface": {
+      "chamfer_l1": 0.03218235561621276,
+      "fscore_0p01": 0.19385274111675124,
+      "fscore_0p02": 0.3849501832825649,
+      "fscore_0p05": 0.7700949483840847
+    },
+    "novel_depth_registered_domain": {
+      "all": 0.05662193149328232,
+      "bad": 0.05859407037496567,
+      "good": 0.002000687411054969,
+      "selected_bad": 0.05495426058769226
+    },
+    "novel_depth_previous_domain": {
+      "all": 0.05662193149328232,
+      "bad": 0.05859407037496567,
+      "good": 0.002000687411054969
+    }
+  },
+  "registered_baseline": {
+    "surface": {
+      "chamfer_l1": 0.032182458009228435,
+      "fscore_0p01": 0.19385274111675124,
+      "fscore_0p02": 0.3849501832825649,
+      "fscore_0p05": 0.7700949483840847
+    },
+    "novel_depth_registered_domain": {
+      "all": 0.05662192404270172,
+      "bad": 0.05859407037496567,
+      "good": 0.002000687178224325,
+      "selected_bad": 0.05495426058769226
+    },
+    "novel_depth_previous_domain": {
+      "all": 0.05662192404270172,
+      "bad": 0.05859407037496567,
+      "good": 0.002000687178224325
+    }
+  },
+  "endpoints": {
+    "shape": {
+      "accepted": {
+        "surface": {
+          "chamfer_l1": 0.032182458009228435,
+          "fscore_0p01": 0.19385274111675124,
+          "fscore_0p02": 0.3849501832825649,
+          "fscore_0p05": 0.7700949483840847
+        },
+        "novel_depth_registered_domain": {
+          "all": 0.05662192404270172,
+          "bad": 0.05859407037496567,
+          "good": 0.002000687178224325,
+          "selected_bad": 0.05495426058769226
+        },
+        "novel_depth_previous_domain": {
+          "all": 0.05662192404270172,
+          "bad": 0.05859407037496567,
+          "good": 0.002000687178224325
+        }
+      },
+      "candidate": {
+        "surface": {
+          "chamfer_l1": 0.03217802315011496,
+          "fscore_0p01": 0.1942274314113292,
+          "fscore_0p02": 0.38561810353717646,
+          "fscore_0p05": 0.7703184248742285
+        },
+        "novel_depth_registered_domain": {
+          "all": 0.05662010237574577,
+          "bad": 0.05859065055847168,
+          "good": 0.0020431396551430225,
+          "selected_bad": 0.05493827536702156
+        },
+        "novel_depth_previous_domain": {
+          "all": 0.05662010237574577,
+          "bad": 0.05859065055847168,
+          "good": 0.0020431396551430225
+        }
+      }
+    },
+    "adaptive": {
+      "accepted": {
+        "surface": {
+          "chamfer_l1": 0.031922103957974894,
+          "fscore_0p01": 0.1922693230848066,
+          "fscore_0p02": 0.38842201008368954,
+          "fscore_0p05": 0.7738484910868612
+        },
+        "novel_depth_registered_domain": {
+          "all": 0.056712351739406586,
+          "bad": 0.05867397412657738,
+          "good": 0.002382684266194701,
+          "selected_bad": 0.05581093579530716
+        },
+        "novel_depth_previous_domain": {
+          "all": 0.056712351739406586,
+          "bad": 0.05867397412657738,
+          "good": 0.002382684266194701
+        }
+      },
+      "candidate": {
+        "surface": {
+          "chamfer_l1": 0.031922103957974894,
+          "fscore_0p01": 0.1922693230848066,
+          "fscore_0p02": 0.38842201008368954,
+          "fscore_0p05": 0.7738484910868612
+        },
+        "novel_depth_registered_domain": {
+          "all": 0.056712351739406586,
+          "bad": 0.05867397412657738,
+          "good": 0.002382684266194701,
+          "selected_bad": 0.05581093579530716
+        },
+        "novel_depth_previous_domain": {
+          "all": 0.056712351739406586,
+          "bad": 0.05867397412657738,
+          "good": 0.002382684266194701
+        }
+      }
+    }
+  },
+  "selections": {
+    "shape": {
+      "accepted_edit": false,
+      "accepted": {
+        "name": "base",
+        "kind": "direct_native_decode",
+        "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/registered_base.obj",
+        "latent": "/data/zjr/trellis2_geometry_repair/outputs/native512_pilot_20261028/objects/005/42/original_latent.pt"
+      },
+      "candidate": {
+        "latent": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/candidates/shape_t035_n202.pt",
+        "native_mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/shape_t035_n202_native.obj",
+        "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/shape_t035_n202_composite.obj",
+        "paired_composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/shape_t035_n202_fields.pt",
+        "name": "shape_t035_n202_native",
+        "kind": "direct_native_decode",
+        "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/shape_t035_n202_native.obj",
+        "field_state": null
+      },
+      "candidates": 8,
+      "reason": "input-only proposal decision"
+    },
+    "adaptive": {
+      "accepted_edit": true,
+      "accepted": {
+        "latent": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/candidates/ss_t065_n101_shape_n202.pt",
+        "native_mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/ss_t065_n101_shape_n202_native.obj",
+        "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/ss_t065_n101_shape_n202_composite.obj",
+        "paired_composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/ss_t065_n101_shape_n202_fields.pt",
+        "name": "ss_t065_n101_shape_n202_native",
+        "kind": "direct_native_decode",
+        "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/ss_t065_n101_shape_n202_native.obj",
+        "field_state": null
+      },
+      "candidate": {
+        "latent": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/candidates/ss_t065_n101_shape_n202.pt",
+        "native_mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/ss_t065_n101_shape_n202_native.obj",
+        "composite_mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/ss_t065_n101_shape_n202_composite.obj",
+        "paired_composite_fields": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/ss_t065_n101_shape_n202_fields.pt",
+        "name": "ss_t065_n101_shape_n202_native",
+        "kind": "direct_native_decode",
+        "mesh": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/objects/005/42/exports/ss_t065_n101_shape_n202_native.obj",
+        "field_state": null
+      },
+      "candidates": 16,
+      "reason": "input-only proposal decision"
+    }
+  },
+  "plan": {
+    "time": "2026-10-29T04:25:09+00:00",
+    "index": 5,
+    "seed": 42,
+    "uid": "omni_brussels_sprout_002",
+    "gt_used": false,
+    "alignment": {
+      "gt_used": false,
+      "old_matrix": [
+        [
+          0.006093004252761602,
+          -0.8536073565483093,
+          0.17313162982463837,
+          0.0015581806655973196
+        ],
+        [
+          0.8414031863212585,
+          -0.038973335176706314,
+          -0.22176280617713928,
+          0.019523506984114647
+        ],
+        [
+          0.2250789850950241,
+          0.16879798471927643,
+          0.8243198990821838,
+          -0.004425584804266691
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "matrix": [
+        [
+          0.006093004252761602,
+          -0.8536073565483093,
+          0.17313162982463837,
+          0.0015581806655973196
+        ],
+        [
+          0.8414031863212585,
+          -0.038973335176706314,
+          -0.22176280617713928,
+          0.019523506984114647
+        ],
+        [
+          0.2250789850950241,
+          0.16879798471927643,
+          0.8243198990821838,
+          -0.004425584804266691
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "changed": false,
+      "candidates": [
+        {
+          "origin": "original",
+          "cost": 0.5436348915100098,
+          "mean_iou": 0.8811929374933243,
+          "photo": null,
+          "safe": true,
+          "improved": false,
+          "matrix": [
+            [
+              0.006093004252761602,
+              -0.8536073565483093,
+              0.17313162982463837,
+              0.0015581806655973196
+            ],
+            [
+              0.8414031863212585,
+              -0.038973335176706314,
+              -0.22176280617713928,
+              0.019523506984114647
+            ],
+            [
+              0.2250789850950241,
+              0.16879798471927643,
+              0.8243198990821838,
+              -0.004425584804266691
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "origin": "rotation_3_step_0",
+          "cost": 0.543639600276947,
+          "mean_iou": 0.8811929374933243,
+          "photo": null,
+          "safe": true,
+          "improved": false,
+          "matrix": [
+            [
+              0.006093004252761602,
+              -0.8536073565483093,
+              0.17313162982463837,
+              0.0015581806655973196
+            ],
+            [
+              0.8414031863212585,
+              -0.038973335176706314,
+              -0.22176280617713928,
+              0.019523506984114647
+            ],
+            [
+              0.2250789850950241,
+              0.16879798471927643,
+              0.8243198990821838,
+              -0.004425584804266691
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "origin": "rotation_3_step_10",
+          "cost": 0.28157123923301697,
+          "mean_iou": 0.7908326834440231,
+          "photo": null,
+          "safe": false,
+          "improved": true,
+          "matrix": [
+            [
+              -0.17344513535499573,
+              -0.8916634321212769,
+              0.12961331009864807,
+              -0.06012827530503273
+            ],
+            [
+              0.8079413175582886,
+              -0.2123379111289978,
+              -0.3795916438102722,
+              0.04642084985971451
+            ],
+            [
+              0.3988656997680664,
+              0.042373836040496826,
+              0.8252615928649902,
+              0.05258858576416969
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "origin": "rotation_3_step_20",
+          "cost": 0.29222628474235535,
+          "mean_iou": 0.7707645446062088,
+          "photo": null,
+          "safe": false,
+          "improved": true,
+          "matrix": [
+            [
+              -0.2432650625705719,
+              -0.8331620693206787,
+              0.25405722856521606,
+              -0.0801016315817833
+            ],
+            [
+              0.7393361330032349,
+              -0.33696863055229187,
+              -0.3971332311630249,
+              0.05428551882505417
+            ],
+            [
+              0.4605264663696289,
+              0.10086965560913086,
+              0.771765947341919,
+              0.061045270413160324
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "origin": "rotation_3_step_30",
+          "cost": 0.2503317594528198,
+          "mean_iou": 0.8005347549915314,
+          "photo": null,
+          "safe": false,
+          "improved": true,
+          "matrix": [
+            [
+              -0.15404757857322693,
+              -0.8028823137283325,
+              0.37204664945602417,
+              -0.07196047157049179
+            ],
+            [
+              0.7427516579627991,
+              -0.32259228825569153,
+              -0.3886156380176544,
+              0.029314208775758743
+            ],
+            [
+              0.48099642992019653,
+              0.2410045564174652,
+              0.7192549705505371,
+              0.05540836229920387
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "origin": "rotation_1_step_0",
+          "cost": 0.5698851346969604,
+          "mean_iou": 0.8375329375267029,
+          "photo": null,
+          "safe": false,
+          "improved": false,
+          "matrix": [
+            [
+              -0.006093004252761602,
+              -0.8536073565483093,
+              -0.17313162982463837,
+              0.0015581806655973196
+            ],
+            [
+              -0.8414031863212585,
+              -0.038973335176706314,
+              0.22176280617713928,
+              0.019523506984114647
+            ],
+            [
+              -0.2250789850950241,
+              0.16879798471927643,
+              -0.8243198990821838,
+              -0.004425584804266691
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "origin": "rotation_1_step_10",
+          "cost": 0.3933911621570587,
+          "mean_iou": 0.7999480962753296,
+          "photo": null,
+          "safe": false,
+          "improved": true,
+          "matrix": [
+            [
+              -0.17083106935024261,
+              -0.8241855502128601,
+              0.04746708273887634,
+              -0.06615883857011795
+            ],
+            [
+              -0.8249395489692688,
+              0.1722860187292099,
+              0.02257809042930603,
+              -0.054333239793777466
+            ],
+            [
+              -0.03177504241466522,
+              -0.04187384247779846,
+              -0.841400146484375,
+              0.025029094889760017
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "origin": "rotation_1_step_20",
+          "cost": 0.3968755602836609,
+          "mean_iou": 0.6875095069408417,
+          "photo": null,
+          "safe": false,
+          "improved": true,
+          "matrix": [
+            [
+              -0.24119380116462708,
+              -0.7555394768714905,
+              0.16366761922836304,
+              -0.09112811088562012
+            ],
+            [
+              -0.7725050449371338,
+              0.2420695275068283,
+              -0.020957529544830322,
+              -0.10340069234371185
+            ],
+            [
+              -0.02937065064907074,
+              -0.16236911714076996,
+              -0.7928268909454346,
+              0.05311797186732292
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        },
+        {
+          "origin": "rotation_1_step_30",
+          "cost": 0.4241495430469513,
+          "mean_iou": 0.6607206463813782,
+          "photo": null,
+          "safe": false,
+          "improved": true,
+          "matrix": [
+            [
+              -0.19782301783561707,
+              -0.749101996421814,
+              0.15740340948104858,
+              -0.09232094883918762
+            ],
+            [
+              -0.7607215642929077,
+              0.2104584276676178,
+              0.04553203284740448,
+              -0.12074626982212067
+            ],
+            [
+              -0.08504217863082886,
+              -0.14006026089191437,
+              -0.7734430432319641,
+              0.06283239275217056
+            ],
+            [
+              0.0,
+              0.0,
+              0.0,
+              1.0
+            ]
+          ]
+        }
+      ],
+      "initial_cost": 0.5436348915100098,
+      "selected_origin": "original",
+      "proper_rotation": true,
+      "all_input_masks_used": true,
+      "heldout_rgb_for_selection_only": true
+    },
+    "trusted_pixels": 789,
+    "da3_verified_pixels": 689,
+    "ncc_pixels": 100,
+    "core_cells": 980,
+    "envelope_cells": 2163,
+    "active_fraction": 0.14382978723404255,
+    "verified_error_pixels": 779,
+    "extra_mask_pixels": 6200,
+    "needs_ss": true,
+    "has_evidence": true,
+    "unsupported_positive_cells": 164,
+    "verified_anchor_cells": 30,
+    "scope": "local",
+    "seconds": 15.663330100476742
+  },
+  "gt_used_for_input_decisions": false,
+  "previous_cd_replay_abs_error": 0.0,
+  "field_composite_is_not_direct_latent_decode": true,
+  "figure": "/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029/figures/005_42.jpg",
+  "selection_seconds": 295.1309758350253,
+  "selection_peak_gib": 3.2586092948913574
+}

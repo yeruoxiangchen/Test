@@ -1,0 +1,15 @@
+{
+  "time": "2026-10-29T04:41:08+00:00",
+  "passed": true,
+  "candidate_latents": 8,
+  "serialized_composites": 2,
+  "ss_supports": 2,
+  "input_cases": 1,
+  "indices": [
+    5
+  ],
+  "seeds": [
+    42
+  ],
+  "partial": true
+}

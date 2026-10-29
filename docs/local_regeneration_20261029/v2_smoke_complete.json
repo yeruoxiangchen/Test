@@ -1,0 +1,15 @@
+{
+  "time": "2026-10-29T04:24:49+00:00",
+  "passed": true,
+  "native_vertex_parity_max": 0.0,
+  "native_faces_exact": true,
+  "empty_region_mesh_exact": true,
+  "exterior_fields_exact": true,
+  "real_shape_exterior_exact": true,
+  "real_shape_changed": 3.549172878265381,
+  "ss_original_coords_exact": true,
+  "real_ss_exterior_exact": true,
+  "gt_used": false,
+  "synthetic_region_only": true,
+  "seconds": 128.22801264375448
+}

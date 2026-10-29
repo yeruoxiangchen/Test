@@ -1,0 +1,72 @@
+{
+  "time": "2026-10-29T05:06:42+00:00",
+  "passed": true,
+  "files": [
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/config.py",
+      "sha256": "bbce6d658d657d6239e3a21d7d107b6953002f6c856cecfd40c058e5814c1a08",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/data.py",
+      "sha256": "cb433042b566715672b9a689d7c9ab7f9f131fbdd0e5418f941034cd9a1fdc8d",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/evidence.py",
+      "sha256": "7dbec12235de112d5b8c16799bd88c3e81563239a5d88aedd3e5e36071d7521a",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/alignment.py",
+      "sha256": "2147fc96ed5361c3ac508dae9a975e6c01e8317efc544b80349f88c3ac187d2d",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/planning.py",
+      "sha256": "e306cac017666c2dd52e65b4efe4b4e7a0adfa8bf7e655c2703a0ba587f459ae",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/sampling.py",
+      "sha256": "608350109514dea5887267d760581c612a859f96ce1f1dc4e98769f36aac5a4b",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/fields.py",
+      "sha256": "624e9e0737cedec5ab56fde0f28b14b100a60bb76a767a71c01dcdecd1d9d477",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/generation.py",
+      "sha256": "125cdf94336ab46473bf088312d7d5ea4f1b9f47810dd9eac01988ba16b4b2f2",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/selection.py",
+      "sha256": "65f6dbcba28ee2d27d62a253355ef2a8357d48ebbc659a4b2c87337e60607716",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/experiments/local_regeneration/evaluate.py",
+      "sha256": "0a8a071396bcdca344f62f6de0a687cdf288cf828c696013e80fd9d548531371",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/config.py",
+      "sha256": "822e6966f6909f6ded4ee92a506663953ba2c739fd39651e93a4c936fb527df1",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/runtime.py",
+      "sha256": "673671f1d6dc7dafdef3d3e25e8ade31bf880efb0383070c74b26e9654b9f0b0",
+      "unchanged_since_prepare": true
+    },
+    {
+      "path": "/home/zjr/Tracker/trellis2_geometry_repair/geometry.py",
+      "sha256": "d891573d75881b752e9d606a9b76be4b78744d408d1120a34711bcd374970487",
+      "unchanged_since_prepare": true
+    }
+  ],
+  "protocol_unchanged": true
+}

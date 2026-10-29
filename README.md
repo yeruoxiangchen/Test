@@ -75,3 +75,34 @@ controls and the frozen-SS distance audit are diagnostics only. Read
 [full report](docs/repair_diagnostic_20261028/REPORT.md). Source and commands
 are in `trellis2_geometry_repair/experiments/repair_diagnostic/` and
 `trellis2_geometry_repair/run_diagnostic.sh`.
+
+## Native local/regional Flow regeneration (2026-10-29)
+
+The new independent package performs input-RGB revalidation, retained global
+registration, connected 3D regions, native masked Shape Flow resampling and
+optional local SS regeneration. V2 uses voxel footprints, verified support
+anchors and a fixed regional depth scoring domain. Exterior SS coordinates
+and denormalized features are preserved exactly. Direct-native latents and
+explicit FDG field composites are saved and labeled separately. The v1
+protocol and results remain separate; thresholds were not changed.
+
+25 CPU regressions, a fresh native GPU smoke, the full eight-case experiment,
+and readback of 64 candidate latents, 16 supports and 13 exported composite
+fields completed. All eight common-camera comparisons were inspected. The
+scientific code and protocol match the launch snapshot; only orchestration,
+reporting and validation were extended during the run.
+
+Adaptive accepted3/8. Delivered CD improved only0.0402% against the same
+registered base, while F-score@0.01 and the previous good-ray metric worsened.
+This validates the implementation; it does not establish reliable geometry
+repair. No acceptance thresholds were changed to improve the GT result.
+Read `docs/local_regeneration_20261029/FINAL_ANALYSIS.md` and `REPORT.md` for
+the completed outcome. Historical partial receipts remain explicitly labeled.
+
+```bash
+bash trellis2_geometry_repair/run_local_regeneration.sh tests
+watch -n 10 -d 'bash /home/zjr/Tracker/trellis2_geometry_repair/run_local_regeneration.sh status'
+```
+
+Read `trellis2_geometry_repair/experiments/local_regeneration/PROTOCOL.md` and
+audit sections5.1–5.3 for evidence, limitations, preserved failures and storage.

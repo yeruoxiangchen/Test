@@ -59,3 +59,34 @@ comparisons were inspected and these are not counted as method successes.
 GT-target arms and the subsequent fixed-SS support audit are diagnostics only.
 See `outputs/repair_diagnostic_20261028/REPORT.md` and `FINAL_ANALYSIS.md`
 under the physical project store, and the appended audit sections4.2/4.3.
+# Local Flow regeneration v2 (2026-10-29)
+
+The independent local-regeneration package passed 25 CPU regressions. The
+real native GPU smoke completed at 04:24:49 UTC: exact captured-FDG/native
+vertices and faces, exact empty-region mesh identity, exact exterior Shape
+features, exact original SS-coordinate replay and exact exterior dense SS
+latents. These are technical invariants, not evidence of improved quality.
+
+005/42 completed the full input-only planning, SS/Shape proposals, decisions,
+OBJ export, sealed GT evaluation and common-camera comparison. Independent
+readback at 04:41:08 UTC validated all 8 candidate latents, 2 SS supports and
+2 serialized composite fields for that case. The receipt is explicitly a
+one-case partial audit; the full eight-case closeout remains the queue's job.
+The first result has mixed metrics and small visible fragments; see audit §5.1.
+
+```bash
+bash trellis2_geometry_repair/run_local_regeneration.sh tests
+bash trellis2_geometry_repair/run_local_regeneration.sh report --verify --index 5 --seed 42
+watch -n 10 -d 'bash /home/zjr/Tracker/trellis2_geometry_repair/run_local_regeneration.sh status'
+```
+
+Physical outputs: `/data/zjr/trellis2_geometry_repair/outputs/local_regeneration_v2_20261029`.
+
+## Local regeneration v2 completed
+
+Completed 2026-10-29T05:03:33+00:00: 8/8 cases, 64 candidate latents, 16 SS supports and
+13 serialized composites passed full readback. All eight figures were inspected.
+The 13 scientific implementation files and v2 protocol match the launch snapshot.
+Adaptive accepted3/8; delivered CD improved only0.0402% and metrics are mixed.
+See audit §5.3 and the data-side FINAL_ANALYSIS.md; completion is a technical
+result, not a claim of useful reconstruction improvement.
