@@ -1,7 +1,7 @@
 {
-  "date": "2026-10-28",
-  "method": "corecoder_retrieval_workflow_v2",
-  "previous_method": "corecoder_retrieval_workflow_v1",
+  "date": "2026-10-29",
+  "method": "corecoder_repair_workflow_v3",
+  "previous_method": "corecoder_retrieval_workflow_v2",
   "references": [
     {
       "repository": "https://github.com/wingwen/CoreCoder-Agent",
@@ -31,6 +31,12 @@
       "source": "https://github.com/AutoCodeRoverSG/auto-code-rover/blob/main/app/task.py",
       "use": "Design reference for comparing pre-existing test failures against candidate failures. No upstream execution code copied.",
       "adaptation": "Cache an original public baseline, detect lost passing tests and additional failures, and report incomplete/timeout evidence separately."
+    },
+    {
+      "repository": "https://github.com/SWE-agent/mini-swe-agent",
+      "source": "vendor/mini-swe-agent/src/minisweagent/config/benchmarks/swebench.yaml",
+      "use": "Recommended inspect/reproduce/edit/verify sequence and exclusion of debug artifacts. The v3 default reuses CoreCoder Agent.chat continuously; it does not claim to execute mini-SWE-agent.",
+      "adaptation": "Removed forced locate/reproduce phases and separate model review. One bounded continuation uses concrete public checks in the existing conversation."
     }
   ],
   "new_training": false,

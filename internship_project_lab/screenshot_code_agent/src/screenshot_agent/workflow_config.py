@@ -20,6 +20,13 @@ class PhaseEnded(RunStopped):
 
 class WorkflowPolicy(BaseModel):
     model_config = ConfigDict(extra='forbid')
+    execution_mode: Literal['staged', 'linear'] = 'staged'
+    public_test_max_cases: int = Field(default=12, ge=1, le=100)
+    xvfb_executable: str | None = None
+    development_casebook: bool = False
+    require_issue_verification: bool = False
+    final_check_reserve_seconds: int = Field(default=0, ge=0, le=300)
+    final_test_timeout_seconds: int | None = Field(default=None, ge=1, le=1200)
     locate_calls: int = Field(default=8, ge=1, le=40)
     reproduce_calls: int = Field(default=8, ge=1, le=40)
     repair_calls: int = Field(default=32, ge=1, le=100)
@@ -49,6 +56,7 @@ class WorkflowBudget(HarnessBudget):
         super().__init__(config, events, counter)
         self.path = Path(path)
         self.phase_limit = None
+        self.phase_wall_reserve = 0
         if resume and self.path.exists():
             old = json.loads(self.path.read_text())
             for field in ('code_calls','vision_calls','tool_calls','decision_calls','summary_calls',
@@ -73,6 +81,8 @@ class WorkflowBudget(HarnessBudget):
                                    'elapsed_seconds':time.monotonic()-self.started, 'usage':self.snapshot()})
 
     def reserve(self, kind, config, messages, tools=None):
+        if self.phase_wall_reserve and super().remaining_seconds() <= self.phase_wall_reserve:
+            raise PhaseEnded('Reserve remaining time for final checks')
         if kind != 'vision' and self.phase_limit is not None and self.code_calls >= self.phase_limit:
             raise PhaseEnded('Stage model allowance reached; continue with observed evidence')
         if kind == 'vision':
@@ -96,6 +106,14 @@ class WorkflowBudget(HarnessBudget):
     def tool(self, name, arguments):
         super().tool(name,arguments)
         self.save()
+
+    def remaining_seconds(self):
+        remaining = super().remaining_seconds()
+        if self.phase_wall_reserve:
+            if remaining <= self.phase_wall_reserve:
+                raise PhaseEnded('Reserve remaining time for final checks')
+            remaining -= self.phase_wall_reserve
+        return max(.1, remaining)
 
     def stage(self, calls):
         self.phase_limit = self.code_calls+calls

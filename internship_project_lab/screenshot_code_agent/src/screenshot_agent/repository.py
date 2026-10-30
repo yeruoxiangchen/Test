@@ -5,15 +5,22 @@ from __future__ import annotations
 import os
 import shutil
 import subprocess
+import tempfile
 from pathlib import Path
 
-IGNORED = {".git", ".venv", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache"}
+IGNORED = {".git", ".venv", "__pycache__", ".pytest_cache", ".mypy_cache", ".ruff_cache",
+           ".hypothesis", ".sca_scratch"}
 
 
 def git(repo: Path, *args: str, stdin: bytes | None = None, check: bool = True,
-        timeout: float = 180) -> subprocess.CompletedProcess:
+        timeout: float = 180, index_file: Path | None = None,
+        work_tree: Path | None = None) -> subprocess.CompletedProcess:
     env = {"PATH": "/usr/bin:/bin", "HOME": "/tmp", "LANG": "C.UTF-8",
            "GIT_CONFIG_NOSYSTEM": "1", "GIT_CONFIG_GLOBAL": "/dev/null"}
+    if index_file is not None:
+        env['GIT_INDEX_FILE'] = str(index_file.resolve())
+    if work_tree is not None:
+        env.update(GIT_DIR=str((repo / '.git').resolve()), GIT_WORK_TREE=str(work_tree.resolve()))
     command = ["git", "-c", "core.hooksPath=/dev/null", "-c", "core.fsmonitor=false",
                "-c", "core.fileMode=true", "-c", "user.name=Screenshot Agent",
                "-c", "user.email=screenshot-agent@localhost", *args]
@@ -142,3 +149,45 @@ def replay_patch(baseline: Path, target: Path, patch: Path, **tree_limits) -> di
     except ValueError as error:
         return {"applied": False, "error": str(error)}
     return {"applied": True}
+
+
+def export_session_patch(baseline: Path, workspace: Path, path: Path, protected: list[str],
+                         exclude_debug: bool = False, **tree_limits) -> dict:
+    """Compare workspace files to a trusted base even after agent commits/resets.
+
+    Only a temporary controller-owned index is staged. The agent's HEAD, index,
+    hooks and Git config are never consulted for delivery.
+    """
+    files = validate_tree(workspace, **tree_limits)
+    violations = protected_changes(baseline, workspace, protected)
+    if violations:
+        raise ValueError(f'Protected files changed: {violations}')
+    artifacts = []
+    debug_artifacts = []
+    for file in files:
+        relative = file.relative_to(workspace).as_posix()
+        if (baseline / relative).exists():
+            continue
+        if exclude_debug and len(Path(relative).parts) == 1 and is_debug_artifact(relative):
+            debug_artifacts.append(relative)
+        if file.name.endswith(('.bak', '.backup', '.fixed_backup', '.orig', '.rej', '.tmp', '.temp', '.fixed', '~')):
+            artifacts.append(relative)
+    paths = ['.', *[f':(exclude,glob)**/{name}/**' for name in sorted(IGNORED) if name != '.git'],
+             *[':(exclude,literal)' + name for name in [*artifacts, *debug_artifacts]]]
+    with tempfile.TemporaryDirectory(prefix='delivery-index-', dir=path.parent) as tmp:
+        index = Path(tmp) / 'index'
+        shutil.copy2(baseline / '.git/index', index)
+        kwargs = {'index_file': index, 'work_tree': workspace}
+        git(baseline, 'add', '-A', '-f', '--', *paths, **kwargs)
+        payload = git(baseline, 'diff', '--cached', '--binary', '--no-ext-diff', '--no-textconv',
+                      '--no-renames', 'HEAD', '--', *paths, **kwargs).stdout
+        changed = git(baseline, 'diff', '--cached', '--name-only', '-z', 'HEAD', '--', *paths, **kwargs).stdout
+    path.write_bytes(payload)
+    return {'patch_bytes': len(payload), 'changed_files': [s.decode() for s in changed.split(b'\0') if s],
+            'excluded_new_backup_files': sorted(artifacts),
+            'excluded_new_debug_files': sorted(debug_artifacts), 'trusted_baseline_export': True}
+
+
+def is_debug_artifact(name):
+    return (Path(name).name.startswith(('test_', 'repro_', 'reproduce_', 'debug_', 'temp_'))
+            or Path(name).name in {'patch.txt', 'final_verification.py'})

@@ -34,13 +34,27 @@ class BubblewrapSandbox:
         self.active: set[subprocess.Popen] = set()
         self.lock = threading.RLock()
         self.cancelled = threading.Event()
+        self.session_tmp = None
+
+    def enable_agent_session(self):
+        """Task-private persistent files and writable workspace Git, never baseline Git."""
+        if getattr(getattr(self, 'runtime', None), 'backend', None) == 'docker':
+            raise SandboxUnavailable('Session mode requires the verified Bubblewrap backend')
+        self.session_tmp = self.repo.parent / ('session_tmp_' + self.repo.name)
+        self.session_tmp.mkdir(exist_ok=True)
+        (self.session_tmp / 'home').mkdir(exist_ok=True)
+        self.protected = [name for name in self.protected if name != '.git']
+
+    def tmp_mount(self):
+        return (['--bind', str(self.session_tmp), '/tmp'] if self.session_tmp is not None
+                else ['--tmpfs', '/tmp'])
 
     def command(self, argv: list[str], mounts: dict[str, Path] | None = None) -> list[str]:
         cmd = [self.executable, "--unshare-all", "--die-with-parent", "--cap-drop", "ALL"]
         for path in ("/usr", "/bin", "/lib", "/lib64"):
             if Path(path).exists():
                 cmd += ["--ro-bind", path, path]
-        cmd += ["--proc", "/proc", "--dev", "/dev", "--tmpfs", "/tmp", "--dir", "/tmp/home",
+        cmd += ["--proc", "/proc", "--dev", "/dev", *self.tmp_mount(), "--dir", "/tmp/home",
                 "--dir", "/etc", "--clearenv", "--setenv", "PATH", "/usr/bin:/bin",
                 "--setenv", "HOME", "/tmp/home", "--setenv", "LANG", "C.UTF-8",
                 "--setenv", "PYTHONDONTWRITEBYTECODE", "1", "--setenv", "PYTHONPATH", "/workspace",
@@ -151,4 +165,5 @@ class BubblewrapSandbox:
         return {"backend": "bubblewrap", "network": "unshared", "gpu_devices": False,
                 "repository_mount": "/workspace", "system_runtime": "/usr/bin/python3",
                 "protected_paths": self.protected, "address_space_limit_gib": 2,
+                "persistent_tmp": self.session_tmp is not None, "writable_workspace_git": self.session_tmp is not None,
                 "command_timeout_seconds": self.timeout}

@@ -1,0 +1,73 @@
+{
+  "code": {
+    "model": "sca-coder",
+    "base_url": "http://127.0.0.1:18876/v1",
+    "api_key_env": "SCA_CODE_API_KEY",
+    "input_usd_per_million": 0,
+    "output_usd_per_million": 0,
+    "max_output_tokens": 4096,
+    "model_kwargs": {
+      "temperature": 0
+    }
+  },
+  "vision": {
+    "model": "${SCA_VISION_MODEL}",
+    "base_url": "${SCA_VISION_BASE_URL}",
+    "api_key_env": "SCA_VISION_API_KEY",
+    "input_usd_per_million": 0,
+    "output_usd_per_million": 0,
+    "max_output_tokens": 2048,
+    "model_kwargs": {
+      "temperature": 0
+    }
+  },
+  "limits": {
+    "max_steps": 96,
+    "max_model_calls": 96,
+    "max_summary_calls": 2,
+    "max_tool_calls": 200,
+    "max_tool_output_chars": 10000,
+    "max_vision_calls": 3,
+    "max_wall_seconds": 1800,
+    "command_timeout_seconds": 120,
+    "request_timeout_seconds": 300,
+    "max_cost_usd": 1
+  },
+  "max_context_tokens": 24576,
+  "screenshots": {
+    "allow_crop": true,
+    "allow_reread": true
+  },
+  "agent": {
+    "mode": "v6",
+    "read_file_max_lines": 120,
+    "repeated_edit_limit": 2,
+    "summary_max_tokens": 384
+  },
+  "framework": "corecoder",
+  "protocol": "hidden_reference_tests_harness_v1",
+  "tokenizer_path": "/data/zjr/sca_coder_runtime_20261026/model",
+  "service_context_tokens": 32768,
+  "max_prompt_tokens": 24576,
+  "total_prompt_tokens": 2000000,
+  "total_completion_tokens": 130000,
+  "workflow": {
+    "locate_calls": 8,
+    "reproduce_calls": 8,
+    "repair_calls": 32,
+    "retry_calls": 16,
+    "max_retries": 2,
+    "map_chars": 7000,
+    "retrieval_top_k": 6,
+    "public_test_timeout_seconds": 120,
+    "reproduction_timeout_seconds": 60,
+    "max_reproductions": 3,
+    "execution_mode": "linear",
+    "public_test_max_cases": 12,
+    "xvfb_executable": "/data/zjr/screenshot_code_agent/workflow_v3_runtime/xvfb_extract/usr/bin/Xvfb",
+    "development_casebook": true,
+    "require_issue_verification": true,
+    "final_check_reserve_seconds": 240,
+    "final_test_timeout_seconds": 600
+  }
+}

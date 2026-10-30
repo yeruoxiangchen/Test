@@ -216,14 +216,15 @@ def test_changing_reproducer_to_pass_cannot_fake_a_fix(flow):
 
 
 @pytest.mark.sandbox
-def test_changed_expected_failure_invalidates_cached_validation(flow):
+def test_invalid_new_expectation_preserves_verified_reproducer(flow):
     assert register(flow)['baseline_reproduced']
     (flow.workspace/'maths.py').write_text('def add(a,b):\n    return a+b\ndef stable():\n    return 7\n')
     assert flow.feedback.check('fixed')['passed']
     invalid=flow.feedback.register_reproduction('repro.py','different assertion, not observed')
     assert not invalid['baseline_reproduced']
+    assert invalid['previous_verified_reproduction_retained']
     checked=flow.feedback.check('new expectation')
-    assert not checked['passed'] and checked['reproduction']['status']=='unverified'
+    assert checked['passed'] and checked['reproduction']['status']=='verified'
 
 
 @pytest.mark.sandbox

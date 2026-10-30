@@ -98,6 +98,10 @@ def render_run(directory):
         if 'regression' in item:
             body += '<p>原有功能回归：'+text(LABELS.get(item['regression']['status'],item['regression']['status']))
             body += '；原问题复现验证：'+text(LABELS.get(item['reproduction']['status'],item['reproduction']['status']))+'</p>'
+        known = item.get('known_issue', {})
+        if known and known.get('status') != 'not_configured':
+            body += '<p>已知问题开发验收：'+text(LABELS.get(known['status'], known['status']))+'</p>'
+            body += '<pre>'+text(known.get('output', ''))+'</pre>'
         body += '<pre>'+text(item.get('output',''))+'</pre></details>'
     for i, review in enumerate(state.get('reviews',[]),1):
         body += f'<details><summary>第{i}次失败分析</summary><pre>'+text(review)+'</pre></details>'
@@ -141,6 +145,9 @@ def render_batch(directory, rows, total):
     success = sum(bool(r.get('resolved')) for r in rows)
     body = '<header><div class="eyebrow">SCREENSHOT CODE AGENT</div><h1>修复任务进度与结果</h1>'
     body += f'<p>已结束 {finished}/{total} · 独立验证通过 {success}/{total}</p></header>'
+    config = read_json(directory/'workflow_config.json')
+    if config.get('workflow', {}).get('development_casebook'):
+        body += '<p>已知失败题开发回归：使用先前失败反馈和可见验收检查，全部任务保留。结果不代表未见任务的泛化成功率。</p>'
     body += '<input id="query" placeholder="按任务名称或状态筛选" aria-label="筛选任务"><section><table><thead><tr><th>任务</th><th>状态</th><th>模型调用</th><th>报告</th></tr></thead><tbody id="tasks">'
     for row in rows:
         task_id = row['task_id']

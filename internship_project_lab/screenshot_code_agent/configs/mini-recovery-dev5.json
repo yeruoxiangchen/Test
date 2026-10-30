@@ -1,0 +1,61 @@
+{
+  "code": {
+    "model": "sca-coder",
+    "base_url": "http://127.0.0.1:18899/v1",
+    "api_key_env": "SCA_CODE_API_KEY",
+    "input_usd_per_million": 0,
+    "output_usd_per_million": 0,
+    "max_output_tokens": 4096,
+    "model_kwargs": {
+      "temperature": 0
+    }
+  },
+  "vision": {
+    "model": "${SCA_VISION_MODEL}",
+    "base_url": "${SCA_VISION_BASE_URL}",
+    "api_key_env": "SCA_VISION_API_KEY",
+    "input_usd_per_million": 0,
+    "output_usd_per_million": 0,
+    "max_output_tokens": 2048,
+    "model_kwargs": {
+      "temperature": 0
+    }
+  },
+  "limits": {
+    "max_steps": 96,
+    "max_model_calls": 96,
+    "max_summary_calls": 2,
+    "max_tool_calls": 200,
+    "max_tool_output_chars": 10000,
+    "max_vision_calls": 3,
+    "max_wall_seconds": 1800,
+    "command_timeout_seconds": 120,
+    "request_timeout_seconds": 300,
+    "max_cost_usd": 1
+  },
+  "max_context_tokens": 24576,
+  "screenshots": {
+    "allow_crop": true,
+    "allow_reread": true
+  },
+  "agent": {
+    "mode": "v6",
+    "read_file_max_lines": 120,
+    "repeated_edit_limit": 2,
+    "summary_max_tokens": 384
+  },
+  "framework": "mini",
+  "protocol": "hidden_reference_tests_harness_v1",
+  "tokenizer_path": "/data/zjr/sca_coder_runtime_20261026/model",
+  "service_context_tokens": 32768,
+  "max_prompt_tokens": 24576,
+  "total_prompt_tokens": 2000000,
+  "total_completion_tokens": 130000,
+  "development_casebook": true,
+  "xvfb_executable": "/data/zjr/screenshot_code_agent/workflow_v3_runtime/xvfb_extract/usr/bin/Xvfb",
+  "final_test_timeout_seconds": 600,
+  "mini_session": true,
+  "mini_verified": true,
+  "mini_repair_control": true,
+  "mini_recovery": true
+}

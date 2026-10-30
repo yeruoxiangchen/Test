@@ -79,7 +79,7 @@ class OCISandbox(BubblewrapSandbox):
         env_python = str(Path(self.runtime.python).parent)
         cmd = [self.executable, "--unshare-all", "--die-with-parent", "--cap-drop", "ALL",
                "--ro-bind", str(self.rootfs), "/", "--proc", "/proc", "--dev", "/dev",
-               "--tmpfs", "/tmp", "--dir", "/tmp/home", "--clearenv",
+               *self.tmp_mount(), "--dir", "/tmp/home", "--clearenv",
                "--setenv", "PATH", env_python + ":/opt/miniconda3/bin:/usr/bin:/bin",
                "--setenv", "HOME", "/tmp/home", "--setenv", "LANG", "C.UTF-8",
                "--setenv", "PYTHONPATH", "/testbed/src:/testbed", "--setenv", "PYTHONDONTWRITEBYTECODE", "1",
@@ -94,6 +94,16 @@ class OCISandbox(BubblewrapSandbox):
         if self.library_overlay:
             cmd += ["--ro-bind", str(self.library_overlay), "/tmp/sca-libs",
                     "--setenv", "LD_LIBRARY_PATH", "/tmp/sca-libs"]
+        display = getattr(self, 'public_display', None)
+        if display is not None:
+            if display.proc.poll() is not None:
+                raise SandboxUnavailable('Owned public X server exited')
+            cmd += ['--dir', '/tmp/.X11-unix', '--ro-bind', str(display.socket), str(display.socket),
+                    '--setenv', 'DISPLAY', display.name, '--setenv', 'PYVISTA_OFF_SCREEN', 'true',
+                    '--setenv', 'MPLBACKEND', 'Agg', '--setenv', 'LIBGL_ALWAYS_SOFTWARE', '1',
+                    # Mesa LLVM needs GLIBCXX_3.4.30; the image's system C++ library
+                    # supplies it, whereas its historical Conda library does not.
+                    '--setenv', 'LD_PRELOAD', '/usr/lib/x86_64-linux-gnu/libstdc++.so.6']
         for name in self.protected:
             rel = Path(name)
             if rel.is_absolute() or ".." in rel.parts or rel == Path("."):
@@ -137,6 +147,7 @@ class OCISandbox(BubblewrapSandbox):
                 "image_digest": self.runtime.image_digest, "network": "unshared", "gpu_devices": False,
                 "repository_mount": "/testbed", "workspace_alias": "/workspace",
                 "system_runtime": self.runtime.python, "protected_paths": self.protected,
+                "persistent_tmp": self.session_tmp is not None, "writable_workspace_git": self.session_tmp is not None,
                 "address_space_limit_gib": self.runtime.memory_gib, "command_timeout_seconds": self.timeout,
                 "python_overlay": self.runtime.python_overlay,
                 "python_overlay_manifest_sha256": self.runtime.python_overlay_manifest_sha256,

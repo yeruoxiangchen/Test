@@ -24,16 +24,19 @@ from .harness import PROTOCOL, HarnessAPIModel, QwenTokenCounter
 from .hidden_eval import grade_hidden, validate_hidden_task
 from .images import ImageStore, OCRReader, OracleReader, VisionReader
 from .models import APIModel, ModelOutputError
+from .public_display import PublicDisplay
 from .repo_search import RepoSearch
 from .repository import export_patch, prepare_repository, replay_patch, validate_tree
 from .runtime import create_sandbox
 from .scale_data import tree_hash
 from .tools import INTEGER, STRING, FunctionTool, build_tools, filesystem_result, schema
+from .workflow_cases import development_case
 from .workflow_config import PhaseEnded, WorkflowBudget
 from .workflow_feedback import VisibleFeedback
+from .workflow_support import classify_changes, patch_excerpt
 from .workflow_view import export_delivery, render_run
 
-METHOD = 'corecoder_retrieval_workflow_v2'
+METHOD = 'corecoder_repair_workflow_v4'
 PHASES = [('locate','找到与问题有关的文件、函数和调用关系'),
           ('reproduce','用已有测试或复现脚本检查问题，记录观察结果'),
           ('repair','修改生产代码并检查相关行为')]
@@ -93,6 +96,7 @@ class RepairWorkflow:
         self.counter, self.api_factory, self.grader = counter, api_factory, grader
         self.model_inference = model_inference
         self.sandbox = self.budget = self.agent = None
+        self.public_display = None
         self.state = {}
         self.tree = {'max_files':task.runtime.max_repo_files,'max_bytes':task.runtime.max_repo_bytes,
                      'allowed_symlinks':task.runtime.allowed_symlinks}
@@ -157,6 +161,12 @@ class RepairWorkflow:
                                      self.directory/'budget.json',resume=self.resume)
         self.sandbox = create_sandbox(workspace,self.events,self.task.protected_paths,
             self.config.limits.command_timeout_seconds,baseline,self.task.runtime)
+        if (self.config.workflow.xvfb_executable and self.task.runtime.backend == 'oci'
+                and (baseline/'pyvista').is_dir() and not self.state.get('grading_started')):
+            self.public_display = PublicDisplay(self.config.workflow.xvfb_executable, self.directory)
+            self.sandbox.public_display = self.public_display
+            self.save(public_display={'display': self.public_display.name, 'cpu_only': True,
+                                      'scope': 'public agent tools and checks only'})
         self.sandbox.probe()
         self.images = ImageStore(inputs,self.directory/'screenshots',self.events)
         self.reader = None
@@ -176,7 +186,8 @@ class RepairWorkflow:
         for tool in tools:
             if tool.name == 'run_tests':
                 tool.function = lambda: self.check_summary(self.feedback.check('Agent请求公共验证'))
-                tool.description = 'Compare the public test baseline and rerun any frozen issue reproducer.'
+                tool.description = ('Compare public tests, rerun frozen issue reproducers and any visible '
+                                    'development acceptance. Inspect known_issue.output on failure.')
         def search(query, top_k=6):
             # Index refresh runs at phase boundaries, after commands have joined.
             # During model/tool execution we read only this trusted in-memory index.
@@ -231,6 +242,9 @@ class RepairWorkflow:
         self.phase('indexing')
         mapping = self.refresh_index()
         self.api = self.api_factory(self.config.code,self.budget,self.events,policy=self.config.agent)
+        if not self.state['plan'] and self.config.workflow.execution_mode == 'linear':
+            self.save(plan=[{'phase': 'repair', 'description': 'Inspect, reproduce, edit and verify in one conversation',
+                             'status': 'pending'}])
         if not self.state['plan']:
             self.phase('planning')
             default = [{'phase':phase,'description':desc,'status':'pending'} for phase,desc in PHASES]
@@ -254,6 +268,12 @@ class RepairWorkflow:
         self.anchor = (f'Problem:\n{self.task.problem}\nRepository: {cwd}\nPublic test command: {self.task.test_command}\n'
                        f'Screenshot evidence (may contain recognition errors):\n{json.dumps(self.state["readings"],ensure_ascii=False)}\n'
                        f'Repository map:\n{mapping["output"]}')
+        case = development_case(self.task.task_id) if self.config.workflow.development_casebook else None
+        if case:
+            self.anchor += ('\nVisible development acceptance (prior failed run feedback):\n' + case['note'] +
+                            '\nFrozen acceptance script run by run_tests:\n' + case['script'] +
+                            '\nOriginal failure:\n' +
+                            self.state.get('development_acceptance_baseline', {}).get('output', '')[-2500:])
         self.agent = Agent(llm=self.api,tools=self.tools,max_rounds=self.config.limits.max_steps,
                            max_context_tokens=self.config.max_context_tokens)
         self.agent.context = RepairContext(self.config.max_context_tokens,self.anchor,self.events)
@@ -274,6 +294,34 @@ class RepairWorkflow:
             'After explaining a concrete hypothesis, implement the justified change; avoid repeated broad reading. '
             'You may use apply_patch with <<<<<<< SEARCH / ======= / >>>>>>> REPLACE blocks. '
             'Conclude each requested phase with a concise account of observed facts and remaining uncertainty.')
+        if self.config.workflow.execution_mode == 'linear':
+            self.system = (
+                f'You are a software engineer repairing source code in {cwd}. '
+                'Work continuously: find and read relevant code, reproduce the reported behavior, implement a '
+                'general fix consistent with the codebase, and run focused tests including edge cases. '
+                'Use the existing read/search/edit/bash tools; do not stop after merely proposing a fix. '
+                'Each shell call starts in the repository; network is disabled and dependencies are preinstalled. '
+                'Existing tests, protected configuration files and .git are read-only. '
+                'Keep all NEW debugging scripts, reproductions and temporary files in .sca_scratch/ '
+                '(create it with mkdir -p); it is excluded from the delivered patch. '
+                'A standalone Python reproduction must actually execute its assertions; printing FAILED is insufficient. '
+                'register_reproduction can freeze a script and verify it before/after editing, but is optional. '
+                'If registration fails, inspect the output; do not spend the task repeatedly registering scripts. '
+                'run_tests checks a bounded sample of original public tests plus any frozen reproducer and imports; '
+                'it does not claim full test coverage. Use bash for additional targeted tests. '
+                'Missing reproduction evidence and inconclusive environment checks are not new code regressions. '
+                'Do not change unrelated dependencies or broaden the patch to address pre-existing test failures. '
+                'After edits, check imports and affected callers, then inspect the source diff. '
+                'Reference evaluation tests are unavailable. Finish with a concise, accurate account of the actual '
+                'changes and checks; the controller exports your source patch. No plan/review JSON is required.')
+        if self.config.workflow.require_issue_verification:
+            self.system += (
+                '\nThis run requires evidence that the reported issue is fixed. '
+                'If a visible development acceptance is provided, run_tests executes its frozen assertions; '
+                'fix its failures and preserve backward compatibility. Do not substitute weaker tests. '
+                'If none is provided, register one real assertion reproducer. '
+                'Passing only the public regression sample or creating only debug files is insufficient. '
+                'You have at most 120 seconds for each shell command; use focused commands.')
         self.agent.context.bind_request(self.budget.counter,self.config.max_prompt_tokens,
                                         lambda:self.agent._full_messages()[:1],self.agent._tool_schemas)
 
@@ -287,13 +335,15 @@ class RepairWorkflow:
         self.agent.tools = selected
         self.agent._tool_by_name = {t.name:t for t in selected}
         gap = ''
-        if name in {'repair','retry'} and not self.state.get('reproduction',{}).get('baseline_reproduced'):
+        if (self.config.workflow.execution_mode != 'linear' and name in {'repair','retry'}
+                and not self.state.get('reproduction',{}).get('baseline_reproduced')):
             gap = '\nIssue reproduction is unverified. Establish and register an assertion reproducer before claiming a fix.'
         self.agent._system = self.system+f'\nCurrent phase: {name}.\n{description}'+gap
         current = export_patch(self.baseline,self.workspace,self.directory/'current.patch',self.task.protected_paths,**self.tree)
         prompt = (f'Execute phase {name}: {description}\nCurrent changed files: {current["changed_files"]}\n'
-                  f'Current diff excerpt:\n{(self.directory/"current.patch").read_text(errors="replace")[:10000]}')
+                  f'Current diff excerpt:\n{self.diff_excerpt(10000)}')
         answer, reason = '', 'returned'
+        self.budget.phase_wall_reserve = self.config.workflow.final_check_reserve_seconds
         try:
             answer = self.agent.chat(prompt)
         except PhaseEnded:
@@ -301,6 +351,7 @@ class RepairWorkflow:
         except (NoProgress,ModelOutputError) as error:
             reason = str(error)
         finally:
+            self.budget.phase_wall_reserve = 0
             atomic_json(self.directory/'conversation.json',self.agent.messages)
         self.events.emit('phase_finished',stage=name,reason=reason,answer=answer[:6000])
         self.save(last_answer=answer[:6000])
@@ -310,6 +361,10 @@ class RepairWorkflow:
     def public_check(self,label):
         self.phase('public_check')
         return self.feedback.check(label)
+
+    def diff_excerpt(self, limit=12000):
+        return patch_excerpt((self.directory/'current.patch').read_text(errors='replace'), self.baseline,
+                             limit, [r['script_path'] for r in self.state.get('reproduction_attempts', [])])
 
     @staticmethod
     def check_summary(check):
@@ -324,11 +379,26 @@ class RepairWorkflow:
         return {'public_command':check['command'],'regression':regression,
                 'reproduction':{k:v for k,v in reproduction.items() if k!='candidate'},
                 'reproduction_output':candidate.get('output','')[-5000:],
+                'quick_check':check.get('quick_check', {}),
                 'patch_replay':check['patch_replay'],'changed_files':check['changed_files'],
+                'known_issue':check.get('known_issue', {}),
+                'implementation_changed_files':check.get('non_reproduction_changed_files', []),
+                'diagnostic_changed_files':check.get('diagnostic_changed_files', []),
                 'public_output':check['output'][-5000:],'passed':check['passed']}
 
     def failure_feedback(self,check):
         self.phase('review')
+        if self.config.workflow.execution_mode == 'linear':
+            # Preserve the working conversation. No separate model with a truncated diff.
+            review = {'issues': ['Inspect the concrete check results below.'],
+                      'next_action': 'Fix the failing development acceptance, definite regressions or missing source patch; '
+                                     'if issue verification is required and no acceptance is configured, register an assertion reproducer. '
+                                     'Do not repair unrelated '
+                                     'environment failures or repeatedly register a reproducer.',
+                      'observed': self.check_summary(check)}
+            self.state['reviews'].append(review)
+            self.save()
+            return json.dumps(review, ensure_ascii=False)
         self.budget.stage(2)
         observed = self.check_summary(check)
         try:
@@ -340,7 +410,7 @@ class RepairWorkflow:
                  'If reproduction is missing/unverified, create an assertion script and call register_reproduction. '
                  'No-new-regression alone does not establish that the issue is fixed.'},
                 {'role':'user','content':self.task.problem+'\nObserved:\n'+json.dumps(observed)+
-                 '\nDiff:\n'+(self.directory/'current.patch').read_text(errors='replace')[:12000]}])
+                 '\nDiff:\n'+self.diff_excerpt()}])
             review = json_object(response.choices[0].message.content or '')
             if not isinstance(review.get('issues'),list) or not isinstance(review.get('next_action'),str):
                 raise ValueError('Invalid review')
@@ -354,12 +424,18 @@ class RepairWorkflow:
 
     def repair(self):
         self.feedback.baseline()
+        self.feedback.known_issue()
         self.initialize_agent()
         for row in self.state['plan']:
             name = row['phase']
             if name in self.state.get('attempted_phases',[]):
                 continue
-            reason = self.run_phase(name,row['description'],getattr(self.config.workflow,name+'_calls'))
+            calls = getattr(self.config.workflow,name+'_calls')
+            if self.config.workflow.execution_mode == 'linear':
+                calls = max(1, (self.config.limits.max_model_calls or self.config.limits.max_steps)
+                            - self.budget.code_calls - self.config.workflow.retry_calls *
+                            (self.config.workflow.max_retries if self.config.workflow.require_issue_verification else 1))
+            reason = self.run_phase(name,row['description'],calls)
             status = 'returned' if reason == 'returned' else 'incomplete'
             if name == 'reproduce':
                 status = 'verified' if self.state.get('reproduction',{}).get('baseline_reproduced') else 'incomplete'
@@ -370,14 +446,38 @@ class RepairWorkflow:
             self.save()
         check = self.public_check('初次修复后的公共测试')
         while check['retry_needed'] and self.state['retry_count'] < self.config.workflow.max_retries:
+            if self.budget.remaining_seconds() <= self.config.workflow.final_check_reserve_seconds + 10:
+                self.save(stop_reason='Reserved time used for final verification; issue remains unverified')
+                break
             feedback = self.failure_feedback(check)
             self.save(retry_count=self.state['retry_count']+1)
             self.run_phase('retry','Use this observed feedback to repair remaining issues:\n'+feedback,
                            self.config.workflow.retry_calls)
+            previous = check
             check = self.public_check(f'第{self.state["retry_count"]}次纠错后的公共测试')
+            if (self.config.workflow.execution_mode == 'linear' and
+                    previous['patch_sha256'] == check['patch_sha256'] and
+                    check.get('known_issue', {}).get('status') != 'failed'):
+                self.save(stop_reason='No patch change after concrete feedback')
+                break
         self.save(public_test_passed=check['passed'],public_patch_present=bool(check['patch_bytes']))
 
     def finalize(self):
+        # Move only newly-created diagnostic files; retain them for inspection.
+        if self.config.workflow.require_issue_verification:
+            current = export_patch(self.baseline, self.workspace, self.directory/'current.patch',
+                                   self.task.protected_paths, **self.tree)
+            changes = classify_changes(self.baseline, current['changed_files'])
+            moved = []
+            for name in changes['diagnostics']:
+                source = self.workspace/name
+                if (self.baseline/name).exists() or not source.is_file() or source.is_symlink():
+                    continue
+                target = self.workspace/'.sca_scratch'/'delivery_cleanup'/name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                source.rename(target)
+                moved.append(name)
+            self.save(omitted_diagnostic_files=moved)
         # This flag is saved BEFORE reference tests are installed. An interrupted
         # grader can resume verification, but can never return feedback to the Agent.
         self.save(grading_started=True)
@@ -390,11 +490,13 @@ class RepairWorkflow:
         if replay['applied']:
             if self.task.benchmark:
                 final['hidden'] = self.grader(self.task,target,self.events,self.directory/'final_test.log',
-                                             timeout=self.config.limits.command_timeout_seconds)
+                                             timeout=(self.config.workflow.final_test_timeout_seconds or
+                                                      self.config.limits.command_timeout_seconds))
                 resolved = bool(final['hidden']['resolved'])
             else:
                 sb = create_sandbox(target,self.events,self.task.protected_paths,self.config.limits.command_timeout_seconds,
                                     self.baseline,self.task.runtime)
+                sb.public_display = self.public_display
                 try:
                     final['public'] = sb.run(self.task.test_command,log_path=self.directory/'final_test.log')
                 finally:
@@ -429,11 +531,15 @@ def run_workflow_task(task, config, directory, **kwargs):
         def cancel(signum,frame):
             if flow.sandbox:
                 flow.sandbox.cancel()
+            if flow.public_display:
+                flow.public_display.close()
             raise RunCancelled(f'Interrupted by signal {signum}')
         for sig in (signal.SIGINT,signal.SIGTERM):
             handlers[sig] = signal.signal(sig,cancel)
         result = {'task_id':task.task_id,'method':METHOD,'framework':'corecoder_workflow',
                   'protocol':PROTOCOL if task.benchmark else 'user_public_tests_workflow_v1',
+                  'development_regression':config.workflow.development_casebook,
+                  'prior_failure_feedback_used':bool(config.workflow.development_casebook and development_case(task.task_id)),
                   'resolved':False,'model_inference':kwargs.get('model_inference',True)}
         try:
             flow.setup()
@@ -455,6 +561,8 @@ def run_workflow_task(task, config, directory, **kwargs):
         finally:
             if flow.sandbox:
                 flow.sandbox.cancel()
+            if flow.public_display:
+                flow.public_display.close()
             for sig,handler in handlers.items():
                 signal.signal(sig,handler)
             if flow.budget:

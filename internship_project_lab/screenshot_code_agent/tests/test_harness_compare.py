@@ -266,3 +266,80 @@ def test_capacity_probe_precedes_tasks_and_never_saves_credentials(tmp_path):
     assert len(calls)==2 and value['concurrency']==2
     assert updates[-1]['probe_completed']==2
     assert 'secret-not-for-disk' not in (tmp_path/'capacity_check.json').read_text()
+
+
+@pytest.mark.sandbox
+def test_mini_failure_feedback_frozen_developer_case_and_final_timeout(old_input, tmp_path, monkeypatch):
+    folder = tmp_path / 'clean'
+    prepare_hidden_task(old_input / 'task.json', folder)
+    task = Task.from_file(folder / 'task.json')
+    case = {'note': 'Addition must work; visible developer feedback.',
+            'script': "from miniapp import add\nassert add(2,3)==5, 'addition-regression'\n"}
+    monkeypatch.setattr('screenshot_agent.harness_runner.development_case', lambda _: case)
+    ScriptedAPI.commands = [
+        ('bash', {'command': 'python3 .sca_scratch/development_acceptance.py'}),
+        ('bash', {'command': 'printf weakened > .sca_scratch/development_acceptance.py'}),
+        ('bash', {'command': "python3 -c \"from pathlib import Path; p=Path('miniapp.py'); p.write_text(p.read_text().replace('a-b','a+b'))\""}),
+        ('bash', {'command': 'python3 .sca_scratch/development_acceptance.py && echo fixed-addition'}),
+        ('bash', {'command': 'echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT'}),
+    ]
+    cfg = configuration('mini').model_copy(update={'development_casebook': True, 'final_test_timeout_seconds': 600})
+    cfg.limits.command_timeout_seconds = 2
+    directory = tmp_path / 'mini-run'
+    monkeypatch.setattr('screenshot_agent.hidden_eval.official_grade',
+                        lambda metadata, log: {'resolved': 'hidden-ok' in log.read_text(), 'parsed': True})
+    def after_submit(*args, **kwargs):
+        assert kwargs['timeout'] == 600
+        conversation = json.loads((directory / 'conversation.json').read_text())
+        observations = [m['content'] for m in conversation if m['role'] == 'tool']
+        assert 'addition-regression' in observations[0]
+        assert '<returncode>1</returncode>' in observations[0]
+        assert 'Read-only file system' in observations[1]
+        assert 'fixed-addition' in observations[3]
+        assert conversation[-1]['extra']['exit_status'] == 'Submitted'
+        return grade_hidden(*args, **kwargs)
+    result = run_harness_task(task, cfg, directory, counter=lambda m,t:100,
+                             api_factory=ScriptedAPI, grader=after_submit)
+    assert result['resolved'], result
+    assert result['changed_files'] == ['miniapp.py']
+    assert result['prior_failure_feedback_used']
+    assert json.loads((directory / 'budget.json').read_text())['code_model_calls'] == 5
+    assert (directory / 'workspace/.sca_scratch/development_acceptance.py').read_text() == case['script']
+    assert json.loads((directory / 'development_baseline.json').read_text())['returncode'] != 0
+
+
+def test_mini_respects_command_and_remaining_wall_limits(tmp_path):
+    from screenshot_agent.harness import MiniEnvironment
+    load_mini(tmp_path)
+    durations = []
+    sandbox = SimpleNamespace(timeout=120, run=lambda command, timeout: (
+        durations.append(timeout) or {'output':'timeout','returncode':-9,'timed_out':True}))
+    for remaining in (1800, 3):
+        budget = SimpleNamespace(tool=lambda *args:None, remaining_seconds=lambda: remaining)
+        output = MiniEnvironment(sandbox, budget, Events(tmp_path/'events.jsonl')).execute({'command':'sleep 1000'})
+        assert output['exception_info'] == 'Command timed out'
+    assert durations == [120, 3]
+
+
+def test_mini_only_ten_task_report_and_immutable_reuse(tmp_path):
+    sys.path.insert(0, str(ROOT/'scripts'))
+    from run_harness_compare import prepare, report
+    prior, output = tmp_path/'prior', tmp_path/'new'
+    tasks = [{'task_id': str(i), 'task_file': str(prior/str(i)/'task.json')} for i in range(10)]
+    atomic_json(prior/'prepared.json', {'protocol': PROTOCOL, 'tasks': tasks})
+    args = SimpleNamespace(output=output, reuse_prepared=prior, limit=10, arms=['mini'])
+    prepare(SimpleNamespace(update=lambda **kw:None), args)
+    assert json.loads((output/'prepared.json').read_text())['tasks'] == tasks
+    assert report(output)['arms']['mini']['total'] == 10
+    assert not report(output)['complete']
+    for i in range(10):
+        atomic_json(output/'mini/runs'/str(i)/'result.json', {
+            'task_id':str(i), 'framework':'mini', 'protocol':PROTOCOL,
+            'status':'error' if i==9 else 'unresolved', 'resolved':i==0, 'runtime_failure':i==9})
+    value = report(output)
+    assert value['complete'] and set(value['arms']) == {'mini'}
+    assert value['arms']['mini']['resolved'] == 1 and value['arms']['mini']['runtime_failures'] == 1
+    tasks.reverse()
+    atomic_json(prior/'prepared.json', {'protocol': PROTOCOL, 'tasks': tasks})
+    with pytest.raises(ValueError):
+        prepare(SimpleNamespace(update=lambda **kw:None), args)

@@ -12,6 +12,7 @@ import signal
 import sys
 import time
 import urllib.request
+import xml.etree.ElementTree as ET
 from collections import Counter
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
@@ -82,6 +83,35 @@ def stage_runtime(c, runtime, cache):
 
 
 def prepare(c, args):
+    if getattr(args, 'reuse_prepared', None):
+        prior = args.reuse_prepared
+        source = read(prior / 'prepared.json')
+        task_ids = getattr(args, 'task_ids', None)
+        if task_ids:
+            wanted = task_ids.split(',')
+            mapping = {row['task_id']: row for row in source['tasks']}
+            if len(wanted) != args.limit or len(set(wanted)) != args.limit or set(wanted) - mapping.keys():
+                raise ValueError('Explicit task IDs must select exactly the declared number of distinct prepared tasks')
+            rows = [mapping[name] for name in wanted]
+        else:
+            rows = source['tasks'][:args.limit]
+        if (source['protocol'] != PROTOCOL or len(rows) != args.limit
+                or len({row['task_id'] for row in rows}) != args.limit):
+            raise ValueError('Reused input manifest must contain the requested distinct hidden-test tasks')
+        identity = {'source_prepared': str(prior.resolve() / 'prepared.json'),
+                    'sha256': sha256(prior / 'prepared.json'), 'protocol': PROTOCOL,
+                    'task_ids': [row['task_id'] for row in rows], 'frameworks': args.arms,
+                    'selection_rule': ('explicit diagnostic regression cases fixed before this run' if task_ids else
+                                       'first N entries of existing ordered manifest; no score-based selection')}
+        immutable_json(args.output / 'selection.json', identity)
+        immutable_json(args.output / 'prepared.json', {
+            'protocol': PROTOCOL, 'tasks': rows, 'task_count': len(rows),
+            'selection_sha256': sha256(args.output / 'selection.json')})
+        c.update(stage='prepared', prepared_count=len(rows), total=len(rows), copied=False,
+                 note='Existing data reused; all inputs validated before GPU startup')
+        return
+    if getattr(args, 'limit', 100) != 100:
+        raise ValueError('Small runs require --reuse-prepared with the original prepared inputs')
     source = read(args.source_plan)
     rows = source['tasks']
     if len(rows) != 100 or len({r['task_id'] for r in rows}) != 100:
@@ -164,9 +194,50 @@ def capacity_check(c, args, config, key, *, chat=None, counter=None):
     return value
 
 
+def selected_frameworks(output):
+    for name in ('comparison_plan.json', 'selection.json'):
+        if (output / name).exists():
+            value = read(output / name)
+            if 'frameworks' in value:
+                return value['frameworks']
+    return ['corecoder', 'mini']
+
+
+def session_contract_preflight(c, args, config, runtime):
+    tasks = read(args.output / 'prepared.json')['tasks']
+    identity = {'source_sha256': sha256(runtime / 'source_state.json'),
+                'config': config.model_dump(), 'prepared_sha256': sha256(args.output / 'prepared.json'),
+                'task_ids': [row['task_id'] for row in tasks]}
+    receipt = args.output / 'session_preflight.json'
+    xml = args.output / 'session_preflight.xml'
+    if receipt.exists():
+        old = read(receipt)
+        if not old.get('passed') or any(old.get(k) != v for k,v in identity.items()) or old.get('xml_sha256') != sha256(xml):
+            raise ValueError('Session preflight receipt does not match frozen source/config/tasks')
+        c.update(stage='session_contract_preflight_reused', preflight_checks=old['checks'])
+        return
+    env = {**os.environ, 'PYTHONPATH': str(runtime / 'src'), 'CUDA_VISIBLE_DEVICES': '',
+           'SCA_MINI_PREFLIGHT_MANIFEST': str(args.output / 'prepared.json'),
+           'SCA_MINI_REPAIR_PREFLIGHT': '1' if config.mini_repair_control else '0'}
+    c.update(stage='session_contract_preflight')
+    command = [sys.executable, '-B', '-m', 'pytest', '-q', '-p', 'no:cacheprovider',
+               str(runtime / 'tests/test_mini_session.py'),
+               *([str(runtime / 'tests/test_mini_verified.py')] if config.mini_verified else []),
+               *([str(runtime / 'tests/test_mini_repair_control.py')] if config.mini_repair_control else []),
+               *([str(runtime / 'tests/test_mini_recovery.py')] if config.mini_recovery else []),
+               '--basetemp=' + str(args.output / 'session_preflight'), '--junitxml=' + str(xml)]
+    c.wait(c.launch(command, 'session_contract_preflight', env=env, cwd=runtime))
+    cases = list(ET.parse(xml).getroot().iter('testcase'))
+    if len(cases) < 6 * (1 + len(tasks)) + len(tasks) + 1 or any(
+            case.find(tag) is not None for case in cases for tag in ('failure', 'error', 'skipped')):
+        raise ValueError('Incomplete real-runtime preflight; no GPU model was started')
+    atomic_json(receipt, {**identity, 'passed': True, 'checks': len(cases), 'xml_sha256': sha256(xml),
+        'gpu_started': False, 'scope': 'selected OCI runtimes, scripted mini loop and delivery contract; not model accuracy'})
+
+
 def results(output, tasks):
     arms = {}
-    for arm in ('corecoder', 'mini'):
+    for arm in selected_frameworks(output):
         records = []
         for task in tasks:
             p = output / arm / 'runs' / task['task_id'] / 'result.json'
@@ -187,6 +258,8 @@ def report(output):
         totals[arm] = {'completed':len(rows), 'total':len(prepared['tasks']),
             'resolved':sum(r['resolved'] for r in rows),
             'runtime_failures':sum(bool(r.get('runtime_failure')) for r in rows),
+            'recoverable_tool_errors':sum(r.get('recoverable_tool_errors', 0) for r in rows),
+            'agent_errors':sum(r.get('exit_reason') == 'agent_error' for r in rows),
             'zero_patch':sum(not r.get('changed_files') for r in rows),
             'model_calls':sum(r.get('usage', {}).get('code_model_calls', 0) for r in rows),
             'tool_calls':sum(r.get('usage', {}).get('tool_calls', 0) for r in rows),
@@ -198,20 +271,25 @@ def report(output):
     paired = Counter()
     paired_tasks = {name:[] for name in ('both_success','mini_only','corecoder_only','both_failed')}
     maps = {a:{r['task_id']:r for r in rows} for a, rows in arms.items()}
-    for task_id in sorted(maps['corecoder'].keys() & maps['mini'].keys()):
+    for task_id in sorted(maps.get('corecoder', {}).keys() & maps.get('mini', {}).keys()):
         a, b = maps['corecoder'][task_id]['resolved'], maps['mini'][task_id]['resolved']
         group = 'both_success' if a and b else 'mini_only' if b else 'corecoder_only' if a else 'both_failed'
         paired[group] += 1
         paired_tasks[group].append(task_id)
+    count = len(prepared['tasks'])
+    plan = read(output / 'comparison_plan.json') if (output / 'comparison_plan.json').exists() else {}
+    known = plan.get('config', {}).get('development_casebook', False)
     value = {'protocol':PROTOCOL, 'complete':complete, 'arms':totals, 'paired':dict(paired), 'paired_tasks':paired_tasks,
-             'interpretation':'Same Qwen model and 100 development tasks; reference tests hidden during repair. '
+             'development_regression': known,
+             'interpretation':f'Qwen model and fixed {count} development tasks; reference tests hidden during repair. '
+                              + ('Known v4 developer hints are visible; this is not held-out generalization. ' if known else '') +
                               'Do not compare percentage deltas directly against the old visible-test 19/100.'}
     atomic_json(output / 'report.json', value)
     lines = ['# CoreCoder / mini-SWE-agent 对照', '', value['interpretation'], '',
              '| 框架 | 已结束 | 修复成功 | 运行异常 |', '|---|---:|---:|---:|']
     for arm, item in totals.items():
         lines.append(f"| {arm} | {item['completed']}/{item['total']} | {item['resolved']}/{item['total']} | {item['runtime_failures']} |")
-    lines += ['', '全部运行异常保留在固定100题分母；完整配对：' + json.dumps(dict(paired), ensure_ascii=False)]
+    lines += ['', f'全部运行异常保留在固定{count}题分母；完整配对：' + json.dumps(dict(paired), ensure_ascii=False)]
     lines += ['', '| 框架 | 模型调用 | 工具调用 | 输入token（含失败估计） | 输出token（含失败估计） | 单题时间合计(h) | 零补丁 |',
               '|---|---:|---:|---:|---:|---:|---:|']
     for arm, item in totals.items():
@@ -226,14 +304,24 @@ def report(output):
 def run(c, args):
     verify_mini()
     prepared = read(args.output / 'prepared.json')
-    if prepared['protocol'] != PROTOCOL or len(prepared['tasks']) != 100:
-        raise ValueError('All 100 hidden-test inputs must be prepared before model startup')
+    count = getattr(args, 'limit', 100)
+    frameworks = getattr(args, 'arms', ['corecoder', 'mini'])
+    if (prepared['protocol'] != PROTOCOL or len(prepared['tasks']) != count
+            or len({r['task_id'] for r in prepared['tasks']}) != count):
+        raise ValueError('All declared distinct hidden-test inputs must be prepared before model startup')
+    for row in prepared['tasks']:
+        name = row['task_id']
+        if not name or name in {'.', '..'} or any(ch not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.-' for ch in name):
+            raise ValueError('Invalid task identifier')
     runtime = freeze(args)
-    config = HarnessConfig.model_validate(read(runtime / 'configs/harness-compare.json'))
+    config = HarnessConfig.model_validate(read(args.config or runtime / 'configs/harness-compare.json'))
+    if config.mini_session and frameworks != ['mini']:
+        raise ValueError('Session mode must select only the mini arm')
+    immutable_json(args.output / 'harness_config.json', config.model_dump())
     args.service_context_tokens = config.service_context_tokens
     args.max_num_seqs = args.workers
     args.split = 'dev'
-    plan = {'protocol':PROTOCOL, 'frameworks':['corecoder','mini'], 'config':config.model_dump(),
+    plan = {'protocol':PROTOCOL, 'frameworks':frameworks, 'config':config.model_dump(),
             'prepared_sha256':sha256(args.output / 'prepared.json'),
             'source_sha256':sha256(runtime / 'source_state.json'), 'mini_pin_sha256':sha256(runtime / 'MINI_UPSTREAM.json'),
             'model':scale.verify_resource_receipts(), 'framework_environment':framework_environment(), 'workers':args.workers,
@@ -241,9 +329,10 @@ def run(c, args):
     immutable_json(args.output / 'comparison_plan.json', plan)
     pending = []
     for i, receipt in enumerate(prepared['tasks']):
-        c.update(stage='validating_inputs', completed=i, total=100)
-        validate_prepared(Path(receipt['task_file']).parent)
-        for arm in ('corecoder','mini'):
+        c.update(stage='validating_inputs', validation_completed=i, validation_total=count)
+        if validate_prepared(Path(receipt['task_file']).parent) != receipt:
+            raise ValueError('Prepared receipt does not match its frozen task selection')
+        for arm in frameworks:
             directory = args.output / arm / 'runs' / receipt['task_id']
             if (directory / 'result.json').exists():
                 old = read(directory / 'result.json')
@@ -266,11 +355,14 @@ def run(c, args):
             pending.append((arm, receipt))
     if not pending:
         return report(args.output)
+    c.update(validation_completed=count, validation_total=count)
+    if config.mini_session:
+        session_contract_preflight(c, args, config, runtime)
     service, env = scale.start_service(c, args, runtime, 'coder', read(runtime / 'configs/scale_4gpu_resources.json'))
     try:
         capacity_check(c, args, config, env['SCA_CODE_API_KEY'])
         active = []
-        for arm in ('corecoder','mini'):
+        for arm in frameworks:
             cfg = config.model_copy(update={'framework':arm, 'code':config.code.model_copy(
                 update={'base_url':f'http://127.0.0.1:{args.port}/v1'})})
             immutable_json(args.output / arm / 'config.json', cfg.model_dump())
@@ -292,7 +384,7 @@ def run(c, args):
                     if entry['proc'].returncode or not (directory / 'result.json').exists():
                         raise RuntimeError('Task process failed: ' + entry['log'])
                     active.remove((entry,directory,started))
-            c.update(stage='evaluating', pending=len(pending), running=len(active), total=200)
+            c.update(stage='evaluating', pending=len(pending), running=len(active), total=count * len(frameworks))
             if active:
                 time.sleep(1)
     finally:
@@ -302,9 +394,14 @@ def run(c, args):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('action', choices=['prepare','run','all','status','report','task','check'])
+    p.add_argument('action', choices=['prepare','run','all','status','report','task','check','preflight'])
     p.add_argument('--output', type=Path, default=DEFAULT_OUTPUT)
     p.add_argument('--source-plan', type=Path, default=DEFAULT_SOURCE)
+    p.add_argument('--reuse-prepared', type=Path)
+    p.add_argument('--limit', type=int, choices=[5, 10, 100], default=100)
+    p.add_argument('--task-ids', help='Comma-separated diagnostic task IDs; must match --limit')
+    p.add_argument('--arms', default='corecoder,mini')
+    p.add_argument('--brief', action='store_true', help='Compact status for watch')
     p.add_argument('--gpus', default='2,5,6,7')
     p.add_argument('--workers', type=int, choices=[1,2,4,8], default=2)
     p.add_argument('--port', type=int, default=18846)
@@ -318,6 +415,9 @@ def main():
     p.add_argument('--config', type=Path)
     p.add_argument('--run-dir', type=Path)
     args = p.parse_args()
+    args.arms = args.arms.split(',')
+    if not args.arms or len(set(args.arms)) != len(args.arms) or set(args.arms) - {'corecoder','mini'}:
+        p.error('--arms must select corecoder, mini, or corecoder,mini')
     args.output = storage(args.output, create=args.action != 'status')
     if args.action == 'status':
         state = read(args.output / 'status.json') if (args.output / 'status.json').exists() else {'stage':'not_started'}
@@ -335,7 +435,24 @@ def main():
             state['arms'] = {arm:{'completed':len(rows), 'resolved':sum(r['resolved'] for r in rows),
                 'runtime_failures':sum(bool(r.get('runtime_failure')) for r in rows)}
                 for arm, rows in results(args.output, read(args.output / 'prepared.json')['tasks']).items()}
-        print(json.dumps(state, ensure_ascii=False, indent=2))
+        if args.brief:
+            print(f"stage={state.get('stage')} | controller_alive={state['controller_alive']} | pid={state.get('pid')}")
+            print(f"pending={state.get('pending', '-')} | running={state.get('running', '-')} | updated={state.get('updated_at', '-')}")
+            if state.get('error'):
+                print('error:', state['error'])
+            print('arms:', json.dumps(state.get('arms', {}), ensure_ascii=False))
+            if (args.output / 'prepared.json').exists():
+                for arm in selected_frameworks(args.output):
+                    for task in read(args.output / 'prepared.json')['tasks']:
+                        folder = args.output / arm / 'runs' / task['task_id']
+                        result_file = folder / 'result.json'
+                        state_file = folder / 'status.json'
+                        row = read(result_file) if result_file.exists() else read(state_file) if state_file.exists() else {}
+                        if not result_file.exists() and (folder / 'budget.json').exists():
+                            row['usage'] = read(folder / 'budget.json')
+                        print(f"{arm:10} {task['task_id']:40} {row.get('stage', row.get('status', 'pending')):24} resolved={row.get('resolved', '-')} calls={row.get('usage', {}).get('code_model_calls', '-')}")
+        else:
+            print(json.dumps(state, ensure_ascii=False, indent=2))
         return
     if args.action == 'check':
         from screenshot_agent.harness import QwenTokenCounter, load_mini
@@ -366,11 +483,17 @@ def main():
         signal.signal(sig, cancel)
     c = scale.Controller(args.output, args.action)
     try:
-        if args.action in ('prepare','all'):
+        if args.action in ('prepare','all','preflight'):
             prepare(c, args)
+        if args.action == 'preflight':
+            config = HarnessConfig.model_validate(read(args.config or ROOT / 'configs/harness-compare.json'))
+            if not config.mini_session:
+                raise ValueError('Session preflight requires mini_session configuration')
+            verify_mini()
+            session_contract_preflight(c, args, config, freeze(args))
         if args.action in ('run','all'):
             run(c,args)
-        c.update(stage='prepared' if args.action == 'prepare' else 'completed', finished_at=time.time())
+        c.update(stage={'prepare':'prepared', 'preflight':'preflight_completed'}.get(args.action, 'completed'), finished_at=time.time())
     except KeyboardInterrupt:
         c.update(stage='cancelled', finished_at=time.time())
         raise SystemExit(130) from None

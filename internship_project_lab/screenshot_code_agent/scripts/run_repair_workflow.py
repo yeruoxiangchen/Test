@@ -19,20 +19,21 @@ from screenshot_agent.gpu_queue import QueuePolicy
 from screenshot_agent.harness import PROTOCOL
 from screenshot_agent.hidden_eval import validate_prepared
 from screenshot_agent.scale_data import immutable_json, read, sha256
-from screenshot_agent.workflow import METHOD, run_workflow_task
+from screenshot_agent.workflow import METHOD, implementation, run_workflow_task
 from screenshot_agent.workflow_config import WorkflowConfig, load_workflow_config
 from screenshot_agent.workflow_view import export_delivery, render_batch, render_run
 
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_OUTPUT = Path('/data/zjr/screenshot_code_agent/repair_workflow_20261027')
+DEFAULT_OUTPUT = Path('/data/zjr/screenshot_code_agent/v4_dev10_20261029')
 TERMINAL = {'verified','unresolved','error'}
 
 
 def prepared_tasks(output):
     value = read(output/'prepared.json')
     rows = value['tasks']
-    if value['protocol'] != PROTOCOL or len(rows) != 100 or len({r['task_id'] for r in rows}) != 100:
-        raise ValueError('Acceptance run requires the fixed 100 distinct hidden-test tasks')
+    count = value.get('task_count', 100)
+    if count not in {10, 100} or value['protocol'] != PROTOCOL or len(rows) != count or len({r['task_id'] for r in rows}) != count:
+        raise ValueError('Run requires its declared fixed 10 or 100 distinct hidden-test tasks')
     for row in rows:
         if not row['task_id'] or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_.-' for c in row['task_id']):
             raise ValueError('Invalid task identifier')
@@ -45,27 +46,39 @@ def prepare(c,args):
     # Reuse already prepared data, without touching its controller or results.
     prior = args.reuse_prepared
     if (args.output/'prepared.json').exists():
-        prepared_tasks(args.output)
+        rows = prepared_tasks(args.output)
+        if len(rows) != getattr(args, 'limit', 100):
+            raise ValueError('Task count changed for an existing run; use a new output directory')
         return
     if prior and (prior/'prepared.json').exists():
         rows = prepared_tasks(prior)
+        limit = getattr(args, 'limit', 100)
+        if len(rows) < limit:
+            raise ValueError('Reused input manifest has fewer tasks than requested')
+        rows = rows[:limit]
         selection = read(prior/'selection.json')
         if selection['sha256'] != sha256(args.source_plan):
             raise ValueError('Reused inputs come from a different source selection')
         for i,row in enumerate(rows):
-            c.update(stage='validating_reused_inputs',completed=i,total=100)
+            c.update(stage='validating_reused_inputs',validation_completed=i,validation_total=len(rows))
             validate_prepared(Path(row['task_file']).parent)
+        selection = {**selection, 'selected_ids': [row['task_id'] for row in rows],
+                     'selection_rule': 'first N entries of the existing ordered manifest; no score-based selection'}
         immutable_json(args.output/'selection.json',selection)
-        immutable_json(args.output/'prepared.json',read(prior/'prepared.json'))
+        immutable_json(args.output/'prepared.json', {**read(prior/'prepared.json'), 'tasks': rows,
+                       'task_count': len(rows), 'selection_sha256': sha256(args.output/'selection.json')})
         atomic_json(args.output/'input_storage.json',{'reused_from':str(prior),'copied':False})
     else:
+        if getattr(args, 'limit', 100) != 100:
+            raise ValueError('10-task smoke requires --reuse-prepared pointing to the existing prepared inputs')
         harness.prepare(c,args)
 
 
 def report_method(output):
     plan = output/'workflow_plan.json'
     method = read(plan)['method'] if plan.exists() else METHOD
-    if method not in {'corecoder_retrieval_workflow_v1',METHOD}:
+    if method not in {'corecoder_retrieval_workflow_v1','corecoder_retrieval_workflow_v2',
+                      'corecoder_repair_workflow_v3',METHOD}:
         raise ValueError('Unknown workflow method')
     return method
 
@@ -90,14 +103,20 @@ def result_rows(output):
 def report(output):
     rows = result_rows(output)
     ended = [r for r in rows if r['status'] in TERMINAL]
+    config_file = output/'workflow_config.json'
+    known = config_file.exists() and read(config_file).get('workflow',{}).get('development_casebook',False)
     value = {'method':report_method(output),'protocol':PROTOCOL,'complete':len(ended)==len(rows),
+        'development_regression': bool(known),
         'completed':len(ended),'total':len(rows),'resolved':sum(bool(r['resolved']) for r in ended),
         'runtime_failures':sum(bool(r.get('runtime_failure')) for r in ended),
         'zero_patch':sum(not r.get('changed_files') for r in ended),
         'status_counts':dict(Counter(r['status'] for r in rows)),
         'usage':{key:sum(r.get('usage',{}).get(key,0) for r in rows) for key in
                  ('code_model_calls','vision_model_calls','tool_calls','accounted_prompt_tokens','accounted_completion_tokens','elapsed_seconds')},
-        'interpretation':'固定100题，运行异常保留在分母。参考测试仅在Agent停止后评分；不能与旧的可见参考测试19/100直接计算提升。',
+        'interpretation':f'固定{len(rows)}题，运行异常保留在分母。参考测试仅在Agent停止后评分。'
+                         + ('本轮为工程小测，不代表100题成功率。' if len(rows)==10 else '')
+                         + ('本轮使用已知失败反馈与开发验收检查，全部10题保留；不是未见任务泛化成绩。' if known else '')
+                         + '不能与旧的可见参考测试19/100直接计算提升。',
         'tasks':rows}
     atomic_json(output/'report.json',value)
     render_batch(output,rows,len(rows))
@@ -111,9 +130,11 @@ def report(output):
 
 def evaluate(c,args):
     tasks = prepared_tasks(args.output)
-    runtime = scale.frozen_runtime(args.output)
     config = load_workflow_config(args.config)
     config = config.model_copy(update={'code':config.code.model_copy(update={'base_url':f'http://127.0.0.1:{args.port}/v1'})})
+    if config.workflow.execution_mode == 'linear' and len(tasks) == 10:
+        validate_smoke_preflight(tasks, config, args.preflight_report)
+    runtime = scale.frozen_runtime(args.output)
     immutable_json(args.output/'workflow_config.json',config.model_dump())
     plan = {'method':METHOD,'protocol':PROTOCOL,'prepared_sha256':sha256(args.output/'prepared.json'),
         'source_sha256':sha256(runtime/'source_state.json'),'config':config.model_dump(),
@@ -122,7 +143,7 @@ def evaluate(c,args):
     immutable_json(args.output/'workflow_plan.json',plan)
     pending = []
     for i,task in enumerate(tasks):
-        c.update(stage='validating_inputs',completed=i,total=len(tasks))
+        c.update(stage='validating_inputs',validation_completed=i,validation_total=len(tasks))
         validate_prepared(Path(task['task_file']).parent)
         folder = args.output/'runs'/task['task_id']
         if (folder/'result.json').exists():
@@ -167,12 +188,27 @@ def evaluate(c,args):
                         raise RuntimeError('Task process failed; inspect '+entry['log'])
                     active.remove((entry,folder,started))
                     report(args.output)
+                    if read(folder/'result.json').get('runtime_failure'):
+                        raise RuntimeError('Task infrastructure/model error; stop scheduling new tasks and inspect '+str(folder))
             c.update(stage='evaluating',pending=len(pending),running=len(active),total=len(tasks))
             if active:
                 time.sleep(1)
     finally:
         scale.terminate(service['proc'])
     report(args.output)
+
+
+def validate_smoke_preflight(tasks, config, path):
+    if not path:
+        raise ValueError('10-task smoke requires --preflight-report from check_workflow_v3.py')
+    checked = read(path)
+    if (not checked.get('ready') or checked.get('implementation') != implementation()
+            or checked.get('config') != config.model_dump()):
+        raise ValueError('Public preflight failed or code/config changed; rerun the CPU preflight first')
+    rows = checked['tasks']
+    if ([r['task_id'] for r in rows] != [t['task_id'] for t in tasks]
+            or any(r['task_sha256'] != sha256(Path(t['task_file'])) for r,t in zip(rows,tasks))):
+        raise ValueError('Public preflight does not cover the same fixed ten inputs')
 
 
 def single(args):
@@ -257,7 +293,10 @@ def parser():
     p.add_argument('--output',type=Path,default=DEFAULT_OUTPUT)
     p.add_argument('--source-plan',type=Path,default=harness.DEFAULT_SOURCE)
     p.add_argument('--reuse-prepared',type=Path,default=harness.DEFAULT_OUTPUT)
-    p.add_argument('--config',type=Path,default=ROOT/'configs/workflow-local.json')
+    p.add_argument('--limit',type=int,choices=[10,100],default=10,
+                   help='Default: fixed first 10 prepared tasks; 100 requires explicit selection')
+    p.add_argument('--preflight-report',type=Path,help='Successful CPU check of the same ten tasks and implementation')
+    p.add_argument('--config',type=Path,default=ROOT/'configs/workflow-v4.json')
     p.add_argument('--run-dir',type=Path)
     p.add_argument('--task',type=Path)
     p.add_argument('--repo',type=Path)
@@ -275,7 +314,7 @@ def parser():
     p.add_argument('--gpu-poll-seconds',type=float,default=10)
     p.add_argument('--gpu-stable-samples',type=int,default=2)
     p.add_argument('--workers',type=int,choices=[1,2,4],default=2)
-    p.add_argument('--port',type=int,default=18856)
+    p.add_argument('--port',type=int,default=18876)
     p.add_argument('--gpu-memory-utilization',type=float,default=.8)
     p.add_argument('--gpu-headroom-mib',type=int,default=1536)
     p.add_argument('--allow-shared-gpus',action='store_true',

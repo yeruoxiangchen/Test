@@ -18,7 +18,7 @@ from pydantic import Field, model_validator
 
 from .config import RunConfig
 from .context import compact_request
-from .control import Budget, BudgetExceeded, ContextWindowExceeded
+from .control import Budget, BudgetExceeded, ContextWindowExceeded, atomic_json
 from .models import APIModel
 
 PROTOCOL = "hidden_reference_tests_harness_v1"
@@ -33,9 +33,22 @@ class HarnessConfig(RunConfig):
     max_prompt_tokens: int = Field(default=24576, ge=2048)
     total_prompt_tokens: int = Field(default=1_500_000, ge=1)
     total_completion_tokens: int = Field(default=100_000, ge=1)
+    development_casebook: bool = False
+    xvfb_executable: str | None = None
+    final_test_timeout_seconds: int | None = Field(default=None, ge=1)
+    mini_session: bool = False
+    mini_verified: bool = False
+    mini_repair_control: bool = False
+    mini_recovery: bool = False
 
     @model_validator(mode="after")
     def context_fits(self):
+        if self.mini_repair_control and not self.mini_verified:
+            raise ValueError("mini_repair_control requires mini_verified")
+        if self.mini_recovery and not self.mini_repair_control:
+            raise ValueError("mini_recovery requires mini_repair_control")
+        if self.mini_verified and (not self.mini_session or self.framework != 'mini'):
+            raise ValueError('mini_verified requires mini_session and the mini framework')
         if self.max_prompt_tokens + self.code.max_output_tokens > self.service_context_tokens:
             raise ValueError("Prompt and output allowances exceed the model service context")
         if self.max_context_tokens > self.max_prompt_tokens:
@@ -137,20 +150,35 @@ def load_mini(run_dir):
 
 
 class MiniModel:
-    def __init__(self, api, templates):
+    def __init__(self, api, templates, control=None):
         self.api, self.templates = api, templates
+        self.control = control
 
     def query(self, messages):
         from minisweagent.exceptions import FormatError
         from minisweagent.models.utils.actions_toolcall import BASH_TOOL, parse_toolcall_actions
         prepared = [{k: v for k, v in row.items() if k != "extra"} for row in messages]
+        if self.control and hasattr(self.control, 'guard'):
+            self.control.guard()
+        if self.control and self.control.message():
+            prepared.append(self.control.message())
         prior_cost = self.api.budget.cost_usd
-        response = self.api.complete(prepared, [BASH_TOOL])
+        try:
+            from .mini_actions import EXTRA_TOOLS
+            verified = self.api.budget.config.mini_verified
+            response = self.api.complete(prepared, [BASH_TOOL, *EXTRA_TOOLS] if verified else [BASH_TOOL])
+        finally:
+            atomic_json(self.api.events.path.parent / 'budget.json', self.api.budget.snapshot())
         cost = self.api.budget.cost_usd - prior_cost
         try:
-            actions = parse_toolcall_actions(response.choices[0].message.tool_calls or [],
-                format_error_template=self.templates["format_error_template"],
-                template_kwargs={"finish_reason": response.choices[0].finish_reason})
+            calls = response.choices[0].message.tool_calls or []
+            if verified and calls:
+                from .mini_actions import parse_actions
+                actions = parse_actions(calls)
+            else:
+                actions = parse_toolcall_actions(calls,
+                    format_error_template=self.templates["format_error_template"],
+                    template_kwargs={"finish_reason": response.choices[0].finish_reason})
         except FormatError as error:
             error.messages[0].setdefault("extra", {}).update(cost=cost, response=response.model_dump(mode="json"))
             raise
@@ -175,22 +203,53 @@ class MiniModel:
 
 
 class MiniEnvironment:
-    def __init__(self, sandbox, budget, events):
+    def __init__(self, sandbox, budget, events, submission_check=None, control=None):
         self.sandbox, self.budget, self.events = sandbox, budget, events
+        self.submission_check = submission_check
+        self.control = control
+        self.actions = 0
+        self.recoverable_errors = 0
 
     def execute(self, action, cwd=""):
         from minisweagent.exceptions import Submitted
-        command = action.get("command")
-        if not isinstance(command, str):
-            raise ValueError("bash command must be a string")
-        self.budget.tool("bash", {"command": command})
-        output = self.sandbox.run(command, timeout=self.budget.remaining_seconds())
-        self.events.emit("tool_result", name="bash", output=output)
+
+        from .mini_actions import execute_action
+        tool = action.get('tool', 'bash')
+        self.budget.tool(tool, {k: v for k, v in action.items() if k != 'tool_call_id'})
+        self.actions += 1
+        output = self.control.before(action) if self.control else None
+        if output is None:
+            output = execute_action(action, self.sandbox, self.budget, self.submission_check)
+        if self.control:
+            self.control.after(action, output)
+        if output.get('input_error'):
+            self.recoverable_errors += 1
+            self.events.emit('recoverable_tool_error', tool=tool, output=output)
+        self.events.emit("tool_result", name=tool, output=output)
         lines = output["output"].lstrip().splitlines(keepends=True)
         if (lines and lines[0].strip() == "COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT"
                 and output["returncode"] == 0 and not output["timed_out"]):
+            if self.submission_check:
+                checked = self.submission_check()
+                self.events.emit('submission_check', **checked)
+                if self.control and hasattr(self.control, 'feedback'):
+                    self.control.feedback(checked)
+                if not checked['passed']:
+                    if self.control:
+                        self.control.failed = checked['output']
+                    return {**output, 'output': checked['output'], 'returncode': 1, 'exception_info': ''}
             raise Submitted({"role": "exit", "content": "".join(lines[1:]),
                              "extra": {"exit_status": "Submitted", "submission": "".join(lines[1:])}})
+        if (getattr(self.submission_check, 'automatic', False) and tool != 'check_patch'
+                and self.actions % (6 if self.budget.config.mini_recovery else 12) == 0
+                and self.budget.remaining_seconds() > 100):
+            checked = self.submission_check()
+            output['output'] += '\nAutomatic public verification:\n' + checked['output']
+            self.events.emit('automatic_check', **checked)
+            if self.control:
+                self.control.failed = '' if checked['passed'] else checked['output']
+                if hasattr(self.control, 'feedback'):
+                    self.control.feedback(checked)
         output["exception_info"] = "Command timed out" if output["timed_out"] else ""
         return output
 
@@ -201,7 +260,7 @@ class MiniEnvironment:
         return {"info": {"sandbox": self.sandbox.description()}}
 
 
-def make_mini(config, budget, events, sandbox, run_dir, api=None):
+def make_mini(config, budget, events, sandbox, run_dir, api=None, submission_check=None):
     import yaml
     agent_class = load_mini(run_dir)
     upstream = yaml.safe_load((PROJECT / "vendor/mini-swe-agent/src/minisweagent/config/benchmarks/swebench.yaml").read_text())
@@ -213,11 +272,55 @@ When finished, run `echo COMPLETE_TASK_AND_SUBMIT_FINAL_OUTPUT` as a separate co
 The evaluator exports your workspace diff; do not create a patch.txt file.
 The network is disabled and dependencies are preinstalled. Use existing repository
 tests and your own reproduction scripts. Reference evaluation tests are unavailable.
+Keep temporary reproduction/debug files under `.sca_scratch/` so they are not
+included in the exported patch. Tests and .git are read-only. Each shell command
+starts in the repository directory; use `cd ... && ...` within the same command.
 </instructions>
 """
     prompt = prompt.replace("/testbed", sandbox.description()["repository_mount"])
+    if config.mini_session:
+        prompt = prompt.replace('Tests and .git are read-only.',
+            'Existing tests are read-only. Your workspace Git is writable: git diff, git restore '
+            'and git checkout work on your private copy. /tmp and HOME files persist across commands. '
+            'Each command uses a new shell; run background services and their clients in one command. '
+            'Before submission, Python syntax/imports, implementation changes and any supplied visible '
+            'development assertion are checked. Failed checks return feedback so you can continue. '
+            'Backups are omitted from delivery; keep all other debug/reproduction files in .sca_scratch/.')
+    if config.mini_verified:
+        prompt = prompt.replace('bash tool call', 'tool call')
+        prompt += '''
+Use edit_file for source edits: it requires one exact old-text match and rejects
+invalid Python before writing. Read the current source before each edit; avoid
+line-number sed deletions/insertions. bash remains available for reading and tests.
+After a coherent change, call check_patch. It runs a clean-replay public behavior
+check and compares existing public tests against their original baseline. Any
+reported regression must be fixed; do not dismiss a failed test as acceptable.
+Successful checks save a controller-owned candidate. On abnormal exit, the last
+verified candidate is preserved for final grading; this is not a guarantee of success.
+Checks also run periodically and on submission. Existing baseline failures are
+reported separately. Reference tests are never exposed. Keep changes minimal and
+verify both the requested behavior and the old API. Every response needs a tool call.
+'''
     api = api or HarnessAPIModel(config.code, budget, events, policy=config.agent)
-    return agent_class(MiniModel(api, upstream["model"]), MiniEnvironment(sandbox, budget, events),
+    control = None
+    if config.mini_repair_control:
+        from .mini_repair_control import RepairControl
+        control = RepairControl(submission_check)
+        prompt += ('\nUse submit when ready, not completion-summary echo commands. '
+                   'Repeated unchanged failures remain in the next request. Six status-only retries '
+                   'end the attempt. Ordinary shell commands are limited to 30 seconds. '
+                   'Use edit_file to repair, then check_patch. Do not rerun a hanging reproduction unchanged.\n')
+    if config.mini_recovery:
+        from .mini_semantic_control import SemanticControl
+        control = SemanticControl(submission_check)
+        prompt = prompt.replace('Six status-only retries end the attempt.',
+            'Twelve actions without a new valid source state after failed checks end the attempt.')
+        prompt += ('\nSource progress is tracked across ALL tools, including bash and git rollback. '
+            'Comments, reworded reproductions and revisiting earlier source states are not progress. '
+            'Read the named failure, inspect that API and fix it; do not repeatedly test a weaker condition. '
+            'New root debug files are excluded from patches. Public checks run independently. '
+            'A partially improved candidate may be retained for grading but does not count as verified.\n')
+    return agent_class(MiniModel(api, upstream["model"], control), MiniEnvironment(sandbox, budget, events, submission_check, control),
                        system_template=upstream["agent"]["system_template"], instance_template=prompt,
                        step_limit=config.limits.max_steps, cost_limit=0,
                        wall_time_limit_seconds=config.limits.max_wall_seconds,
