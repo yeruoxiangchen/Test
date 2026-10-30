@@ -1,0 +1,156 @@
+from __future__ import annotations
+
+import argparse
+import faulthandler
+import json
+import os
+from pathlib import Path
+import signal
+import sys
+import unittest
+
+from video_count_probe.cli import stage_log
+from video_count_probe.core import atomic_json, checked_plan
+from video_count_probe.wan22_action_probe.cli import configure_storage
+from .protocol import MODEL, REFERENCE, ROOT, all_prompts, code_hash, prepare, under_data, verify_reference
+
+
+def check(root, model_dir):
+    plan = checked_plan(root / 'pilot/plan.json')
+    _, _, reference_records, _, _ = verify_reference(plan)
+    print('Checking frozen reference, local configs and prompt lengths on CPU; no GPU model will load.', flush=True)
+    faulthandler.dump_traceback_later(60, repeat=False)
+    try:
+        from diffusers import WanPipeline
+        from diffusers.pipelines.wan.pipeline_wan import prompt_clean
+        from transformers import T5TokenizerFast
+        from video_count_probe.wan22_action_probe.model import validate_configs
+        from .runtime import current_identity, initial_latents, verify_noise
+        from types import MethodType, SimpleNamespace
+        identity = current_identity(plan, model_dir)
+        configs = validate_configs(model_dir)
+        tokenizer = T5TokenizerFast.from_pretrained(model_dir, subfolder='tokenizer', local_files_only=True)
+        lengths = [len(tokenizer(prompt_clean(p), truncation=False).input_ids) for p in all_prompts(plan)]
+        if max(lengths) > 512 or identity['packages']['diffusers'] != '0.35.1':
+            raise ValueError('Prompt truncation or wrong Diffusers version')
+        temporal = configs['vae']['scale_factor_temporal']
+        spatial = configs['vae']['scale_factor_spatial']
+        shapes = {}
+        for condition in ('text_only', 'routed'):
+            cfg = plan['conditions'][condition]['config']
+            if (cfg['frames'] - 1) % temporal or cfg['height'] % (spatial * 2) or cfg['width'] % (spatial * 2):
+                raise ValueError('Frame/spatial geometry would be rounded by WanPipeline')
+            shapes[condition] = [1, configs['transformer']['in_channels'], (cfg['frames'] - 1) // temporal + 1,
+                                 cfg['height'] // spatial, cfg['width'] // spatial]
+        # Exercise the installed noise sampler at real geometry; no model weights are needed.
+        holder = SimpleNamespace(vae_scale_factor_temporal=temporal, vae_scale_factor_spatial=spatial,
+                                 transformer=SimpleNamespace(config=SimpleNamespace(in_channels=shapes['text_only'][1])))
+        holder.prepare_latents = MethodType(WanPipeline.prepare_latents, holder)
+        noise_checks = []
+        for seed in plan['seeds']:
+            _, tensor, sha = initial_latents(holder, plan['conditions']['text_only']['config'], seed)
+            verify_noise({'condition': 'text_only', 'seed': seed}, sha, reference_records)
+            if list(tensor.shape) != shapes['text_only']:
+                raise ValueError('Unexpected real 8s noise shape')
+            noise_checks.append({'seed': seed, 'sha256': sha, 'matches_reference': True})
+            del tensor
+        from .routing import routing_material
+        _, audit = routing_material(plan, model_dir)
+        atomic_json(root / 'routing_audit.json', audit)
+        result = {'routing_audit_sha256': audit['sha256'], 'python': sys.executable, 'packages': identity['packages'], 'source_hash': code_hash(),
+                  'reference_clips_verified': 3, 'prompt_token_lengths': lengths,
+                  'expected_initial_latent_shapes': shapes, 'both_arms_identical_prompt': True,
+                  'actual_cpu_noise_matches_to_n2': noise_checks,
+                  'gpu_smoke_checked_by_this_command': False, 'note': 'Both routing arms must pass GPU smoke.'}
+        atomic_json(root / 'environment.json', result)
+        print(json.dumps(result, indent=2), flush=True)
+    finally:
+        faulthandler.cancel_dump_traceback_later()
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Paired two-squat phase routing: six new clips with identical prompts and noise.')
+    parser.add_argument('command', choices=['prepare', 'check', 'test', 'encode', 'smoke', 'pilot', 'status', 'review', 'report'])
+    parser.add_argument('--root', type=Path, default=os.environ.get('WAN22_PHASE_CONTROL_ROOT', ROOT))
+    parser.add_argument('--model-dir', type=Path, default=MODEL)
+    parser.add_argument('--reference', type=Path, default=REFERENCE)
+    parser.add_argument('--mode', choices=['smoke', 'pilot'], default='pilot')
+    parser.add_argument('--condition', choices=['all', 'text_only', 'routed'], default='all')
+    parser.add_argument('--shared-gpu-memory-mib', type=int)
+    parser.add_argument('--limit', type=int)
+    parser.add_argument('--retry-failures', action='store_true')
+    parser.add_argument('--annotations', type=Path)
+    args = parser.parse_args()
+    generation = args.command in ('smoke', 'pilot')
+    if args.shared_gpu_memory_mib is not None and (not generation or args.shared_gpu_memory_mib <= 0):
+        parser.error('--shared-gpu-memory-mib requires smoke/pilot and a positive integer')
+    if args.limit is not None and (not generation or args.limit < 1):
+        parser.error('--limit requires smoke/pilot and a positive integer')
+    if args.condition != 'all' and not generation:
+        parser.error('--condition applies only to smoke/pilot')
+    if args.retry_failures and not generation:
+        parser.error('--retry-failures applies only to smoke/pilot')
+    root, model_dir = configure_storage(args.root), under_data(args.model_dir)
+    for variable, directory in {'CUDA_CACHE_PATH': 'cuda', 'TRITON_CACHE_DIR': 'triton'}.items():
+        path = root / 'cache' / directory
+        path.mkdir(parents=True, exist_ok=True)
+        os.environ[variable] = str(path)
+    os.environ['HF_HUB_OFFLINE'] = os.environ['TRANSFORMERS_OFFLINE'] = '1'
+    if not generation:
+        os.environ['CUDA_VISIBLE_DEVICES'] = ''
+    faulthandler.enable()
+
+    def stop(signum, _frame):
+        print(json.dumps({'event': 'termination_signal', 'signal': signal.Signals(signum).name, 'pid': os.getpid()}), flush=True)
+        raise SystemExit(128 + signum)
+
+    for sig in (signal.SIGTERM, signal.SIGINT):
+        signal.signal(sig, stop)
+    with stage_log(root, args.command):
+        print(f'root={root}\nmodel_dir={model_dir}', flush=True)
+        if args.command == 'prepare':
+            prepare(root, args.reference)
+        elif args.command == 'test':
+            suite = unittest.defaultTestLoader.discover(str(Path(__file__).parent / 'tests'))
+            if not unittest.TextTestRunner(verbosity=2).run(suite).wasSuccessful():
+                raise SystemExit(1)
+        elif args.command == 'check':
+            check(root, model_dir)
+        elif args.command == 'encode':
+            from video_count_probe.wan22_action_probe.model import encode
+            plan = checked_plan(root / 'pilot/plan.json')
+            verify_reference(plan)
+            from .runtime import current_identity
+            current_identity(plan, model_dir)
+            import shutil
+            from video_count_probe.wan22_action_probe.model import cache_path, text_identity, read_embedding
+            tid = text_identity(model_dir)
+            for prompt in all_prompts(plan):
+                origin = cache_path(Path(plan['reference']['root']).parent, prompt, tid)
+                target = cache_path(root, prompt, tid)
+                if not target.exists() and origin.exists():
+                    read_embedding(origin, prompt, tid)
+                    target.parent.mkdir(parents=True, exist_ok=True)
+                    temp = target.with_suffix('.copy.partial')
+                    shutil.copyfile(origin, temp)
+                    read_embedding(temp, prompt, tid)
+                    os.replace(temp, target)
+                    print(f'Reused verified CPU text cache: {target.name}', flush=True)
+            encode(root, model_dir, all_prompts(plan))
+        else:
+            from .review import report, review
+            if generation:
+                from .runtime import generate
+                generate(root, args.command, model_dir, args.condition, args.limit,
+                         args.retry_failures, args.shared_gpu_memory_mib)
+                review(root, args.command)
+                report(root, args.command)
+                print('Invocation finished. Check generated_new/expected_new; explicit visual annotation is required. No training started.', flush=True)
+            elif args.command == 'review':
+                review(root, args.mode)
+            else:
+                report(root, args.mode, args.annotations, write=args.command == 'report')
+
+
+if __name__ == '__main__':
+    main()

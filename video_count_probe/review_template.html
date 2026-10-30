@@ -1,0 +1,37 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><title>动作周期核验</title>
+<style>body{max-width:1000px;margin:30px auto;font:17px system-ui;color:#182636;background:#f7f9fc}video{width:100%;max-height:550px;background:#000}button,input,select{font:inherit;margin:8px;padding:8px}button{cursor:pointer}p{line-height:1.6}.box{background:white;padding:20px;border-radius:12px}#state{font-weight:bold;color:#065f46}small{color:#555}</style>
+<h1>动作周期核验</h1><p>按完整周期记录发生次数和完成时刻。页面隐藏生成方法及要求次数。先观看全片，再逐帧核验；质量差或无法确定时如实标记。</p>
+<div class="box"><label>核验者<input id="rater" placeholder="姓名或代号"></label><span id="progress"></span>
+<p id="criterion"></p><video id="video" controls preload="metadata"></video>
+<button onclick="step(-1)">前一帧</button><button onclick="step(1)">后一帧</button><button onclick="mark()">记录此刻完成一次</button>
+<p><label>完成时刻（秒，逗号分隔）<input id="times" size="45" placeholder="如 1.20, 2.65, 4.10"></label></p>
+<p><label>画面足以辨认动作<select id="usable"><option value="">请选择</option><option value="yes">是</option><option value="no">否</option></select></label>
+<label>目标动作出现<select id="present"><option value="">请选择</option><option value="yes">是</option><option value="no">否</option></select></label>
+<label>次数存在歧义<select id="ambiguous"><option value="">请选择</option><option value="no">否</option><option value="yes">是</option></select></label></p>
+<p><label>第二与第三次之间有明显停止动作的停顿<select id="pause"><option value="">请选择</option><option value="yes">是</option><option value="no">否 / 不足三次</option></select></label></p>
+<p><input id="notes" size="70" placeholder="备注：动作不完整、遮挡、人物形变、额外动作等"></p>
+<button onclick="save(true)">保存并标记完成</button><span id="state"></span><br>
+<button onclick="move(-1)">上一段</button><button onclick="move(1)">下一段</button>
+<button onclick="download()">导出 annotations.json</button><label>恢复已有标注<input type="file" id="restore" accept="application/json"></label>
+</div><p><small>计时步长 1/16 秒。不同播放器定位可能不精确，请结合时间输入修正。导出文件才是可移交的标注；本地存储仅作临时备份。</small></p>
+<script>
+const DATA=__PROBE_DATA__;
+const key='video-count-'+DATA.plan_hash;let annotations={};let index=0;
+const el=id=>document.getElementById(id);
+try{annotations=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+function current(){return DATA.items[index]}
+function show(){const it=current(),a=annotations[it.id]||{};el('video').src=it.video;el('criterion').textContent=it.criterion;el('progress').textContent=` ${index+1}/${DATA.items.length}`;
+el('times').value=(a.completion_times||[]).join(', ');for(const [id,k] of [['usable','visually_usable'],['present','action_present'],['ambiguous','ambiguous'],['pause','pause_respected']])el(id).value=a[k]===undefined?'':a[k]?'yes':'no';el('notes').value=a.notes||'';if(a.rater)el('rater').value=a.rater;el('state').textContent=a.complete?'已完成':'尚未完成'}
+function save(done=false){const it=current();const times=el('times').value.trim()?el('times').value.split(',').map(s=>Number(s.trim())):[];
+if(times.some(t=>!Number.isFinite(t)||t<0||t>81/16)||times.some((t,i)=>i&&t<=times[i-1])){alert('请按时间升序输入有效完成时刻');return false}
+if(done&&(!el('rater').value.trim()||['usable','present','ambiguous','pause'].some(k=>!el(k).value))){alert('请填写核验者并完成所有选项');return false}
+annotations[it.id]={job_id:it.id,video_sha256:it.sha256,rater:el('rater').value.trim(),complete:done,completion_times:times,notes:el('notes').value};
+for(const [id,k] of [['usable','visually_usable'],['present','action_present'],['ambiguous','ambiguous'],['pause','pause_respected']])if(el(id).value)annotations[it.id][k]=el(id).value==='yes';
+try{localStorage.setItem(key,JSON.stringify(annotations))}catch(e){}el('state').textContent=done?'已完成':'草稿已保存';return true}
+function move(d){index=Math.max(0,Math.min(DATA.items.length-1,index+d));show()}
+function step(d){const v=el('video');v.pause();v.currentTime=Math.max(0,Math.min(v.duration||81/16,v.currentTime+d/16))}
+function mark(){const t=el('video').currentTime.toFixed(3);el('times').value+=(el('times').value.trim()?', ':'')+t}
+function download(){const blob=new Blob([JSON.stringify({plan_hash:DATA.plan_hash,annotations:Object.values(annotations)},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='annotations.json';a.click();URL.revokeObjectURL(a.href)}
+el('restore').onchange=async e=>{try{const d=JSON.parse(await e.target.files[0].text());if(d.plan_hash!==DATA.plan_hash)throw Error('实验不匹配');for(const a of d.annotations)annotations[a.job_id]=a;localStorage.setItem(key,JSON.stringify(annotations));show()}catch(x){alert(x.message)}};
+show();
+</script></html>
