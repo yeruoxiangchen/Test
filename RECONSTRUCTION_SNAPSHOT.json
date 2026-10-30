@@ -2599,8 +2599,8 @@
     },
     {
       "path": "pose_aligned_layered_reconstruction/审计.md",
-      "bytes": 246252,
-      "sha256": "1c84ff1c04c6573418d9685f91497f56152ea49402250be21ff3726b619dcdab"
+      "bytes": 257906,
+      "sha256": "2f5cfbb61e14951b276d93787f5e236d3edfe170d9533ea48df67c3d4bfbc1cd"
     },
     {
       "path": "pose_aligned_reconstruction/README.md",
@@ -3084,8 +3084,8 @@
     },
     {
       "path": "pose_constrained_trellis2/SCENE_RELATIONS_PLAN_20261028.md",
-      "bytes": 19026,
-      "sha256": "538137029d77b5fb6e561d2cb3e3e48add7776973dad03c6274123d9b98af110"
+      "bytes": 20242,
+      "sha256": "399bb9074028a2986afc7389d5d7715f9e9654fcbdf19f7d11df3bef5481bf48"
     },
     {
       "path": "pose_constrained_trellis2/VALIDATION.md",
@@ -3186,6 +3186,106 @@
       "path": "pose_constrained_trellis2/experiments/hssd_mv_baseline_20261028/tests.py",
       "bytes": 3480,
       "sha256": "8070e9f90d02f8860056d3adb970fef0244db5c86597242214199a97f634ca52"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/INTERIM_REVIEW_20261030.md",
+      "bytes": 3477,
+      "sha256": "f477dd05b6a49884f381a15535c6f24da7cc168f5bbfe29d1da837ffcfdc88ab"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/PROTOCOL.md",
+      "bytes": 8508,
+      "sha256": "f4deda510cacf72240ac3daffeee0d88c45c2816faeac9589c09ef843b702070"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/README.md",
+      "bytes": 10021,
+      "sha256": "7a0096b8bee1800057b6cbb7b1f0d1bfc5be6736908898ff7557c8df55e456e6"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/TOKEN_SUPPORT_REPAIR_20261029.md",
+      "bytes": 3619,
+      "sha256": "c7a8e2658c9116323ca22db79ae748343f43d8751e2f1f831fedf0e0a075d6bb"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/__init__.py",
+      "bytes": 78,
+      "sha256": "55631fcc41f39d6f271b64af69d5f2b6748b8fd371bfa75d2311dcc909a9fdf0"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/common.py",
+      "bytes": 2992,
+      "sha256": "50280b0b1840369a4484273de64382e174796b7d80fd188187ab771f0bdf5fde"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/data_worker.py",
+      "bytes": 16713,
+      "sha256": "a19af9bcc6dabd993c5725772ec0f94a30c77a9895bf523f96f15da71b66b671"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/evaluate_group.py",
+      "bytes": 8438,
+      "sha256": "e649ee015ae2233cd904b43846028c66afe4feec6356cb7e07af2ddee9e77bf0"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/launch_stage.py",
+      "bytes": 1860,
+      "sha256": "2a7f69f5157c94973987bbb7679925efd8857011e963925cdc8a2ff86f8487fa"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/operations/fix_dino_transfer.py",
+      "bytes": 3544,
+      "sha256": "7b6d13fac63c41212c8b10d2acb19d9ee603dd4ec2e6a1cd6c66a6dd92c12857"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/operations/migrate_support.py",
+      "bytes": 4352,
+      "sha256": "4af4e5baf8f41795a4119000ac362a4816592b9b391f4f2ce5acbd815ccd806c"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/operations/projection_probe.py",
+      "bytes": 1366,
+      "sha256": "81b877625a21365a7d3f895c8141df0c00f01ca36dda06e64554e98a8ff421be"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/operations/verify_preflight.py",
+      "bytes": 3522,
+      "sha256": "66466d247548ca2858d55300a5fc48547d16f4aa42953d94bb34749cf353df06"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/prepare.py",
+      "bytes": 3173,
+      "sha256": "e09797991b02f7ea101402141f85c76b2d0785c3fc6a7226e0473e8f03c9673b"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/run.sh",
+      "bytes": 1169,
+      "sha256": "f29e31b0f9ab8687c4eaeef662b15557be1e11b4a7988fdcd31f3f0a27a23590"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/runner.py",
+      "bytes": 16130,
+      "sha256": "959445d67515a8f8d9e9560779ef17f5fc991cb2936f9f5208563af3e34940f2"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/summary.py",
+      "bytes": 9686,
+      "sha256": "bf788d5e80a9624704c3f3a014de9808772c27955008ccc5ce0b1deb84c97b0b"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/support_probe.py",
+      "bytes": 4615,
+      "sha256": "0658c55f62d0411d5e506b23d8d4b74e11c1ac70ac1094e4e7e4d5f316e932f1"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/tests.py",
+      "bytes": 7899,
+      "sha256": "c37254131430a787401b2734a7258b5dde33fa4e3b2d04a77f715bcdba74e0a6"
+    },
+    {
+      "path": "pose_constrained_trellis2/experiments/hssd_relations192_20261029/train_group.py",
+      "bytes": 8218,
+      "sha256": "f1f1eee62e411f3422542a3c0a703ba74c218d7d6068bb7856ca39bd79804343"
     },
     {
       "path": "pose_constrained_trellis2/experiments/hssd_scene_20261028/PROTOCOL.md",
@@ -3323,6 +3423,11 @@
       "sha256": "af618049504c24ee03488b27c87f5012242919932a62c831cd988352dcc0bc3c"
     },
     {
+      "path": "pose_constrained_trellis2/publication/update_relations192_20261030.py",
+      "bytes": 5354,
+      "sha256": "f5333a808cbe1e85af00872184aecec2aff1acd5f40b3131f4f4bde96120e9be"
+    },
+    {
       "path": "pose_constrained_trellis2/requirements-project.txt",
       "bytes": 219,
       "sha256": "50eb46ef3f513154aaddb2c5a3d736679976f5f4f441d43ecb7e02cb57c8cf15"
@@ -3331,6 +3436,31 @@
       "path": "pose_constrained_trellis2/runtime.py",
       "bytes": 7935,
       "sha256": "279d787169b4dc927f341caec16ca503dcc889d711b3de9a0069ee7440bb6e1e"
+    },
+    {
+      "path": "pose_constrained_trellis2/scene_relations/__init__.py",
+      "bytes": 74,
+      "sha256": "fabfaa85be841a669e064ff84fcbf3ec8c0d7471617ed48beb60a624b4fbf8f5"
+    },
+    {
+      "path": "pose_constrained_trellis2/scene_relations/data.py",
+      "bytes": 1701,
+      "sha256": "8e3ed0e05282bd2a5867e4f64519abb780a7cf7c873958fc4fc114d77baf594b"
+    },
+    {
+      "path": "pose_constrained_trellis2/scene_relations/model.py",
+      "bytes": 6495,
+      "sha256": "2bf32365139012fb0b467f16ae6a6fcef566a8ebb679d786b21ebb816d7fbe7a"
+    },
+    {
+      "path": "pose_constrained_trellis2/scene_relations/sampling.py",
+      "bytes": 2628,
+      "sha256": "d0fd097071e7a8b0de35f0b555efd520c50479d0bc2d214c9e77286c9e9913d9"
+    },
+    {
+      "path": "pose_constrained_trellis2/scene_relations/shape_support.py",
+      "bytes": 2803,
+      "sha256": "5930181840f47ca79ea539c92bfe2e99cc0eb5f0f176ff3510649e3260569133"
     },
     {
       "path": "pose_constrained_trellis2/scripts/gpu_smoke.sh",
@@ -3648,8 +3778,8 @@
       "sha256": "a93554635b71c24d72929bc9a5fa507fa9d706a9272984847d4708f7a4819959"
     }
   ],
-  "source_file_count": 727,
-  "source_bytes": 13450462,
+  "source_file_count": 753,
+  "source_bytes": 13601767,
   "dependencies": [
     {
       "path": "TRELLIS2",
@@ -3673,5 +3803,7 @@
     "pose_aligned_reconstruction/tools/ninja",
     "ar_ss_flow/c1_pairwise_v3_ablation_multiseed_results.tar.gz",
     "ar_ss_flow/C1_pairwise_v3"
-  ]
+  ],
+  "updated_utc": "2026-10-30T06:12:40.842499+00:00",
+  "incremental_update": "RECONSTRUCTION_UPDATE_20261030.json; other entries retain the original snapshot provenance"
 }
