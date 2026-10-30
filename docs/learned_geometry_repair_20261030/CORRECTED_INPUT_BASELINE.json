@@ -1,0 +1,16 @@
+{
+  "time": "2026-10-30T00:22:58+00:00",
+  "complete": true,
+  "records": 32,
+  "mean_cd": {
+    "damaged_input": 0.010664660677631877,
+    "damaged": 0.004874584803012094,
+    "stock_local": 0.00513526184532662,
+    "candidate_teacher_support": 0.0051528807429037475,
+    "native_codec_gt": 0.004059172644986092,
+    "candidate_predicted_ss": 0.00907628848053478
+  },
+  "v1_predicted_ss_gain_vs_actual_damaged_input": 0.14893790295912157,
+  "does_not_change_teacher_support_failure": true,
+  "note": "V1 is not retroactively marked passed. Its teacher-support mesh and overfit gate failed."
+}

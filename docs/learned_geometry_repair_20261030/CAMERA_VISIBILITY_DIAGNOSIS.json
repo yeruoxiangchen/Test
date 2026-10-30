@@ -1,0 +1,168 @@
+{
+  "time": "2026-10-30T03:45:24+00:00",
+  "records": [
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 0,
+      "mode": "given",
+      "true_surface_mask_support": 0.72436,
+      "tolerant_support": 0.8518619607843138,
+      "radius": 8,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 0,
+      "mode": "remove_source_R",
+      "true_surface_mask_support": 0.2662,
+      "tolerant_support": 0.4230347450980392,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 0,
+      "mode": "double_source_R",
+      "true_surface_mask_support": 0.26488,
+      "tolerant_support": 0.4220098823529411,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 3,
+      "mode": "given",
+      "true_surface_mask_support": 0.69192,
+      "tolerant_support": 0.8858672941176471,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 3,
+      "mode": "remove_source_R",
+      "true_surface_mask_support": 0.1737,
+      "tolerant_support": 0.3357364705882353,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 3,
+      "mode": "double_source_R",
+      "true_surface_mask_support": 0.17528,
+      "tolerant_support": 0.33692313725490197,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 6,
+      "mode": "given",
+      "true_surface_mask_support": 0.66496,
+      "tolerant_support": 0.8286073725490196,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 6,
+      "mode": "remove_source_R",
+      "true_surface_mask_support": 0.37912,
+      "tolerant_support": 0.6172096470588234,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_d00a04598dd84db4a53afb288667cc9c",
+      "view": 6,
+      "mode": "double_source_R",
+      "true_surface_mask_support": 0.37828,
+      "tolerant_support": 0.6093250980392158,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 0,
+      "mode": "given",
+      "true_surface_mask_support": 0.50658,
+      "tolerant_support": 0.6646267450980392,
+      "radius": 9,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 0,
+      "mode": "remove_source_R",
+      "true_surface_mask_support": 0.66732,
+      "tolerant_support": 0.8005692549019608,
+      "radius": 8,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 0,
+      "mode": "double_source_R",
+      "true_surface_mask_support": 0.62926,
+      "tolerant_support": 0.8107613333333334,
+      "radius": 9,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 3,
+      "mode": "given",
+      "true_surface_mask_support": 0.50144,
+      "tolerant_support": 0.6355745098039215,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 3,
+      "mode": "remove_source_R",
+      "true_surface_mask_support": 0.50766,
+      "tolerant_support": 0.7123493333333334,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 3,
+      "mode": "double_source_R",
+      "true_surface_mask_support": 0.53644,
+      "tolerant_support": 0.700695294117647,
+      "radius": 7,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 6,
+      "mode": "given",
+      "true_surface_mask_support": 0.5075,
+      "tolerant_support": 0.6151645490196078,
+      "radius": 9,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 6,
+      "mode": "remove_source_R",
+      "true_surface_mask_support": 0.54694,
+      "tolerant_support": 0.7342598431372549,
+      "radius": 8,
+      "frustum_fraction": 1.0
+    },
+    {
+      "uid": "objaverse_1073c44309524810b6cd4cef2d6e8008",
+      "view": 6,
+      "mode": "double_source_R",
+      "true_surface_mask_support": 0.57748,
+      "tolerant_support": 0.744880862745098,
+      "radius": 9,
+      "frustum_fraction": 1.0
+    }
+  ],
+  "scope": "GT source geometry and alternate fixed source rotations used only for data diagnosis; no method selection or GT alignment"
+}

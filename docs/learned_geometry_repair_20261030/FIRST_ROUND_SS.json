@@ -1,0 +1,27 @@
+{
+  "time": "2026-10-29T13:41:32+00:00",
+  "stage": "ss",
+  "records": 32,
+  "objects": 32,
+  "checkpoint": "/data/zjr/pose_conditioned_geometry_repair/outputs/round1_20261029/overfit_repair_ss/checkpoints/step_000600.pt",
+  "ss_checkpoint": "",
+  "arm": "repair",
+  "variants": [
+    0
+  ],
+  "seed": 42,
+  "synthetic_known_roi": true,
+  "source": "c79b89f52618e2d25bd4e5aabb2a4a8d40a27db22c29018d7cd1354118168074",
+  "edit_flow_loss": {
+    "stock": 0.3776469238740295,
+    "candidate": 0.2895965675003633,
+    "ratio": 0.7668447674075669
+  },
+  "damaged_iou": 0.848240315914154,
+  "stock_iou": 0.8571041934192181,
+  "candidate_iou": 0.8610260998830199,
+  "candidate_raw_iou": 0.7177486745640635,
+  "outside_occupancy_changes": 0.0,
+  "overfit_gate_passed": true,
+  "complete": true
+}

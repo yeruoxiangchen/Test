@@ -1,0 +1,30 @@
+{
+  "time": "2026-10-30T03:01:56+00:00",
+  "passed": true,
+  "native_npz_readback": true,
+  "dataset_and_gt_reads_denied_in_inference_child": true,
+  "shape_tokens": 2626,
+  "result": {
+    "time": "2026-10-30T03:01:51+00:00",
+    "args": {
+      "pose": "/data/zjr/pose_conditioned_geometry_repair/outputs/bridge_v2_20261030/inference_smoke/pose.pt",
+      "ss_latent": "/data/zjr/pose_conditioned_geometry_repair/outputs/bridge_v2_20261030/inference_smoke/reference_ss.npz",
+      "shape_latent": "/data/zjr/pose_conditioned_geometry_repair/outputs/bridge_v2_20261030/inference_smoke/reference_shape.npz",
+      "roi": "/data/zjr/pose_conditioned_geometry_repair/outputs/bridge_v2_20261030/inference_smoke/roi.json",
+      "ss_checkpoint": "/data/zjr/pose_conditioned_geometry_repair/outputs/round1_20261029/overfit_repair_ss/checkpoints/step_000600.pt",
+      "shape_checkpoint": "/data/zjr/pose_conditioned_geometry_repair/outputs/bridge_v2_20261030/overfit_repair_shape/checkpoints/step_000600.pt",
+      "output": "/data/zjr/pose_conditioned_geometry_repair/outputs/bridge_v2_20261030/inference_smoke/result",
+      "seed": 42,
+      "steps": 12,
+      "validate_only": false
+    },
+    "gt_accessed": false,
+    "elapsed_seconds": 486.37020230293274,
+    "shape_tokens": 2626,
+    "peak_gpu_gib": 3.800327777862549,
+    "outside_features_max_abs": 0.0,
+    "outside_occupancy_changes": 0,
+    "localization": "caller-provided ROI; no automatic error localization in this entry point"
+  },
+  "scope": "Runtime contract test on a synthetic fixture; not a reconstruction score"
+}

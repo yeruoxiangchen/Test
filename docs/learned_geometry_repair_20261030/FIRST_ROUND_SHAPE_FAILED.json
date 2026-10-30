@@ -1,0 +1,57 @@
+{
+  "time": "2026-10-29T15:29:38+00:00",
+  "stage": "shape",
+  "records": 32,
+  "objects": 32,
+  "checkpoint": "/data/zjr/pose_conditioned_geometry_repair/outputs/round1_20261029/overfit_repair_shape/checkpoints/step_002000.pt",
+  "ss_checkpoint": "/data/zjr/pose_conditioned_geometry_repair/outputs/round1_20261029/overfit_repair_ss/checkpoints/step_000600.pt",
+  "arm": "repair",
+  "variants": [
+    0
+  ],
+  "seed": 42,
+  "synthetic_known_roi": true,
+  "source": "c79b89f52618e2d25bd4e5aabb2a4a8d40a27db22c29018d7cd1354118168074",
+  "edit_flow_loss": {
+    "stock": 0.4118750803706159,
+    "candidate": 0.34233026877579203,
+    "ratio": 0.8311507179986573
+  },
+  "means": {
+    "damaged": {
+      "cd_l1": 0.004874584803012094,
+      "f@0.01": 0.9293675688442523,
+      "f@0.02": 0.995719074810073,
+      "components": 3178.5
+    },
+    "stock_local": {
+      "cd_l1": 0.00513526184532662,
+      "f@0.01": 0.9099955690069088,
+      "f@0.02": 0.9831368508913527,
+      "components": 3383.71875
+    },
+    "candidate_teacher_support": {
+      "cd_l1": 0.0051528807429037475,
+      "f@0.01": 0.9147859425589782,
+      "f@0.02": 0.9811954927347811,
+      "components": 3356.09375
+    },
+    "native_codec_gt": {
+      "cd_l1": 0.004059172644986092,
+      "f@0.01": 0.9760166690897492,
+      "f@0.02": 0.9999085908764354,
+      "components": 3888.40625
+    },
+    "candidate_predicted_ss": {
+      "cd_l1": 0.00907628848053478,
+      "f@0.01": 0.8898739761757816,
+      "f@0.02": 0.9281844499869119,
+      "components": 3208.75
+    }
+  },
+  "mesh_cd_gain_vs_damaged": -0.05709120902352338,
+  "outside_features_max_abs": 0.0,
+  "overfit_gate_passed": false,
+  "predicted_ss_mesh_cd_gain_vs_damaged": -0.8619613459030149,
+  "complete": true
+}

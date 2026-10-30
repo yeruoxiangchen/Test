@@ -1,0 +1,40 @@
+{
+  "constants.py": {
+    "source": "pose_constrained_trellis2/constants.py",
+    "sha256": "d22800702a8e4c570e3dd83c126e53cb96b934c6ec1faca6af1c4be510395a50"
+  },
+  "models.py": {
+    "source": "pose_constrained_trellis2/models.py",
+    "sha256": "13aea98429a65af706b6f19ecedd9e414b91e58a5544c25f3e9fd8f1c88c2a92"
+  },
+  "conditioning.py": {
+    "source": "pose_constrained_trellis2/conditioning.py",
+    "sha256": "64ae208912e7e8de5e38d039e9f325ce333572f49015a469344d97abfcb1c7ce"
+  },
+  "geometry.py": {
+    "source": "pose_constrained_trellis2/geometry.py",
+    "sha256": "569820838c4c76889bb91c39e734b0287b80c3c5b983413c0d8111fdf35bf7d9"
+  },
+  "data.py": {
+    "source": "pose_constrained_trellis2/data.py",
+    "sha256": "72cd7aa0c988dc8d03edc5ff89e5d1ff148c2579d125f40aea3ea09f4f9f7777"
+  },
+  "runtime.py": {
+    "source": "pose_constrained_trellis2/runtime.py",
+    "sha256": "279d787169b4dc927f341caec16ca503dcc889d711b3de9a0069ee7440bb6e1e"
+  },
+  "checkpoint.py": {
+    "source": "pose_constrained_trellis2/checkpoint.py",
+    "sha256": "8095148db546fc4ae375e941809daa53d3ab7ebcf71024953ce15ba7d568cdf6"
+  },
+  "dependency.py": {
+    "source": "pose_constrained_trellis2/dependency.py",
+    "sha256": "34a0554951d1630c034ec562f28e5e7f5461061063380668796b86c12e2f3cbe",
+    "upstream_sha256": "c7d1bc38ae2f1e0ff9666222d84ea821295a99a73b316b0a9edc827a0f328735",
+    "local_change": "Resolve sibling TRELLIS2 from the extra vendor package depth"
+  },
+  "prepare_pose_cache.py": {
+    "source": "pose_constrained_trellis2/prepare_pose_cache.py",
+    "sha256": "0d1ba295eb82f2f60a7b977d7a83b7a79f988b9a342a29feffb8cd951d929dbb"
+  }
+}

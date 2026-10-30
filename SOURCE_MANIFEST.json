@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-29T08:43:22.363286+00:00",
+  "created_at": "2026-10-30T05:12:22.053815+00:00",
   "source_root": "/home/zjr/Tracker",
   "packages": [
     "trellis2_geometry_repair",
@@ -10,7 +10,8 @@
     "ar_ss_flow",
     "reconvggt_ar_adapter_a",
     "trellis_point_prior_mv",
-    "pixal3d_multiview"
+    "pixal3d_multiview",
+    "pose_conditioned_geometry_repair"
   ],
   "counts": {
     "trellis2_geometry_repair": 91,
@@ -21,7 +22,8 @@
     "ar_ss_flow": 78,
     "reconvggt_ar_adapter_a": 56,
     "trellis_point_prior_mv": 56,
-    "pixal3d_multiview": 50
+    "pixal3d_multiview": 50,
+    "pose_conditioned_geometry_repair": 35
   },
   "files": [
     {
@@ -6419,11 +6421,221 @@
       "bytes": 43208,
       "sha256": "9d14ec8ae605e5833f5e937e643550b7846ca0a877acff114b942331284ca949",
       "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/BRIDGE_PROTOCOL.md",
+      "bytes": 3885,
+      "sha256": "5e63a37f181a4b83e33ebfb5ed91370a1e1f1dd030cf3b9f240bc7e67799823c",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/PROTOCOL.md",
+      "bytes": 6425,
+      "sha256": "60848b238f44cc63b41aaf9de71fcddb89623d9d2ff3432cf7ec85026bbece12",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/README.md",
+      "bytes": 2676,
+      "sha256": "c9a28b53210a07a7e2ee79aa878ec779e1e13baccdbb7eda1a8b2654194ad417",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/__init__.py",
+      "bytes": 70,
+      "sha256": "c128d1eea0fe7002dc9c2da4bf6b5463dc2f54e2e5dca3adf053a92a0e776978",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/baseline_audit.py",
+      "bytes": 3117,
+      "sha256": "2b5851e5acee04da0077e2622e2493df7d47569d1788d4ca0aeb6b3cc6f83dbe",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/bridge_runner.py",
+      "bytes": 8572,
+      "sha256": "9dccdd9c2bdf1a66bd5d22a55864e4f97fec5ae9e4d46608041d5fd529bacc0d",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/camera_audit.py",
+      "bytes": 3328,
+      "sha256": "3f2917248e58e76af58edd84b37ea5de38807958f671275239f7e58ebe772866",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/common.py",
+      "bytes": 4399,
+      "sha256": "cf6533005a08090826a32dc1704d8a9d29f108d130fea500a6e3f5ea8054c016",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/corruptions.py",
+      "bytes": 5385,
+      "sha256": "e679ba7fe27b8d86886723d2fde70a3ecb5f5b5b4a92816439a79be600518de6",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/data.py",
+      "bytes": 2076,
+      "sha256": "fb3b84927499bc77584aea7d35adfbf428ad8abb92a4b3aeec99b1ee32497b99",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/dispatch.py",
+      "bytes": 1801,
+      "sha256": "1c677e3bfcaa6b8c66b7f9d67f082caaaf3e31638675c01201f4908cbd954824",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/evaluate.py",
+      "bytes": 21344,
+      "sha256": "9f53c6ce1e3f18b390f7a0de39b4b6b778cf26cf6631cde1f1b1942510576968",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/figures.py",
+      "bytes": 5656,
+      "sha256": "fc1fa8f996923d4e6a05901e2cfe55bc2dd5d535352bef4eac89261b9faa7866",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/flow.py",
+      "bytes": 5270,
+      "sha256": "2f510b779204c948cb178de87f96f96172e497c7abbf513c4b608c1de5a204bd",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/infer.py",
+      "bytes": 6228,
+      "sha256": "74fc93fc1a0445e19f65abf02c45a40434f96885c12f5355a3ac129c066e2473",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/inference_smoke.py",
+      "bytes": 4023,
+      "sha256": "9edec740c291567c08182b2b392eb7c4baf81758ce77a713144fd5ff52374ac6",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/model.py",
+      "bytes": 4845,
+      "sha256": "6bdeb2a52d5cc03022cedd37ebaf875a846e377bfa48f0a54c7847273cd47cc3",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/prepare.py",
+      "bytes": 23882,
+      "sha256": "bb41da5e275ecc6f12a3ce78ac465e768af7913a83c31b625d0f8296cadfe6a3",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/report.py",
+      "bytes": 1250,
+      "sha256": "75609b8dd05aaadd5fc90ad99bc90fff1d9646940409729af05c193c79ccda59",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/run.sh",
+      "bytes": 294,
+      "sha256": "c8cb501cf77bfd9f2146ea0fd08f0f92da8605049bd887ccef9403bc12e09dd2",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/runner.py",
+      "bytes": 15439,
+      "sha256": "61547c933300074865d14b65026bea5bcbefbd72870e6b1c6483c013fef2246a",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/tests/test_repair_contracts.py",
+      "bytes": 7212,
+      "sha256": "75e3de9fb397361b6cbc03f74fa5c89839dc316cfca0f84d0ac47c0b15187a52",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/train.py",
+      "bytes": 14056,
+      "sha256": "7a290b646617b8660be178c16da2f3722ae46fd19eb76ea6babf0525e89f8bf6",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/SOURCE.json",
+      "bytes": 1642,
+      "sha256": "664e410ee2aeab4bbdf6093e456be6e9bc028c88ac7f47c152970880f40475e9",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/__init__.py",
+      "bytes": 76,
+      "sha256": "169124634404deeb1d0c63f528164aa2d5cd0e39d716a3a6016639c37c694d81",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/checkpoint.py",
+      "bytes": 5924,
+      "sha256": "8095148db546fc4ae375e941809daa53d3ab7ebcf71024953ce15ba7d568cdf6",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/conditioning.py",
+      "bytes": 6463,
+      "sha256": "64ae208912e7e8de5e38d039e9f325ce333572f49015a469344d97abfcb1c7ce",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/constants.py",
+      "bytes": 2742,
+      "sha256": "d22800702a8e4c570e3dd83c126e53cb96b934c6ec1faca6af1c4be510395a50",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/data.py",
+      "bytes": 10536,
+      "sha256": "72cd7aa0c988dc8d03edc5ff89e5d1ff148c2579d125f40aea3ea09f4f9f7777",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/dependency.py",
+      "bytes": 1057,
+      "sha256": "34a0554951d1630c034ec562f28e5e7f5461061063380668796b86c12e2f3cbe",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/geometry.py",
+      "bytes": 9821,
+      "sha256": "569820838c4c76889bb91c39e734b0287b80c3c5b983413c0d8111fdf35bf7d9",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/models.py",
+      "bytes": 23755,
+      "sha256": "13aea98429a65af706b6f19ecedd9e414b91e58a5544c25f3e9fd8f1c88c2a92",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/prepare_pose_cache.py",
+      "bytes": 17674,
+      "sha256": "0d1ba295eb82f2f60a7b977d7a83b7a79f988b9a342a29feffb8cd951d929dbb",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/vendor_pose/runtime.py",
+      "bytes": 7935,
+      "sha256": "279d787169b4dc927f341caec16ca503dcc889d711b3de9a0069ee7440bb6e1e",
+      "materialized_symlink": false
+    },
+    {
+      "path": "pose_conditioned_geometry_repair/审计.md",
+      "bytes": 13038,
+      "sha256": "7feed558b592ed2b14c91d58c7530559afc6d7ee12e25696e3f270b10f9c1901",
+      "materialized_symlink": false
     }
   ],
   "skipped": [],
   "excluded": "datasets, model weights, generated assets, caches, unrelated projects and upstream checkout trees",
-  "update_scope": "Only trellis2_geometry_repair and its small V3 receipts; all other source packages remain the previous snapshot and used shared helpers were verified identical.",
+  "update_scope": "Only the new pose_conditioned_geometry_repair package and small validation receipts; all previous source packages are preserved byte-for-byte.",
   "local_regeneration_receipts": [
     {
       "path": "docs/local_regeneration_20261029/FINAL_ANALYSIS.md",
@@ -6571,6 +6783,48 @@
       "path": "docs/guided_flow_v3_20261029/visual_audit.json",
       "bytes": 947,
       "sha256": "8b80bacc2c9898879ac9331b61165ef5570e1b1e7cb88001083978586c95ce35"
+    }
+  ],
+  "learned_geometry_repair_receipts": [
+    {
+      "path": "docs/learned_geometry_repair_20261030/BRIDGE_OVERFIT32.json",
+      "bytes": 1995,
+      "sha256": "5d1bff219b1ccd363425974b84e28033760a5e28e87b918cb7f441d1f0d3045c"
+    },
+    {
+      "path": "docs/learned_geometry_repair_20261030/CAMERA_VISIBILITY_DIAGNOSIS.json",
+      "bytes": 4831,
+      "sha256": "eb84f0874303277cb01a350ebdea0282ad3a94a46bff39979e9ec5c9f6e62ff2"
+    },
+    {
+      "path": "docs/learned_geometry_repair_20261030/CORRECTED_INPUT_BASELINE.json",
+      "bytes": 594,
+      "sha256": "a281394c190ca3127201a5b72716ef82bd8ca1f39869997820151d3274507571"
+    },
+    {
+      "path": "docs/learned_geometry_repair_20261030/FIRST_ROUND_SHAPE_FAILED.json",
+      "bytes": 1739,
+      "sha256": "dc633a5d1cc437d1b236f3572c32b362f9c9cef98e761fe6e7e8b0e483c75f8b"
+    },
+    {
+      "path": "docs/learned_geometry_repair_20261030/FIRST_ROUND_SS.json",
+      "bytes": 787,
+      "sha256": "aa920a8262df31fac0acdd52575b7b512515c54a8aca943e4f6b687f03709c24"
+    },
+    {
+      "path": "docs/learned_geometry_repair_20261030/OVERFIT_GATE.json",
+      "bytes": 2566,
+      "sha256": "a322e271a7f7393fffbb40703540407943288546448ad4dbb98e6dfa3f03470e"
+    },
+    {
+      "path": "docs/learned_geometry_repair_20261030/README.md",
+      "bytes": 1217,
+      "sha256": "c7c260b62cb8b557d2cc40e911516626557266feebb3b77927333fb1f78a2e9d"
+    },
+    {
+      "path": "docs/learned_geometry_repair_20261030/STANDALONE_INFERENCE.json",
+      "bytes": 1584,
+      "sha256": "c8eed926e55a9edebf65b240bee9281d481d74a5e9d256994e96e889bdd9471d"
     }
   ]
 }

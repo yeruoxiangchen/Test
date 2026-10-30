@@ -132,3 +132,27 @@ bash trellis2_geometry_repair/run_guided_flow.sh status
 The original-machine launchers and inherited data/cache dependencies remain
 explicit. Physical V3 outputs are under
 `/data/zjr/trellis2_geometry_repair/outputs/guided_flow_v3_fixed_20261029`.
+
+## Trainable pose-conditioned native T2 repair (2026-10-30)
+
+`pose_conditioned_geometry_repair` freezes the official SS/Shape backbones,
+trains multiview/reference-state adapters and attention LoRA, and learns a
+damaged-to-clean Shape residual bridge. A frozen copy of the pose-conditioning
+core avoids coupling to another active source project. No old30K weights or
+distillation are used; texture is outside this experiment.
+
+The initial Shape experiment failed and remains recorded. The residual bridge
+passed32-object known-ROI overfit checks: matched-support CD improved12.30%, and
+predicted-SS CD improved16.78% versus the actual damaged input. This establishes
+training-set repairability, not held-out generalization or automatic localization.
+Read the package audit and `docs/learned_geometry_repair_20261030` for controls,
+the corrected physical-input baseline, validation and limitations.
+
+```bash
+bash pose_conditioned_geometry_repair/run.sh tests
+bash pose_conditioned_geometry_repair/run.sh status
+```
+
+Original-machine paths/environment are explicit. Formal Train2000/Dev64 uses
+data-validity screening before model training; large datasets, checkpoints,
+meshes, images, caches and runtime logs are excluded from this source snapshot.
